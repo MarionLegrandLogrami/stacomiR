@@ -1,0 +1,33 @@
+﻿{
+  "@context": "https://raw.githubusercontent.com/codemeta/codemeta/master/codemeta.jsonld",
+  "@type": "Code",
+  "author": [      
+  {
+	"@id": "https://orcid.org/0000-0002-4688-8303",
+    "@type": "Person",
+    "email": "tableau-salt-loire@logrami.fr",
+    "name": "Marion Legrand",
+    "affiliation": "Loire Grands Migrateurs (LOGRAMI) - ECOLAB université de Toulouse"
+  }
+  {
+	"@id": "",
+    "@type": "Person",
+    "email": "Cedric.Briand@eptb-vilaine.fr ",
+    "name": "Cédric Briand",
+    "affiliation": "Etablissement Public Territorial du Bassin de la Vilaine (EPTB Vilaine)"
+  }
+  
+  
+
+  ],
+  "identifier": "",
+  "codeRepository": "svn://scm.r-forge.r-project.org/svnroot/stacomir/",
+  "datePublished": "2018-05-16",
+  "dateModified": "2018-05-16",
+  "dateCreated": "2018-05-16",
+  "description": "Graphical outputs and treatment for a database of fish pass monitoring. It is a part of the 'STACOMI' open source project developed in France by the French Agency for Biodiversity (AFB) institute to centralize data obtained by fish pass monitoring. ",
+  "keywords": "fish, migration",
+  "license": "GPL (>= 2)",
+  "title": "stacomiR",
+  "version": "0.5.3.1"
+}
