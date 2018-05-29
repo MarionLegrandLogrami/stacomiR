@@ -1,0 +1,2 @@
+lienODBC;uid;pwd;sqldf.uid;sqldf.pwd;sqldf.dbname;sqldf.host;sqldf.port;pgwd;datawd;lang
+bd_contmig_nat;iav;iav;test;test;test;localhost;5432;F:/workspace/stacomir/pkg/stacomir/R/;~/CalcmigData;French
