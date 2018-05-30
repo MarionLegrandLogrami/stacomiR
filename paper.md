@@ -22,7 +22,7 @@ bibliography: paper.bib
 
 # Summary
 
-Migratory fish (like eel, salmon, shad or lamprey) are patrimonial species with cultural, scientific and economical strong interest [@fish_migration_2016].
+Migratory fish (like eel, salmon, shad or lamprey) are patrimonial species with cultural, scientific and economical strong interest [@poisson_eau_2011].
 Migratory fishes population are vulnerable as they are often more prone to human impact when migrating in rivers and to the ocean [@mcdowall_1992].
 They are often counted at stations when they perform the migrations at some of their lifestages, and these counts provide valuable indices to
 the population size and trend. 
