@@ -16,7 +16,6 @@ affiliations:
    index: 2
  - name: Etablissement Public Territorial du Bassin de la Vilaine (EPTB Vilaine), Boulevard de Bretagne, La Roche-Bernard, France
    index: 3
-
 date: 17 May 2018
 bibliography: paper.bib
 ---
