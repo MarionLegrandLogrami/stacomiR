@@ -1,5 +1,9 @@
 ---
 title: 'stacomiR : a common tool for monitoring fish migration'
+tags:
+ - R package
+ - fish migration
+ - data analysis
 authors:
  - name: Marion Legrand
    affiliation: "1, 2"
