@@ -1,9 +1,5 @@
 ---
 title: 'stacomiR : a common tool for monitoring fish migration'
-tags:
- - R package
- - fish migration
- - data analysis
 authors:
  - name: Marion Legrand
    affiliation: "1, 2"
@@ -33,8 +29,10 @@ from R-Forge.
 
 ```{R}
 # Installation
-install.packages("stacomiR") # get the package from CRAN
-install.packages("stacomiR", repos="http://R-Forge.R-project.org") # get the development version
+# get the package from CRAN
+install.packages("stacomiR") 
+# get the development version
+install.packages("stacomiR", repos="http://R-Forge.R-project.org") 
 library(stacomiR)
 
 # Launch the graphical interface
@@ -54,7 +52,8 @@ at the Arzal dam in the Vilaine river (France), in weight and number (top),
 the periods and type of operation for the fishway (DF) and the counting device (DC), and the operation (trapping periods) (middle), a summary of migration per month (bottom).
 
 ```{R}
-# Without a connection at the database we can launch these lines to generate the graph
+# Without a connection at the database we can launch these lines 
+# to generate the graph.
 # To obtain titles in french use Sys.setenv(LANG = "fr")
 data("r_mig_mult")
 data("r_mig_mult_ope")
@@ -65,8 +64,8 @@ data("r_mig_mult_dc")
 assign("report_dc",r_mig_mult_dc,envir=envir_stacomi)
 r_mig_mult<-calcule(r_mig_mult,silent=TRUE) 
 
-# To avoid call to dev.new() which creates a device per stage, DC, taxa, we simplify 
-# the object:
+# To avoid call to dev.new() which creates a device per stage, 
+# DC, taxa, we simplify the object:
 r_mig_mult@taxa@data<- r_mig_mult@taxa@data[1,]
 r_mig_mult@stage@data<-r_mig_mult@stage@data[3,]
 r_mig_mult@dc@dc_selectionne<-r_mig_mult@dc@dc_selectionne[3]
