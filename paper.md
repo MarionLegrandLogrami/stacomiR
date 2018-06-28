@@ -10,9 +10,9 @@ authors:
  - name: Cédric Briand
    affiliation: 3
 affiliations:
- - name: EcoLab, Université de Toulouse, CNRS, INPT, UPS, Toulouse, France
-   index: 1
  - name: Loire Grands Migrateurs (LOGRAMI), 5, avenue Buffon, Orléans, France
+   index: 1
+ - name: EcoLab, Université de Toulouse, CNRS, INPT, UPS, Toulouse, France
    index: 2
  - name: Etablissement Public Territorial du Bassin de la Vilaine (EPTB Vilaine), Boulevard de Bretagne, La Roche-Bernard, France
    index: 3
