@@ -1,0 +1,2 @@
+lienODBC;uid;pwd;sqldf.uid;sqldf.pwd;sqldf.dbname;sqldf.host;sqldf.port;pgwd;datawd;lang
+bd_contmig_nat;user_1;user_1;test;test;test;localhost;5432;;C:/Users/Documents/CalcmigData;French
