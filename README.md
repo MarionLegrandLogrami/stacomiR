@@ -1,4 +1,4 @@
-# stacomiR
+# Welcome to the stacomiR project !
 
 It is a part of the 'STACOMI' open source project developed in France by the French Agency for Biodiversity (AFB) institute to centralize data obtained by fish pass monitoring.  The objective of the stacomi project is to provide a common database for people monitoring ﬁsh
 migration, so that data from watershed are shared, and stocks exchanging between diﬀerent basins are better
