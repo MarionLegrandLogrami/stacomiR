@@ -8,7 +8,7 @@ For complete installation please be sure to have these softwares installed :
 - R >= 3.5.0
 
 You need also to:
-- create ODBC link for your fish migratory database (add a source of type "PostgreSQL ANSI")
+- create ODBC link for your fish migratory database (add a source of type "PostgreSQL unicode")
 - add a **CalcmigData** folder on your computer (for example c:\users\my_session\Documents\CalcmigData)
 
 ## Create a database
