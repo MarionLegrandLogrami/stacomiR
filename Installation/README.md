@@ -36,9 +36,10 @@ CREATE ROLE user_2 LOGIN PASSWORD 'user_2'
 ```
 You now need to restaure Install_bd_stacomi.sql. To do that open an MS DOS command and write (you first need to save the path to the Program\PostgreSQL\*your_version*\bin in Environment Variables):
 ```
-psql -U user bd_contmig_nat<"path_to_the_Install_bd_stacomi.sql_file"
+psql -U user <"path_to_the_Install_bd_stacomi.sql_file"
 ```
 *with user the name you use to log in pgAdmin*
+This command line works only if your database is installed on your localhost server with the default port (5432). If your database is installed on a distant server you need to specify the server name and the port adding the parameter -h *server name or adress* and -p *port*
 
 Now that your bd_contmig_nat database is restaured, you will find in your database different schemas (to look at your database, open pgAdmin and search for a database called bd_contmig_nat):
 - ref : with all the reference tables to understand codification used (we used the french standard 'SANDRE' for all codifications)
