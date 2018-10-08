@@ -12,13 +12,23 @@ You need also to:
 - add a **CalcmigData** folder on your computer (for example c:\users\my_session\Documents\CalcmigData)
 
 ## Create a database
-Install_bd_stacomi.sql (available in the [Installation folder](https://github.com/MarionLegrandLogrami/stacomiR/tree/master/Installation)) allows you to create an empty database.
+Install_bd_stacomi.sql (available in the [Installation folder](https://github.com/MarionLegrandLogrami/stacomiR/tree/master/Installation)) allows you to create an empty database. **You first need to decompress the file Install_bd_stacomi.zip**.
 You will find different schemas:
 - ref : with all the reference tables to understand codification used (we used the french standard 'SANDRE' for all codifications)
 - nat : for french users, this schema allow a national compilation of all users's schema in France. Please don't write inside this schema
-- user_1 & user_2 : two examples of empty user's schemas. Each user write in his schema. It is possible to share information between user. To do this you need to dump your schema (using MS DOS commande pg_dump or graphical interface). For example inside pgAdmin you can do right click on your schema and click "Backup". Then send this backup file to the user with whom you want to share data. He can restore your schema using MS DOS command (psql) or graphical interface (inside pgAdmin3 right click and "Restore")
+- iav : an example of a real user schema. In this schema you will find all data of the Etablissement Public Territorial du Bassin de la Vilaine.
+- user_1 & user_2 : two examples of empty user's schemas. Each user write in his schema. It is possible to share information between user. To do this you need to dump your schema (using MS DOS commande pg_dump or graphical interface). For example inside pgAdmin you can do right click on your schema and click "Backup". Then send this backup file to the user with whom you want to share data. He can restore your schema using MS DOS command (psql) or graphical interface (inside pgAdmin right click and "Restore")
 
-In pgAdmin, you need to create a connexion role with the same name as your schema (for example if I write inside schema called 'toto' I need to create a connexion role with name 'toto' and password 'toto' (or wathever password you choose))
+In pgAdmin, you need to create a connexion role with the same name as your schema (for example if I write inside schema called 'toto' I need to create a connexion role with name 'toto' and password 'toto' (or wathever password you choose)).
+
+If you want to add data in one of this empty user schema you will probably want to change the name. To do so, you just need to choose a  name for your schema (short name of your organization for example) and execute these lines :
+
+```
+INSERT INTO ref.ts_organisme_org VALUES
+    ('name_of_your_schema', 'description_of_your_organization')
+
+ALTER SCHEMA user_1 RENAME TO name_of_your_schema;
+```
 
 ## Add stacomi folder
 You need to [download and put the **stacomi folder**](https://github.com/MarionLegrandLogrami/stacomiR/tree/master/Installation) at the root of your **c:\Program Files** repository.
