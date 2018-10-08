@@ -29,15 +29,16 @@ CREATE ROLE invite LOGIN PASSWORD 'invite'
 CREATE ROLE user_1 LOGIN PASSWORD 'user_1'
   NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;
 ```
--for user_2
+- for user_2
 ```
 CREATE ROLE user_2 LOGIN PASSWORD 'user_2'
   NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;
 ```
 You now need to restaure Install_bd_stacomi.sql. To do that open an MS DOS command and write (you first need to save the path to the Program\PostgreSQL\*your_version*\bin in Environment Variables):
 ```
-psql -U *user* bd_contmig_nat<"path_to_the_Install_bd_stacomi.sql_file"
+psql -U user bd_contmig_nat<"path_to_the_Install_bd_stacomi.sql_file"
 ```
+*with user the name you use to log in pgAdmin*
 
 Now that your bd_contmig_nat database is restaured, you will find in your database different schemas (to look at your database, open pgAdmin and search for a database called bd_contmig_nat):
 - ref : with all the reference tables to understand codification used (we used the french standard 'SANDRE' for all codifications)
