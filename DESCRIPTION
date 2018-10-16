@@ -1,6 +1,6 @@
 Package: stacomiR
-Version: 0.5.3.1
-Date: 2018-01-04
+Version: 0.5.4.0
+Date: 2018-09-24
 Title: Fish Migration Monitoring
 Authors@R: c(person("Cedric", "Briand", role = c("aut", "cre"), email = "cedric.briand00@gmail.com"),
 	      person("Marion", "Legrand", role = "aut", email="tableau-salt-loire@logrami.fr"),
@@ -8,11 +8,12 @@ Authors@R: c(person("Cedric", "Briand", role = c("aut", "cre"), email = "cedric.
 Description: Graphical outputs and treatment for a database of fish pass
     monitoring. It is a part of the 'STACOMI' open source project developed in
     France by the French Agency for Biodiversity (AFB) institute to centralize
-    data obtained by fish pass monitoring. Version 0.5.3.1 is available in French and
+    data obtained by fish pass monitoring. This version is available in French and
     English. See <http://stacomir.r-forge.r-project.org/> for more information on
     'STACOMI'.     
 License: GPL (>= 2)
 URL: http://stacomir.r-forge.r-project.org/
+BugReports: https://github.com/MarionLegrandLogrami/stacomiR/issues
 Collate:
     'create_generic.R'
     'data.R'
@@ -76,7 +77,7 @@ Collate:
 LazyLoad: yes
 LazyData: true
 Depends:
-    R (>= 3.0.0),
+    R (>= 3.5.0),
     methods,
     stacomirtools,
     RODBC
@@ -96,7 +97,7 @@ Imports:
     stats,
     lattice,
     grDevices,
-    Hmisc,
+    Hmisc (>= 4.1-1),
     RGtk2,
     lubridate,
     dplyr,
@@ -111,6 +112,6 @@ Author: Cedric Briand [aut, cre],
     Marion Legrand [aut],
     Timothee Besse [aut]
 Maintainer: Cedric Briand <cedric.briand00@gmail.com>
-RoxygenNote: 5.0.1
+RoxygenNote: 6.1.0.9000
 NeedsCompilation: no
 VignetteBuilder: knitr
