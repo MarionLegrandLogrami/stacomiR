@@ -60,7 +60,7 @@ In pgAdmin, you need to create a connexion role with the same name as your schem
 
 
 ## Add stacomi folder
-You need to [download and put the **stacomi folder**](https://github.com/MarionLegrandLogrami/stacomiR/tree/master/Installation) at the root of your **c:\Program Files** repository.
+You need to [download the stacomi.zip file, unzip the file and put the **stacomi folder**](https://github.com/MarionLegrandLogrami/stacomiR/tree/master/Installation) at the root of your **c:\Program Files** repository.
 You will find 6 files inside the stacomi folder:
 - base_local.xml: Informations of connection for the java program (to be able to add new data or update your database with graphical interface)
 - calcmig.csv: informations of connection for the R package stacomiR (allow the package to connect to your database). By default calcmig.csv is **configured to log on the iav schema** to allow new user to look at the functionnalities of the package. Once the stacomi folder has been installed on your computer you can change the configuration of calcmig.csv to log on your schema (just replace iav/iav by your schema's name and passeword).
