@@ -22,7 +22,7 @@ baseODBC=c(tableau_config["lienODBC",],tableau_config["uid",],tableau_config["pw
 setwd(pgwd)
 # pour voir apparaitre toutes les requetes dans R
 # assign("showmerequest",1,envir=envir_stacomi)
-source ("C:/workspace/stacomir/pkg/stacomir/inst/config/libraries.R")
+source ("../inst/config/libraries.R")
 
 
 
@@ -79,7 +79,7 @@ source("report_sea_age.R")
 source("setAs.R")
 
 # functions
-source("fun_report_mig_char.R")
+#source("fun_report_mig_char.R")
 source("fungraph_glasseel.R")
 source("fungraph.R")
 source("funstat.R")
@@ -100,7 +100,9 @@ source("interface_report_sea_age.R")
 source("interface_report_species.R")
 source("stacomi.R")
 # interface_report_species dans report_species
-setwd("C:/workspace/stacomir/pkg/stacomir")
+path0<-strsplit(pgwd,"/")$pgwd
+path0<-    paste0(path0[-length(path0)],collapse="/")
+setwd(path0)
 stacomi(gr_interface=TRUE,login_window=TRUE,database_expected=TRUE)
 
 

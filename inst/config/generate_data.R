@@ -39,7 +39,7 @@ devtools::use_data(coef_durif,internal=FALSE,overwrite=TRUE)
 # from iav three dc with eels
 ##################################
 require(stacomiR)
-stacomi(FALSE,FALSE,FALSE)
+stacomi(FALSE,FALSE,TRUE)
 r_mig_mult=new("report_mig_mult")
 baseODBC<-get("baseODBC",envir=envir_stacomi)
 baseODBC[c(2,3)]<-rep("iav",2)
@@ -160,7 +160,7 @@ devtools::use_data(r_mig_dc,internal=FALSE,overwrite=TRUE)
 require(stacomiR)
 stacomi(gr_interface=FALSE,
 	login_window=FALSE,
-	database_expected=FALSE)
+	database_expected=TRUE)
 r_df=new("report_df")
 r_df<-choice_c(r_df,
 	1,
@@ -191,7 +191,7 @@ setwd("C:/workspace/stacomir/pkg/stacomir")
 require(stacomiR)
 stacomi(gr_interface=FALSE,
 	login_window=FALSE,
-	database_expected=FALSE)
+	database_expected=TRUE)
 r_dc=new("report_dc")
 r_dc<-choice_c(r_dc,
 	5,
@@ -218,7 +218,7 @@ setwd("C:/workspace/stacomir/pkg/stacomir")
 require(stacomiR)
 stacomi(gr_interface=FALSE,
 	login_window=FALSE,
-	database_expected=FALSE)
+	database_expected=TRUE)
 r_sample_char<-new("report_sample_char")
 # the following will load data for size, 
 # parameters  1786 (total size) and C001 (size at video control)
@@ -258,9 +258,9 @@ setwd("C:/workspace/stacomir/pkg/stacomir")
 require(stacomiR)
 stacomi(gr_interface=FALSE,
 	login_window=FALSE,
-	database_expected=FALSE)
+	database_expected=TRUE)
 require(stacomiR)
-stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=FALSE)
+stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=TRUE)
 
 baseODBC<-get("baseODBC",envir=envir_stacomi)
 baseODBC[c(2,3)]<-rep("pmp",2)
@@ -296,7 +296,7 @@ setwd("C:/workspace/stacomir/pkg/stacomir")
 require(stacomiR)
 stacomi(gr_interface=FALSE,
 	login_window=FALSE,
-	database_expected=FALSE)
+	database_expected=TRUE)
 baseODBC<-get("baseODBC",envir=envir_stacomi)
 baseODBC[c(2,3)]<-rep("iav",2)
 assign("baseODBC",baseODBC,envir_stacomi)
@@ -360,7 +360,7 @@ setwd("C:/workspace/stacomir/pkg/stacomir")
 require(stacomiR)
 stacomi(gr_interface=FALSE,
 	login_window=FALSE,
-	database_expected=FALSE)
+	database_expected=TRUE)
 r_silver<-new("report_silver_eel")
 baseODBC<-get("baseODBC",envir=envir_stacomi)
 baseODBC[c(2,3)]<-rep("fd80",2)
@@ -397,7 +397,7 @@ Sys.setenv(LANG = "EN")
 require(stacomiR)
 stacomi(gr_interface=FALSE,
 	login_window=FALSE,
-	database_expected=FALSE)
+	database_expected=TRUE)
 r_gew<-new("report_ge_weight")
 baseODBC<-get("baseODBC",envir=envir_stacomi)
 baseODBC[c(2,3)]<-rep("iav",2)
@@ -428,7 +428,7 @@ setwd("C:/workspace/stacomir/pkg/stacomir")
 require(stacomiR)
 stacomi(gr_interface=FALSE,
 	login_window=FALSE,
-	database_expected=FALSE)
+	database_expected=TRUE)
 r_seaa<-new("report_sea_age")
 baseODBC<-get("baseODBC",envir=envir_stacomi)
 baseODBC[c(2,3)]<-rep("logrami",2)
@@ -469,7 +469,7 @@ setwd("C:/workspace/stacomir/pkg/stacomir")
 require(stacomiR)
 stacomi(gr_interface=FALSE,
 	login_window=FALSE,
-	database_expected=FALSE)
+	database_expected=TRUE)
 r_mig_interannual_vichy<-new("report_mig_interannual")
 baseODBC<-get("baseODBC",envir=envir_stacomi)
 baseODBC[c(2,3)]<-rep("logrami",2)
@@ -500,7 +500,7 @@ setwd("C:/workspace/stacomir/pkg/stacomir")
 require(stacomiR)
 stacomi(gr_interface=FALSE,
 	login_window=FALSE,
-	database_expected=FALSE)
+	database_expected=TRUE)
 r_env<-new("report_env")
 r_env<-choice_c(r_env,
 	stationMesure=c("temp_gabion","coef_maree"),
@@ -518,7 +518,7 @@ setwd("C:/workspace/stacomir/pkg/stacomir")
 require(stacomiR)
 stacomi(gr_interface=FALSE,
 	login_window=FALSE,
-	database_expected=FALSE)
+	database_expected=TRUE)
 r_mig_char<-new("report_mig_char")
 baseODBC<-get("baseODBC",envir=envir_stacomi)
 baseODBC[c(2,3)]<-rep("logrami",2)
@@ -552,7 +552,7 @@ setwd("C:/workspace/stacomir/pkg/stacomir")
 require(stacomiR)
 stacomi(gr_interface=FALSE,
 	login_window=FALSE,
-	database_expected=FALSE)
+	database_expected=TRUE)
 
 r_mig_env<-new("report_mig_env")
 r_mig_env<-choice_c(r_mig_env,
