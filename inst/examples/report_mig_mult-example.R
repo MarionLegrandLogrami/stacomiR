@@ -64,5 +64,5 @@ plot(r_mig_mult,plot.type="standard",silent=TRUE)
   plot(r_mig_mult,plot.type="multiple",silent=TRUE)
 # Data will be written in the data directory specified in 
 # the stacomi/calcmig.csv file
-  summary(r_mig_mult,silent=TRUE)
+  summary(r_mig_mult,silent=FALSE)
 }

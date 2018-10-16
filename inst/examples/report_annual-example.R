@@ -4,7 +4,8 @@ stacomi(gr_interface=FALSE,
 	login_window=FALSE,
 	database_expected=FALSE)
 # the following script will load the Arzal dataset if connected to iav schema
-\dontrun{
+
+\donttest{
   baseODBC<-get("baseODBC",envir=envir_stacomi)
   baseODBC[c(2,3)]<-rep("iav",2)
   assign("baseODBC",baseODBC,envir_stacomi)

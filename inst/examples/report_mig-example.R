@@ -22,7 +22,6 @@ stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=FALSE)
   r_mig<-connect(r_mig)
   ########################
 # calculations
-# note this requires to have a database test configured in postgres for use with sqldf  
   ########################
   r_mig<-calcule(r_mig,silent=TRUE)
 }
