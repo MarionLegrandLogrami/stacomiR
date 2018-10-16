@@ -27,4 +27,3 @@ Multiple Choice method for ref_horodate referential objects, to put together wit
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

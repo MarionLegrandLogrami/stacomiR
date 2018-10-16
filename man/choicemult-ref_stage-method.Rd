@@ -36,4 +36,3 @@ choicemult(object,objectreport=report_migPar)
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

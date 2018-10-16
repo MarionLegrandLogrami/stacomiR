@@ -31,4 +31,3 @@ command line interface for report_env class
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
  @aliases choice_c.report_env
 }
-

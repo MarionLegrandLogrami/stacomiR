@@ -6,7 +6,8 @@
 \alias{choice_c.report_mig}
 \title{command line interface for report_mig class}
 \usage{
-\S4method{choice_c}{report_mig}(object, dc, taxa, stage, datedebut, datefin)
+\S4method{choice_c}{report_mig}(object, dc, taxa, stage, datedebut,
+  datefin)
 }
 \arguments{
 \item{object}{An object of class \link{report_mig-class}}
@@ -33,4 +34,3 @@ command line interface for report_mig class
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

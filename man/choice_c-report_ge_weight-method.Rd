@@ -33,4 +33,3 @@ command line interface for \link{report_ge_weight-class}
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

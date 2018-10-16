@@ -5,7 +5,8 @@
 \alias{choice,ref_dc-method}
 \title{Graphical method to choose a fishway through the interface}
 \usage{
-\S4method{choice}{ref_dc}(object, objectreport = NULL, is.enabled = TRUE)
+\S4method{choice}{ref_dc}(object, objectreport = NULL,
+  is.enabled = TRUE)
 }
 \arguments{
 \item{object}{An object of class \link{ref_dc-class}}
@@ -39,4 +40,3 @@ choice(object=object,objectreport=objectreport)
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

@@ -5,7 +5,8 @@
 \alias{choice,ref_stage-method}
 \title{Choice method for ref_stage referential objects}
 \usage{
-\S4method{choice}{ref_stage}(object, objectreport = NULL, is.enabled = TRUE)
+\S4method{choice}{ref_stage}(object, objectreport = NULL,
+  is.enabled = TRUE)
 }
 \arguments{
 \item{object}{An object of class \link{ref_stage-class}}
@@ -35,4 +36,3 @@ choice(object,objectreport=report_migPar)
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

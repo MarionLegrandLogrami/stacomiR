@@ -5,7 +5,8 @@
 \alias{choice,ref_taxa-method}
 \title{Choice method for reftaxa referential objects with only one taxa selected}
 \usage{
-\S4method{choice}{ref_taxa}(object, objectreport = NULL, is.enabled = TRUE)
+\S4method{choice}{ref_taxa}(object, objectreport = NULL,
+  is.enabled = TRUE)
 }
 \arguments{
 \item{object}{An object of class \link{ref_taxa-class}}
@@ -31,4 +32,3 @@ choice(object,objectreport=report_mig)
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

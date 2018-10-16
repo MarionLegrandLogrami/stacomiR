@@ -6,7 +6,8 @@
 \title{Choice method for ref_env referential object}
 \usage{
 \S4method{choice}{ref_env}(object, is.enabled = TRUE,
-  title = gettext("Monitoring stations selection", domain = "R-stacomiR"))
+  title = gettext("Monitoring stations selection", domain =
+  "R-stacomiR"))
 }
 \arguments{
 \item{object}{An object of class \link{ref_env-class}}
@@ -32,4 +33,3 @@ choice(object)
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

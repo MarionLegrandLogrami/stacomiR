@@ -29,4 +29,3 @@ An object of class \link{ref_horodate-class} with slot \emph{horodate} set,
 \description{
 Command line
 }
-

@@ -33,4 +33,3 @@ choicemult(object,objectreport=report_mig)
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

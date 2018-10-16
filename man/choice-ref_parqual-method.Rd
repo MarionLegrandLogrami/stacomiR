@@ -6,8 +6,9 @@
 \title{Choice method for ref_parqual referential objects, internal use}
 \usage{
 \S4method{choice}{ref_parqual}(object,
-  label = gettext("Choice of a sample characteristic", domain = "R-stacomiR"),
-  nomassign = "ref_parqual", frameassign = "frame_par", is.enabled = TRUE)
+  label = gettext("Choice of a sample characteristic", domain =
+  "R-stacomiR"), nomassign = "ref_parqual", frameassign = "frame_par",
+  is.enabled = TRUE)
 }
 \arguments{
 \item{object}{An object of class \link{ref_parqual-class}}
@@ -42,4 +43,3 @@ choice(object)
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

@@ -18,4 +18,3 @@ Generic method for choice (using the gwidget graphical interface)
 cedric.briand
 }
 \keyword{internal}
-

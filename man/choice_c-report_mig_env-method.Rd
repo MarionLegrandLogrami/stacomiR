@@ -38,4 +38,3 @@ command line interface for report_env class
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

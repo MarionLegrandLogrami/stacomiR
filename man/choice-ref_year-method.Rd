@@ -7,7 +7,8 @@
 \usage{
 \S4method{choice}{ref_year}(object, nomassign = "ref_year",
   funoutlabel = gettext("Year selected\\n", domain = "R-stacomiR"),
-  titleFrame = gettext("Year choice", domain = "R-stacomiR"), preselect = 1)
+  titleFrame = gettext("Year choice", domain = "R-stacomiR"),
+  preselect = 1)
 }
 \arguments{
 \item{object}{An object of class \link{ref_year-class}}
@@ -38,4 +39,3 @@ dispose(win)
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

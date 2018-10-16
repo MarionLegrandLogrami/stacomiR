@@ -29,4 +29,3 @@ the list of possible values for a qualitative parameter
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

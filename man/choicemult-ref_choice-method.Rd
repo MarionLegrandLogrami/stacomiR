@@ -19,4 +19,3 @@ Multiple Choice method for ref_choice referential objects, to put together with 
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

@@ -27,4 +27,3 @@ dispose(win)
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

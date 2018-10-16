@@ -32,4 +32,3 @@ choice_c(object=object,objectreport=objectreport,dc=1)
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

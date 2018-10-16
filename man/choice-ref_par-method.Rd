@@ -44,4 +44,3 @@ to load the possible values of qualitative parameters
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

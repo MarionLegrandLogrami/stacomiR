@@ -25,4 +25,3 @@ If an objectreport is passed as a parameter, the method will do a charge_with_fi
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

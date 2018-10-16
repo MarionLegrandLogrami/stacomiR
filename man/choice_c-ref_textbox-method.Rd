@@ -5,7 +5,8 @@
 \alias{choice_c,ref_textbox-method}
 \title{Choice_c method for ReTextBox referential objects}
 \usage{
-\S4method{choice_c}{ref_textbox}(object, value, nomassign = "ref_textbox")
+\S4method{choice_c}{ref_textbox}(object, value,
+  nomassign = "ref_textbox")
 }
 \arguments{
 \item{object}{An object of class \link{ref_textbox-class}}
@@ -20,4 +21,3 @@ Choice_c method for ReTextBox referential objects
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

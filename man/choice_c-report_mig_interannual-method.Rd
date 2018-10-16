@@ -6,8 +6,8 @@
 \alias{choice_c.report_mig_interannual}
 \title{command line interface for report_mig_interannual class}
 \usage{
-\S4method{choice_c}{report_mig_interannual}(object, dc, taxa, stage, anneedebut,
-  anneefin, silent = FALSE)
+\S4method{choice_c}{report_mig_interannual}(object, dc, taxa, stage,
+  anneedebut, anneefin, silent = FALSE)
 }
 \arguments{
 \item{object}{An object of class \link{report_mig_interannual-class}}
@@ -35,4 +35,3 @@ command line interface for report_mig_interannual class
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

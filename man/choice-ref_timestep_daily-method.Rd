@@ -14,4 +14,3 @@
 Method to select timesteps from the graphical interface
 }
 \keyword{internal}
-
