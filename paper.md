@@ -39,9 +39,10 @@ from R-Forge.
 install.packages("stacomiR") 
 # get the development version
 install.packages("stacomiR", repos="http://R-Forge.R-project.org") 
-library(stacomiR)
+
 
 # Launch the graphical interface
+library(stacomiR)
 ## For user having the stacomi database
 stacomi()
 ## For user without connection to the database
