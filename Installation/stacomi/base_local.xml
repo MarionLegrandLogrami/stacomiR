@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-
-<root> 
-   	  <bdd bdurl="jdbc:postgresql://localhost:5432/bd_contmig_nat" user="user_1" password="user_1" />
-</root>
