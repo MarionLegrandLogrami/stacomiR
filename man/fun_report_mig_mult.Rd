@@ -24,11 +24,6 @@ the total weight is "Poids_total"+"poids_depuis_effectifs" and corresponds to we
 Function to calculate daily migration from migration monitoring whose length is less than one day,
  typically video recording whose period are instant events.
 }
-\note{
-The method uses sqldf, configured to access a postgres database, and runs caclulations on a database called
-test (the username and password for test are set in the calcmig.csv configuration file).
-}
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

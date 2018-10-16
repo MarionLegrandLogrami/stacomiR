@@ -18,4 +18,3 @@ FuntableDC create a table output for report_dc class
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

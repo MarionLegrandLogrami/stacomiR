@@ -4,7 +4,8 @@
 \alias{fun_table_per_dis}
 \title{functions called in DF and DC}
 \usage{
-fun_table_per_dis(typeperiode, tempsdebut, tempsfin, libelle, date = TRUE)
+fun_table_per_dis(typeperiode, tempsdebut, tempsfin, libelle,
+  date = TRUE)
 }
 \arguments{
 \item{typeperiode}{ref.tr_typearretdisp_tar(per_tar_code) the code of the
@@ -33,4 +34,3 @@ returns either POSIXt or date if date=TRUE
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

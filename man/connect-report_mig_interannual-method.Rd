@@ -33,4 +33,3 @@ contains the sum of glass eel numbers converted from weights and those directly 
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

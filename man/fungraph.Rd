@@ -4,8 +4,8 @@
 \alias{fungraph}
 \title{Function for report_mig graphs including numbers DF DC operations}
 \usage{
-fungraph(report_mig, tableau, time.sequence, taxa, stage, dc = NULL, silent,
-  color = NULL, color_ope = NULL, ...)
+fungraph(report_mig, tableau, time.sequence, taxa, stage, dc = NULL,
+  silent, color = NULL, color_ope = NULL, ...)
 }
 \arguments{
 \item{report_mig}{An object of class \code{\linkS4class{report_mig}}}
@@ -41,4 +41,3 @@ this function is intended to be called from the plot method in report_mig_mult a
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

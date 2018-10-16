@@ -17,4 +17,3 @@ current_start_date, The starting date for the current timestep
 Gets the starting date of a time step for an object of class \link{ref_timestep-class}
 }
 \keyword{internal}
-

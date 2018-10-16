@@ -17,4 +17,3 @@ Generic method to forward outputs
 \author{
 cedric.briand
 }
-

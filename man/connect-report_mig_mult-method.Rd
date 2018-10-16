@@ -22,4 +22,3 @@ the taxa is eel. It also calls connect method for \link{report_df-class},
 \link{report_dc-class} and \link{report_ope-class} associated with the report
 and used by the \link{fungraph} and \link{fungraph_glasseel} functions.
 }
-

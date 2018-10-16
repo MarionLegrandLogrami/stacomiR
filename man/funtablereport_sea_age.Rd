@@ -18,4 +18,3 @@ funtablereport_sea_age shows a table of results in gdf
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

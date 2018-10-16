@@ -26,4 +26,3 @@ this function uses gfile, edits a text with info and changing colors
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

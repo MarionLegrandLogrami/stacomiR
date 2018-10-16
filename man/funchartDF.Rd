@@ -15,4 +15,3 @@ funchartDF(h, ...)
 Handler function to plot calendar like graph, internal use
 }
 \keyword{internal}
-

@@ -24,4 +24,3 @@ performs a query to collect the conversion coefficients
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

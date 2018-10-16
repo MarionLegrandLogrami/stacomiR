@@ -23,4 +23,3 @@ connect method for report_ope
 \author{
 cedric.briand
 }
-

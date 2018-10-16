@@ -32,4 +32,3 @@ this function is intended to be called from within the summary method
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

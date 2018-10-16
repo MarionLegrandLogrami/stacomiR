@@ -15,4 +15,3 @@ end_date(object, ...)
 Generic method for getting the final date
 }
 \keyword{internal}
-

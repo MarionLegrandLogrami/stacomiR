@@ -18,4 +18,3 @@ Handler function to plot calendar like graph, internal use
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

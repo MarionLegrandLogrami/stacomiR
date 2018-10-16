@@ -15,4 +15,3 @@ currentstart_date(object, ...)
 Generic method for getting the beginning date for current time step
 }
 \keyword{internal}
-

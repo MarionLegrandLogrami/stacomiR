@@ -20,4 +20,3 @@ This writes monthly data in t_reportmensuel_mens table
 This function is launched by fun_Ecritreport_daily, the resum 
 dataset is created by the \link{funstat} function
 }
-

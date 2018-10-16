@@ -18,4 +18,3 @@ assigns an object g in envir_stacomi for eventual modification of the plot
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

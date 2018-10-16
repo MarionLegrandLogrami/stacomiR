@@ -18,4 +18,3 @@ funtablereport_silver_eel shows a table of results in gdf
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

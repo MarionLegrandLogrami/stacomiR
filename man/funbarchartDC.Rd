@@ -21,4 +21,3 @@ Function to create a barchart (lattice) corresponding to the periods
 cedric.briand
 }
 \keyword{internal}
-

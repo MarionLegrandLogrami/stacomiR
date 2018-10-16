@@ -17,4 +17,3 @@ end_date, The final date corresponding to nb_step*time duration + initial date
 Gets the final horodate for an object of class \link{ref_timestep-class}
 }
 \keyword{internal}
-

@@ -15,4 +15,3 @@ funtableDF(h, ...)
 Table output for report_df class
 }
 \keyword{internal}
-

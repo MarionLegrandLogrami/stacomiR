@@ -21,4 +21,3 @@ In American Fisheries Society Symposium. pp. 103-111.
  \url{http://fishlarvae.org/common/SiteMedia/durif\%20et\%20al\%202009b.pdf}
 }
 \keyword{datasets}
-

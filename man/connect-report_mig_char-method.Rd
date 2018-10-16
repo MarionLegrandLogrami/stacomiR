@@ -19,4 +19,3 @@ report_mig_char with slot @data filled from the database
 \description{
 uses the report_mig_mult method
 }
-

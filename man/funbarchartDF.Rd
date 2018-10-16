@@ -21,4 +21,3 @@ The program cuts periods which overlap between two month
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

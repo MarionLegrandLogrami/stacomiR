@@ -15,4 +15,3 @@ funtablereport_ge_weight(h, ...)
 Internal handler for reg, class \code{\link{report_ge_weight-class}}.
 }
 \keyword{internal}
-

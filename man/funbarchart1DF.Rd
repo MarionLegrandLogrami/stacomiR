@@ -18,4 +18,3 @@ Handler for barchart for report_df class from the graphical interface
 The program cuts periods which overlap between two month
 }
 \keyword{internal}
-

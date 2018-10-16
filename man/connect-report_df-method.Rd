@@ -23,4 +23,3 @@ connect method for report_df
 \author{
 cedric.briand
 }
-

@@ -22,4 +22,3 @@ connect method for report_sample_char
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

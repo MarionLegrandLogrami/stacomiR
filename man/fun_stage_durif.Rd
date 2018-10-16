@@ -16,4 +16,3 @@ Function to calculate the stages from Durif
 \author{
 Laurent Beaulaton \email{laurent.beaulaton"at"onema.fr}
 }
-
