@@ -2,7 +2,7 @@
 title: "StacomiR"
 author: "Marion Legrand, Cedric Briand"
 date: "`r Sys.Date()`"
-output: rmarkdown::pdf_document
+output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Vignette Title}
   %\VignetteEncoding{UTF-8}
@@ -277,9 +277,12 @@ the periods and type of operation for DF and DC, and the operation (trapping
 periods) (middle), a summary of migration per month (bottom).
 
 
-```{r rmmstd,eval=TRUE,echo=TRUE,message=FALSE}
+```{r rmmstd,eval=TRUE,echo=TRUE,message=FALSE,fig.height=6,fig.with=8}
 # Without a connection at the database we can launch these lines to generate the graph
 # To obtain titles in french use Sys.setenv(LANG = "fr")
+stacomi(gr_interface=FALSE,
+	login_window=FALSE,
+	database_expected=FALSE)	
 data("r_mig_mult")
 data("r_mig_mult_ope")
 assign("report_ope",r_mig_mult_ope,envir=envir_stacomi)
@@ -302,6 +305,7 @@ plot(r_mig_mult,plot.type="standard",silent=TRUE)
 Summary of migration for different stages and counting devices
 
 ```{r rmmmult,eval=TRUE,echo=TRUE,fig.height = 4, fig.width = 6}
+
   plot(r_mig_mult,plot.type="multiple",silent=TRUE)
 ```
 
@@ -318,7 +322,7 @@ function `fun_stage_durif` choose the stage achieving the highest
 score ([Durif et al.,
 2009](http://fishlarvae.org/common/SiteMedia/durif%20et%20al%202009b.pdf))
 
-```{r silver,eval=TRUE,echo=TRUE,message=FALSE,fig.height = 4, fig.width = 6,fig.keep="all"}
+```{r silver,eval=TRUE,echo=TRUE,message=FALSE,warning=FALSE,fig.height = 4, fig.width = 6,fig.keep="all"}
 require(stacomiR)
 data("coef_durif")
 # load a dataset of class report_silver_eel with data slot already prepared
