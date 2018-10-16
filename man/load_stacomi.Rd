@@ -21,4 +21,3 @@ Internal function, tests the connection and if it works loads the stacomi interf
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

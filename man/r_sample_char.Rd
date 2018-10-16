@@ -14,4 +14,3 @@ at the Arzal control station (see example in \link{report_sample_char-class}), a
 parameters (total size, size converted from pixel in video control) are used in example
 }
 \keyword{data}
-

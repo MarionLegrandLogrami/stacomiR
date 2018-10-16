@@ -31,4 +31,3 @@ Plots of various type for report_silver_eel
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

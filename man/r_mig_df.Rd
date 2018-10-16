@@ -14,4 +14,3 @@ it is loaded along with \link{r_mig} and used to demonstrate the \link{report_mi
 when the database is not installed.
 }
 \keyword{data}
-

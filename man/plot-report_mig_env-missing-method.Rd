@@ -24,4 +24,3 @@ Plot method for report_mig_env
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

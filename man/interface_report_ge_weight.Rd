@@ -13,4 +13,3 @@ interface for report_ge_weight class
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

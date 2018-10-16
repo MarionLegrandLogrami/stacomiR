@@ -27,4 +27,3 @@ the model method provides plots for the fitted models
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

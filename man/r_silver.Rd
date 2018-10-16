@@ -14,4 +14,3 @@ This dataset has been kindly provided by the Federation de Peche de la Somme,
 given the upstream location of the trap, most individuals are female
 }
 \keyword{data}
-

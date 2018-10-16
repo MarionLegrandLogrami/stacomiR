@@ -6,7 +6,8 @@
 \alias{plot.report_sea_age}
 \title{Plots of various type for report_sea_age}
 \usage{
-\S4method{plot}{report_sea_age,missing}(x, plot.type = "1", silent = FALSE)
+\S4method{plot}{report_sea_age,missing}(x, plot.type = "1",
+  silent = FALSE)
 }
 \arguments{
 \item{x}{An object of class \link{report_sea_age-class}}
@@ -25,4 +26,3 @@ Plots of various type for report_sea_age
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

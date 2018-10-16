@@ -14,4 +14,3 @@ This dataset corresponds to the data collected in the vertical slot fishway for 
 demonstrate the use of the \link{report_mig-class} when the database is not loaded
 }
 \keyword{data}
-

@@ -13,11 +13,9 @@ of them. It inherits from 'ref_par', uses its 'choice' method
 \describe{
 \item{\code{valqual="data.frame"}}{the list of qualitative parameters}
 }}
-\author{
-cedric.briand"at"eptb-vilaine.fr
-}
+
 \seealso{
-Other referential.objects: \code{\link{charge,ref_choice-method}},
+Other referential objects: \code{\link{charge,ref_choice-method}},
   \code{\link{ref_checkbox-class}},
   \code{\link{ref_choice-class}},
   \code{\link{ref_coe-class}}, \code{\link{ref_dc-class}},
@@ -31,4 +29,7 @@ Other referential.objects: \code{\link{charge,ref_choice-method}},
   \code{\link{ref_taxa-class}},
   \code{\link{ref_year-class}}
 }
-
+\author{
+cedric.briand"at"eptb-vilaine.fr
+}
+\concept{referential objects}

@@ -14,4 +14,3 @@ it is loaded along with \link{r_mig_mult} and used in demonstration for the
 \link{report_mig_mult-class}
 }
 \keyword{data}
-

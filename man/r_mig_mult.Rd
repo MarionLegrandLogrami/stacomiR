@@ -38,4 +38,3 @@ three continental stages of eel (Anguilla anguilla) : glass eel, yellow eel
 and silver eel.
 }
 \keyword{data}
-

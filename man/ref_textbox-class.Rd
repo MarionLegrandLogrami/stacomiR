@@ -16,7 +16,7 @@ allows to a put a value within a glabel
 
 \item{\code{checked}}{a vector}
 }}
+
 \author{
 cedric.briand"at"eptb-vilaine.fr
 }
-

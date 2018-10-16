@@ -17,4 +17,3 @@ Generic for prediction
 \author{
 cedric.briand
 }
-

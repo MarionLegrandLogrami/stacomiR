@@ -14,4 +14,3 @@ This function is called from a handler in the main graphical interface
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

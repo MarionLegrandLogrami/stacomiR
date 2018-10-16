@@ -6,8 +6,8 @@
 \alias{plot.reportreport_species}
 \title{Plot method for report_species}
 \usage{
-\S4method{plot}{report_species,missing}(x, plot.type = "pie", color = NULL,
-  silent = FALSE)
+\S4method{plot}{report_species,missing}(x, plot.type = "pie",
+  color = NULL, silent = FALSE)
 }
 \arguments{
 \item{x}{An object of class \link{report_species-class}}
@@ -30,4 +30,3 @@ Plot method for report_species
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

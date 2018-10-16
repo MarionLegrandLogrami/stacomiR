@@ -36,4 +36,3 @@ from 2000 to 2015. It represents an object of class \link{report_dc-class}
 with data loaded
 }
 \keyword{data}
-

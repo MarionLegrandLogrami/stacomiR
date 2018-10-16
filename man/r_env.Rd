@@ -28,4 +28,3 @@ The dataset corresponds to the daily temperatures and moon phases in Arzal (Vila
 analyze conditions in which fish migrated at Arzal dam
 }
 \keyword{data}
-

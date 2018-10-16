@@ -6,8 +6,8 @@
 \alias{plot.report_mig_interannual}
 \title{Plot method for report_mig_interannual}
 \usage{
-\S4method{plot}{report_mig_interannual,missing}(x, plot.type = "standard",
-  timesplit = "mois", silent = FALSE)
+\S4method{plot}{report_mig_interannual,missing}(x,
+  plot.type = "standard", timesplit = "mois", silent = FALSE)
 }
 \arguments{
 \item{x}{An object of class report_mig_interannual}
@@ -38,4 +38,3 @@ saturday, the last day of the week.
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

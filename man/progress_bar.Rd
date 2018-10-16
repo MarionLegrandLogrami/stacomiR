@@ -5,7 +5,8 @@
 \title{Progress bar using a gtkdialog, the progress bar is assigned in envir_stacomi
 This progress bar has a button to close.}
 \usage{
-progress_bar(title, progress_text, width = 400, height = 50, pulse = TRUE)
+progress_bar(title, progress_text, width = 400, height = 50,
+  pulse = TRUE)
 }
 \arguments{
 \item{title}{The title of the bar}
@@ -45,4 +46,3 @@ dispose(progres)
 \author{
 cedric.briand
 }
-

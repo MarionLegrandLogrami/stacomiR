@@ -14,4 +14,3 @@ It is an object of class \link{report_ope-class} with data loaded.
 it is loaded along with \link{r_mig_mult}
 }
 \keyword{data}
-

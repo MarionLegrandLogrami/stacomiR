@@ -17,4 +17,3 @@ are assigned in the user environment \code{.GlobalEnv}.
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

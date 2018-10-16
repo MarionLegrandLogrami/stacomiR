@@ -17,4 +17,3 @@ the dataset has been loaded as an example for the report_mig_interannual-class. 
 kindly provided by the parc du Marais Poitevin.
 }
 \keyword{data}
-

@@ -13,4 +13,3 @@ interface for report_migConditionEnv class
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

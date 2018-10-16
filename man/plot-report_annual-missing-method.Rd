@@ -22,10 +22,9 @@
 \description{
 Plot method for report_annual
 }
-\author{
-Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
-}
 \seealso{
 \link{report_mig_interannual-class} for examples
 }
-
+\author{
+Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
+}

@@ -16,4 +16,3 @@ always has to be called within a group constructed and deleted using quitte()
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

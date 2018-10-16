@@ -14,4 +14,3 @@ estuary, France). The operation of the fishway is dependent on tide and is recor
 to be loaded along with \link{r_mig} to demonstrate the use of the \link{report_mig-class}
 }
 \keyword{data}
-

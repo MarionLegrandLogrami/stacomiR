@@ -11,16 +11,16 @@ Character to represent a ref_timestep
  Objects can be created by calls of the form
 \code{new("ref_timestepChar", \dots{})}
 }
+
 \examples{
 
 showClass("ref_timestepChar")
 
 }
-\author{
-cedric.briand"at"eptb-vilaine.fr
-}
 \seealso{
 \code{\linkS4class{ref_timestep}}
 }
+\author{
+cedric.briand"at"eptb-vilaine.fr
+}
 \keyword{classes}
-

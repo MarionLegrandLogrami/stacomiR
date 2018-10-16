@@ -34,4 +34,3 @@ between 1997 and 2012, video recording of the Salmo salar upstream migration.
 This dataset has been kindly provided by Loire Grands Migrateurs.
 }
 \keyword{data}
-

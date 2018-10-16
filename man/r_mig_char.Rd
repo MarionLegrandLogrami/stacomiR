@@ -29,4 +29,3 @@ at Decize (Loire river) and Vichy (Allier river) counting device in 2012. It has
 an example for the report_mig_char-class and kindly provided by Loire Grands Migrateurs (LOGRAMI).
 }
 \keyword{data}
-

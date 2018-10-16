@@ -25,4 +25,3 @@ Plots of various type for reportcarlot
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

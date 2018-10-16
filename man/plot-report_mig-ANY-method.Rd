@@ -6,8 +6,8 @@
 \alias{plot.report_mig}
 \title{Plots of various type for report_mig.}
 \usage{
-\S4method{plot}{report_mig,ANY}(x, y, plot.type = "standard", color = NULL,
-  color_ope = NULL, silent = FALSE, ...)
+\S4method{plot}{report_mig,ANY}(x, y, plot.type = "standard",
+  color = NULL, color_ope = NULL, silent = FALSE, ...)
 }
 \arguments{
 \item{x}{An object of class report_mig}
@@ -37,4 +37,3 @@
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

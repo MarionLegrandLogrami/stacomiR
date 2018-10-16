@@ -35,4 +35,3 @@ This dataset corresponds to the data collected at the vertical slot fishway
 in 2015, video recording of the thin lipped mullet Liza ramada migration
 }
 \keyword{data}
-
