@@ -2,8 +2,8 @@
 % Please edit documentation in R/report_dc.R
 \docType{class}
 \name{report_dc-class}
-\alias{report_dc}
 \alias{report_dc-class}
+\alias{report_dc}
 \title{Class "report_dc" report du fonctionnement du dispositif de
 comptage}
 \description{
@@ -22,10 +22,12 @@ class allows to draw graphics allowing an overview of the device operation
 
 \item{\code{horodatefin}}{An object of class \code{ref_horodate-class}}
 }}
+
 \section{Objects from the Class}{
  Objects can be created by calls of the form
 \code{new("report_dc", ...)}.
 }
+
 \examples{
 require(stacomiR)
 stacomi(gr_interface=FALSE,
@@ -43,7 +45,7 @@ stacomi(gr_interface=FALSE,
 	  horodatefin="2015-12-31",
 	  silent=TRUE)
   Sys.setenv(TZ='GMT')
-  # This dataset formating is GMT. If this option is not set
+  # This dataset format is GMT. If this option is not set
   # the dataset is tranformed from timestamp to date
   r_dc<-connect(r_dc)
   # this dataset has been loaded by the previous lines
@@ -64,11 +66,8 @@ stacomi(gr_interface=FALSE,
 
 
 }
-\author{
-Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
-}
 \seealso{
-Other report.Objects: \code{\link{report_annual-class}},
+Other report Objects: \code{\link{report_annual-class}},
   \code{\link{report_df-class}},
   \code{\link{report_env-class}},
   \code{\link{report_ge_weight-class}},
@@ -82,5 +81,8 @@ Other report.Objects: \code{\link{report_annual-class}},
   \code{\link{report_silver_eel-class}},
   \code{\link{report_species-class}}
 }
+\author{
+Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
+}
+\concept{report Objects}
 \keyword{classes}
-

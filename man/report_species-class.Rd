@@ -2,8 +2,8 @@
 % Please edit documentation in R/report_species.R
 \docType{class}
 \name{report_species-class}
-\alias{report_species}
 \alias{report_species-class}
+\alias{report_species}
 \title{Counts of number per taxa/stages}
 \description{
 This class is used to make the assessment of all species, and their number. It is intended
@@ -31,6 +31,7 @@ year/week/month.
 
 \item{\code{split}}{Object of class \code{\link{ref_list-class}} ref_list referential class choose within a list}
 }}
+
 \examples{
 require(stacomiR)
 stacomi(gr_interface=FALSE,
@@ -70,11 +71,8 @@ stacomi(gr_interface=FALSE,
 }	
 
 }
-\author{
-Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
-}
 \seealso{
-Other report.Objects: \code{\link{report_annual-class}},
+Other report Objects: \code{\link{report_annual-class}},
   \code{\link{report_dc-class}},
   \code{\link{report_df-class}},
   \code{\link{report_env-class}},
@@ -88,5 +86,8 @@ Other report.Objects: \code{\link{report_annual-class}},
   \code{\link{report_sea_age-class}},
   \code{\link{report_silver_eel-class}}
 }
+\author{
+Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
+}
+\concept{report Objects}
 \keyword{classes}
-

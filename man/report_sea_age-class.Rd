@@ -2,8 +2,8 @@
 % Please edit documentation in R/report_sea_age.R
 \docType{class}
 \name{report_sea_age-class}
-\alias{report_sea_age}
 \alias{report_sea_age-class}
+\alias{report_sea_age}
 \title{Class "report_sea_age"}
 \description{
 the report_sea_age class is used to dispatch adult salmons to age class according to
@@ -37,6 +37,7 @@ statistics, the results are to be written to the database.
 
 \item{\code{limit2hm}}{The size limit, in mm between 2 sea winter fishes and 3 sea winter fishes}
 }}
+
 \note{
 This class is displayed by interface_report_sea_age
 }
@@ -44,6 +45,7 @@ This class is displayed by interface_report_sea_age
  Objects can be created by calls of the form
 \code{new("report_sea_age", ...)}
 }
+
 \examples{
 require(stacomiR)
 stacomi(gr_interface=FALSE,
@@ -90,11 +92,8 @@ plot(r_seaa, plot.type=2)
   write_database(r_seaa)
 }
 }
-\author{
-Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
-}
 \seealso{
-Other report.Objects: \code{\link{report_annual-class}},
+Other report Objects: \code{\link{report_annual-class}},
   \code{\link{report_dc-class}},
   \code{\link{report_df-class}},
   \code{\link{report_env-class}},
@@ -108,5 +107,8 @@ Other report.Objects: \code{\link{report_annual-class}},
   \code{\link{report_silver_eel-class}},
   \code{\link{report_species-class}}
 }
+\author{
+Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
+}
+\concept{report Objects}
 \keyword{classes}
-

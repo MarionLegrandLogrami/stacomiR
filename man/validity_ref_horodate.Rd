@@ -16,4 +16,3 @@ Validity check for ref_horodate
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

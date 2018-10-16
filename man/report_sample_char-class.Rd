@@ -2,8 +2,8 @@
 % Please edit documentation in R/report_sample_char.R
 \docType{class}
 \name{report_sample_char-class}
-\alias{report_sample_char}
 \alias{report_sample_char-class}
+\alias{report_sample_char}
 \title{Class "report_sample_char"}
 \description{
 The report_sample_char class is used to load and display sample characteristics, which can be either
@@ -27,6 +27,7 @@ a given period.
 
 \item{\code{horodatefin}}{An object of class \link{ref_horodate-class}}
 }}
+
 \note{
 This class is displayed by interface_report_sample_char, in the database, the class calls the content
 of the view vue_lot_ope_car
@@ -35,6 +36,7 @@ of the view vue_lot_ope_car
  Objects can be created by calls of the form
 \code{new("report_sample_char", ...)}
 }
+
 \examples{
 require(stacomiR)
 # launching stacomi without selecting the scheme or interface
@@ -119,11 +121,8 @@ plot(r_sample_char,plot.type="3",silent=TRUE)
   print(r_sample_char)
 }
 }
-\author{
-Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
-}
 \seealso{
-Other report.Objects: \code{\link{report_annual-class}},
+Other report Objects: \code{\link{report_annual-class}},
   \code{\link{report_dc-class}},
   \code{\link{report_df-class}},
   \code{\link{report_env-class}},
@@ -137,5 +136,8 @@ Other report.Objects: \code{\link{report_annual-class}},
   \code{\link{report_silver_eel-class}},
   \code{\link{report_species-class}}
 }
+\author{
+Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
+}
+\concept{report Objects}
 \keyword{classes}
-

@@ -38,4 +38,3 @@ write_database(report_mig=r_mig,silent=FALSE)
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

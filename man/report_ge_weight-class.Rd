@@ -2,8 +2,8 @@
 % Please edit documentation in R/report_ge_weight.R
 \docType{class}
 \name{report_ge_weight-class}
-\alias{report_ge_weight}
 \alias{report_ge_weight-class}
+\alias{report_ge_weight}
 \title{Trend of wet weight in glass eel}
 \description{
 In trapping ladders, glass eel are seldom counted, as they are too tiny to handle and too numerous to count.
@@ -40,6 +40,7 @@ class choose within a list, here the choice is whether subsamples or not. Subsam
 in the stacomi database are samples with a non null value for parent sample. Migration
 counts are never made on subsamples but those can be integrated to calculate mean weights.}
 }}
+
 \note{
 In this class some tools are available to import glass eel measurement from
 experimental fishing in the estuary. For the charge method dates for the
@@ -89,11 +90,8 @@ plot(r_gew, plot.type=3)
   model(r_gew,model.type="seasonal1")
 }
 }
-\author{
-Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
-}
 \seealso{
-Other report.Objects: \code{\link{report_annual-class}},
+Other report Objects: \code{\link{report_annual-class}},
   \code{\link{report_dc-class}},
   \code{\link{report_df-class}},
   \code{\link{report_env-class}},
@@ -107,5 +105,8 @@ Other report.Objects: \code{\link{report_annual-class}},
   \code{\link{report_silver_eel-class}},
   \code{\link{report_species-class}}
 }
+\author{
+Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
+}
+\concept{report Objects}
 \keyword{classes}
-

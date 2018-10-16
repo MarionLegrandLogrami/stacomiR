@@ -2,8 +2,8 @@
 % Please edit documentation in R/report_mig_char.R
 \docType{class}
 \name{report_mig_char-class}
-\alias{report_mig_char}
 \alias{report_mig_char-class}
+\alias{report_mig_char}
 \title{Migration report along with quantitative and
 qualitative characteristics}
 \description{
@@ -39,6 +39,7 @@ the operation is used to perform calculations.
 
 \item{\code{parqual}}{An object of class \link{ref_parqual-class}, qualitative parameter}
 }}
+
 \note{
 The main difference between this class and \link{report_sample_char-class} is that this class allows to
 select (or not) the samples, and that it handles quantitative and qualitative parameters separately.
@@ -48,6 +49,7 @@ select (or not) the samples, and that it handles quantitative and qualitative pa
 \code{new("report_mig_char", ...)}.  they are loaded by the interface
 using interface_report_mig_char function.
 }
+
 \examples{
 require(stacomiR)
 
@@ -123,11 +125,8 @@ xt<-xtable(r_mig_char)
 }
 
 }
-\author{
-Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
-}
 \seealso{
-Other report.Objects: \code{\link{report_annual-class}},
+Other report Objects: \code{\link{report_annual-class}},
   \code{\link{report_dc-class}},
   \code{\link{report_df-class}},
   \code{\link{report_env-class}},
@@ -141,8 +140,9 @@ Other report.Objects: \code{\link{report_annual-class}},
   \code{\link{report_silver_eel-class}},
   \code{\link{report_species-class}}
 }
-\concept{
-report Object
+\author{
+Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
+\concept{report Object}
+\concept{report Objects}
 \keyword{classes}
-

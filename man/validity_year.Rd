@@ -19,4 +19,3 @@ validity_year tests for validity within the class
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

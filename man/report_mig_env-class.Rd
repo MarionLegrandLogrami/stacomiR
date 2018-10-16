@@ -2,8 +2,8 @@
 % Please edit documentation in R/report_mig_env.R
 \docType{class}
 \name{report_mig_env-class}
-\alias{report_mig_env}
 \alias{report_mig_env-class}
+\alias{report_mig_env}
 \title{Class "report_mig_env"}
 \description{
 Enables to compute an annual overview of fish migration and environmental
@@ -24,6 +24,7 @@ event of the day is displayed on the annual plot.
 
 \item{\code{report_env}}{\link{report_env-class}}
 }}
+
 \examples{
 require(stacomiR)
 stacomi(gr_interface=FALSE,
@@ -53,39 +54,39 @@ plot(r_mig_env,
  	color_dc=c("5"="yellow","6"="orange","12"="purple")
 )
 }
+\seealso{
+Other report Objects: \code{\link{report_annual-class}},
+  \code{\link{report_dc-class}},
+  \code{\link{report_df-class}},
+  \code{\link{report_env-class}},
+  \code{\link{report_ge_weight-class}},
+  \code{\link{report_mig-class}},
+  \code{\link{report_mig_char-class}},
+  \code{\link{report_mig_interannual-class}},
+  \code{\link{report_mig_mult-class}},
+  \code{\link{report_sample_char-class}},
+  \code{\link{report_sea_age-class}},
+  \code{\link{report_silver_eel-class}},
+  \code{\link{report_species-class}}
+
+Other report Objects: \code{\link{report_annual-class}},
+  \code{\link{report_dc-class}},
+  \code{\link{report_df-class}},
+  \code{\link{report_env-class}},
+  \code{\link{report_ge_weight-class}},
+  \code{\link{report_mig-class}},
+  \code{\link{report_mig_char-class}},
+  \code{\link{report_mig_interannual-class}},
+  \code{\link{report_mig_mult-class}},
+  \code{\link{report_sample_char-class}},
+  \code{\link{report_sea_age-class}},
+  \code{\link{report_silver_eel-class}},
+  \code{\link{report_species-class}}
+}
 \author{
 cedric.briand"at"eptb-vilaine.fr marion.legrand"at"logrami.fr
 
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-\seealso{
-Other report.Objects: \code{\link{report_annual-class}},
-  \code{\link{report_dc-class}},
-  \code{\link{report_df-class}},
-  \code{\link{report_env-class}},
-  \code{\link{report_ge_weight-class}},
-  \code{\link{report_mig-class}},
-  \code{\link{report_mig_char-class}},
-  \code{\link{report_mig_interannual-class}},
-  \code{\link{report_mig_mult-class}},
-  \code{\link{report_sample_char-class}},
-  \code{\link{report_sea_age-class}},
-  \code{\link{report_silver_eel-class}},
-  \code{\link{report_species-class}}
-
-Other report.Objects: \code{\link{report_annual-class}},
-  \code{\link{report_dc-class}},
-  \code{\link{report_df-class}},
-  \code{\link{report_env-class}},
-  \code{\link{report_ge_weight-class}},
-  \code{\link{report_mig-class}},
-  \code{\link{report_mig_char-class}},
-  \code{\link{report_mig_interannual-class}},
-  \code{\link{report_mig_mult-class}},
-  \code{\link{report_sample_char-class}},
-  \code{\link{report_sea_age-class}},
-  \code{\link{report_silver_eel-class}},
-  \code{\link{report_species-class}}
-}
+\concept{report Objects}
 \keyword{classes}
-

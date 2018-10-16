@@ -38,4 +38,3 @@ horodatefin="per_date_fin")
 \author{
 cedric.briand
 }
-

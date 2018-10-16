@@ -2,8 +2,8 @@
 % Please edit documentation in R/report_silver_eel.R
 \docType{class}
 \name{report_silver_eel-class}
-\alias{report_silver_eel}
 \alias{report_silver_eel-class}
+\alias{report_silver_eel}
 \title{Class "report_silver_eel"}
 \description{
 the report_silver_eel class is used to calculate various statistics about the silver eel run. It comprises calculation
@@ -37,6 +37,7 @@ dev_libelle (text for destination of fish)
 
 \item{\code{horodatefin}}{An object of class \link{ref_horodate-class}}
 }}
+
 \note{
 This class is displayed by interface_report_silver_eel
 }
@@ -44,6 +45,7 @@ This class is displayed by interface_report_silver_eel
  Objects can be created by calls of the form
 \code{new("report_silver_eel", ...)}
 }
+
 \examples{
 require(stacomiR)
 # launching stacomi without selecting the scheme or interface
@@ -93,11 +95,8 @@ plot(r_silver, plot.type=4)
 # print a summary statistic, and save the output in a list for later use
 stats<-summary(r_silver)
 }
-\author{
-Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
-}
 \seealso{
-Other report.Objects: \code{\link{report_annual-class}},
+Other report Objects: \code{\link{report_annual-class}},
   \code{\link{report_dc-class}},
   \code{\link{report_df-class}},
   \code{\link{report_env-class}},
@@ -111,5 +110,8 @@ Other report.Objects: \code{\link{report_annual-class}},
   \code{\link{report_sea_age-class}},
   \code{\link{report_species-class}}
 }
+\author{
+Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
+}
+\concept{report Objects}
 \keyword{classes}
-

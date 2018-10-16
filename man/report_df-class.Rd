@@ -2,8 +2,8 @@
 % Please edit documentation in R/report_df.R
 \docType{class}
 \name{report_df-class}
-\alias{report_df}
 \alias{report_df-class}
+\alias{report_df}
 \title{Report on fishway operation}
 \description{
 Fishways (DF) are of various nature, from very simple eel ladders fed by water discharged from the river,
@@ -30,10 +30,12 @@ the status of either the fishway or DC. In the database four types of operation 
 
 \item{\code{horodatefin}}{An object of class \code{ref_horodate-class}}
 }}
+
 \section{Objects from the Class}{
  Objects can be created by calls of the form
 \code{new("report_df")}.
 }
+
 \examples{
 require(stacomiR)
 stacomi(gr_interface=FALSE,
@@ -68,11 +70,8 @@ plot(r_df,plot.type="4")
 
 
 }
-\author{
-Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
-}
 \seealso{
-Other report.Objects: \code{\link{report_annual-class}},
+Other report Objects: \code{\link{report_annual-class}},
   \code{\link{report_dc-class}},
   \code{\link{report_env-class}},
   \code{\link{report_ge_weight-class}},
@@ -86,5 +85,8 @@ Other report.Objects: \code{\link{report_annual-class}},
   \code{\link{report_silver_eel-class}},
   \code{\link{report_species-class}}
 }
+\author{
+Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
+}
+\concept{report Objects}
 \keyword{classes}
-

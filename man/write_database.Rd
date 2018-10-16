@@ -17,4 +17,3 @@ Generic method write_database
 \author{
 cedric.briand
 }
-

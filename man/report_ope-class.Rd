@@ -2,8 +2,8 @@
 % Please edit documentation in R/report_ope.R
 \docType{class}
 \name{report_ope-class}
-\alias{report_ope}
 \alias{report_ope-class}
+\alias{report_ope}
 \title{Report on operations}
 \description{
 Operations are monitoring operations generated between two dates. In the case of video monitoring
@@ -13,11 +13,9 @@ or similar, they can be instantaneous
  Objects can be created by calls of the form
 \code{new("report_ope")}.
 }
+
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-\concept{
-report Object
-}
+\concept{report Object}
 \keyword{classes}
-

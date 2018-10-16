@@ -22,4 +22,3 @@ Method to set the Horodate
 cedric.briand
 }
 \keyword{internal}
-

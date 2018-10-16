@@ -2,8 +2,8 @@
 % Please edit documentation in R/report_annual.R
 \docType{class}
 \name{report_annual-class}
-\alias{report_annual}
 \alias{report_annual-class}
+\alias{report_annual}
 \title{Class "report_annual"}
 \description{
 This class displays annual migration counts, for several counting device, taxa or stages.
@@ -24,6 +24,7 @@ This class displays annual migration counts, for several counting device, taxa o
 \item{\code{anneefin}}{Object of class \code{\link{ref_year-class}}
 ref_year allows to choose last year of the report}
 }}
+
 \examples{
 require(stacomiR)
 # launching stacomi without selecting the scheme or interface
@@ -31,7 +32,8 @@ stacomi(gr_interface=FALSE,
 	login_window=FALSE,
 	database_expected=FALSE)
 # the following script will load the Arzal dataset if connected to iav schema
-\dontrun{
+
+\donttest{
   baseODBC<-get("baseODBC",envir=envir_stacomi)
   baseODBC[c(2,3)]<-rep("iav",2)
   assign("baseODBC",baseODBC,envir_stacomi)
@@ -92,11 +94,8 @@ xtr_ann<-stacomiR::xtable(r_ann,
   plot(r_ann_adour)
 }
 }
-\author{
-Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
-}
 \seealso{
-Other report.Objects: \code{\link{report_dc-class}},
+Other report Objects: \code{\link{report_dc-class}},
   \code{\link{report_df-class}},
   \code{\link{report_env-class}},
   \code{\link{report_ge_weight-class}},
@@ -110,5 +109,8 @@ Other report.Objects: \code{\link{report_dc-class}},
   \code{\link{report_silver_eel-class}},
   \code{\link{report_species-class}}
 }
+\author{
+Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
+}
+\concept{report Objects}
 \keyword{classes}
-

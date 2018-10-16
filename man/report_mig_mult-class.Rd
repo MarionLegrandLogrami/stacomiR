@@ -2,8 +2,8 @@
 % Please edit documentation in R/report_mig_mult.R
 \docType{class}
 \name{report_mig_mult-class}
-\alias{report_mig_mult}
 \alias{report_mig_mult-class}
+\alias{report_mig_mult}
 \title{Migration reports for multiple DC / species / stages}
 \description{
 Migration counts for several Fish counting devices (DC), several taxa and several stages.
@@ -30,6 +30,7 @@ method if any weight are found in the data slot.}
 
 \item{\code{time.sequence}}{A POSIXt time sequence}
 }}
+
 \note{
 A Migration report comes from a migration monitoring : the fishes are monitored in a section of river, this section is
 called a control station (station). Most often, there is a dam, one or several fishways (DF) which comprise one or several counting devices (DC).
@@ -110,14 +111,11 @@ plot(r_mig_mult,plot.type="standard",silent=TRUE)
   plot(r_mig_mult,plot.type="multiple",silent=TRUE)
 # Data will be written in the data directory specified in 
 # the stacomi/calcmig.csv file
-  summary(r_mig_mult,silent=TRUE)
+  summary(r_mig_mult,silent=FALSE)
 }
-}
-\author{
-Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \seealso{
-Other report.Objects: \code{\link{report_annual-class}},
+Other report Objects: \code{\link{report_annual-class}},
   \code{\link{report_dc-class}},
   \code{\link{report_df-class}},
   \code{\link{report_env-class}},
@@ -131,5 +129,8 @@ Other report.Objects: \code{\link{report_annual-class}},
   \code{\link{report_silver_eel-class}},
   \code{\link{report_species-class}}
 }
+\author{
+Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
+}
+\concept{report Objects}
 \keyword{classes}
-

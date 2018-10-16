@@ -16,7 +16,6 @@ The use of stacomi(gr_interface=FALSE) allows to launch stacomi without graphica
 translated to French, to switch to English or French type \code{Sys.setenv(LANG = "en")} \code{Sys.setenv(LANG = "fr")}
 }
 
-}
 \author{
 \packageAuthor{stacomiR}
 Maintainer: \packageMaintainer{stacomiR}

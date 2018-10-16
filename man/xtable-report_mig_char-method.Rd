@@ -31,4 +31,3 @@ create an xtable objet to be later used by the print.xtable method.}
 xtable function for \link{report_mig_char-class}
 create an xtable objet to be later used by the print.xtable method.
 }
-

@@ -5,7 +5,8 @@
 \alias{setasqualitative,report_mig_char-method}
 \title{Turns a quantitative parameter into qualitative}
 \usage{
-\S4method{setasqualitative}{report_mig_char}(object, par, silent = FALSE, ...)
+\S4method{setasqualitative}{report_mig_char}(object, par, silent = FALSE,
+  ...)
 }
 \arguments{
 \item{object}{An object of class \link{ref_parquan-class}}
@@ -22,4 +23,3 @@ Turns a quantitative parameter into qualitative
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

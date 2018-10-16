@@ -2,8 +2,8 @@
 % Please edit documentation in R/report_env.R
 \docType{class}
 \name{report_env-class}
-\alias{report_env}
 \alias{report_env-class}
+\alias{report_env}
 \title{class report_env simple output of one or several environmental
 conditions...}
 \description{
@@ -21,6 +21,7 @@ joined graphs crossing the information from \link{report_mig_mult-class} and \li
 
 \item{\code{data}}{\code{data.frame}}
 }}
+
 \examples{
 require(stacomiR)
 stacomi(gr_interface=FALSE,
@@ -40,11 +41,8 @@ stacomi(gr_interface=FALSE,
 data("r_env")
 plot(r_env,silent=TRUE)
 }
-\author{
-cedric.briand"at"eptb-vilaine.fr
-}
 \seealso{
-Other report.Objects: \code{\link{report_annual-class}},
+Other report Objects: \code{\link{report_annual-class}},
   \code{\link{report_dc-class}},
   \code{\link{report_df-class}},
   \code{\link{report_ge_weight-class}},
@@ -58,5 +56,8 @@ Other report.Objects: \code{\link{report_annual-class}},
   \code{\link{report_silver_eel-class}},
   \code{\link{report_species-class}}
 }
+\author{
+cedric.briand"at"eptb-vilaine.fr
+}
+\concept{report Objects}
 \keyword{classes}
-

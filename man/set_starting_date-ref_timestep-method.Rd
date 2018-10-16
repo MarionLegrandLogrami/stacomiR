@@ -20,4 +20,3 @@ An object of class \link{ref_timestep-class}
 Sets starting date from a character
 }
 \keyword{internal}
-

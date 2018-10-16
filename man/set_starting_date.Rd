@@ -15,4 +15,3 @@ set_starting_date(object, ...)
 Generic method to set the starting date
 }
 \keyword{internal}
-
