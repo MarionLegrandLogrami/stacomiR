@@ -175,8 +175,15 @@ chargecsv=function(database_expected){
   lang=tableau_config["lang",]
 #pgwd=tableau_config["pgwd",]
   baseODBC=c(tableau_config["lienODBC",],tableau_config["uid",],tableau_config["pwd",])
-  sqldf.options=c(tableau_config["sqldf.uid",],tableau_config["sqldf.pwd",],tableau_config["sqldf.dbname",],tableau_config["sqldf.host",],tableau_config["sqldf.port",])
-  return(list("datawd"=datawd,"baseODBC"=baseODBC,"lang"=lang,"sqldf.options"=sqldf.options))
+  if (!"dbname"%in%dimnames(tableau_config)[[1]])
+  stop("From version 0.5.4 you need to change C:/program files/stacomi/calcmig.csv, rename 
+ sqldf.dbname to dbname, sqldf.port to port and remove columns sqldf.uid and sqldf.pwd")
+  sqldf.options=c("sqldf.RPostgreSQL.user" = as.character(tableau_config["uid",]),
+      "sqldf.RPostgreSQL.password" = as.character(tableau_config["pwd",]),
+      "sqldf.RPostgreSQL.dbname" = as.character(tableau_config["dbname",]),
+      "sqldf.RPostgreSQL.host" = as.character(tableau_config["host",]),
+      "sqldf.RPostgreSQL.port" = as.character(tableau_config["port",]))
+  return(list("datawd" = datawd,"baseODBC"=baseODBC,"lang"=lang,"sqldf.options"=sqldf.options))
 }
 
 
@@ -438,4 +445,11 @@ getdbname<-function(){
   aa <- strsplit(attributes(odbc)$connection.string, ";")
   dbname <- gsub("DATABASE=","",aa[[1]][2])
   return(dbname)
+}
+#' Test that the program is installed. 
+#' @return A logical checking if there is calcmig.csv folder
+stacomi_installed <- function (){
+filecsv<-"C:/Program Files/stacomi/calcmig.csv"
+test<-file.access(filecsv,0)==0
+return(test)
 }

@@ -618,10 +618,10 @@ setMethod("write_database",signature=signature("report_mig"),definition=function
 	  # object=bM
 	  #host : the host for sqldf, defaults to "localhost"
 	  #port : the port, defaults to 5432
-	  host=get("sqldf.options",envir=envir_stacomi)["sqldf.host"]
-	  port=get("sqldf.options",envir=envir_stacomi)["sqldf.port"]		
+	  host <- get("sqldf.options",envir=envir_stacomi)["sqldf.RPostgreSQL.host"]
+	  port <- get("sqldf.options",envir=envir_stacomi)["sqldf.RPostgreSQL.port"]		
 	  # getting the database name
-	  dbname<-getdbname()			
+	  dbname <- get("sqldf.options",envir=envir_stacomi)["sqldf.RPostgreSQL.dbname"]				
 	  report_mig<-object
 	  if (class(report_mig)!="report_mig") stop("the report_mig should be of class report_mig")
 	  if (class(silent)!="logical") stop("the silent argument should be a logical")

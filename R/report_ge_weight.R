@@ -574,10 +574,10 @@ funtablereport_ge_weight = function(h,...) {
 #' @export
 setMethod("write_database",signature=signature("report_ge_weight"),definition=function(object,silent=FALSE){
 	  #silent=FALSE;dbname="bd_contmig_nat";host="localhost";port=5432
-	  host=get("sqldf.options",envir=envir_stacomi)["sqldf.host"]
-	  port=get("sqldf.options",envir=envir_stacomi)["sqldf.port"]		
+	  host=get("sqldf.options",envir=envir_stacomi)["sqldf.RPostgreSQL.host"]
+	  port=get("sqldf.options",envir=envir_stacomi)["sqldf.RPostgreSQL.port"]		
 	  # getting the database name
-	  dbname<-getdbname()		
+	  dbname <- get("sqldf.options",envir=envir_stacomi)["sqldf.RPostgreSQL.dbname"]					
 	  r_gew<-object
 	  if (!"import_coe"%in% names(r_gew@calcdata)) funout(gettext("Attention, you must fit a model before trying to write the predictions in the database",domain="R-stacomiR"),arret=TRUE)
 	  # first delete existing data from the database

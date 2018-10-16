@@ -127,7 +127,7 @@ setMethod("connect",signature=signature("report_mig_interannual"),
 			data21<-dplyr::select(data2,bjo_annee,bjo_valeur,bjo_labelquantite)
 			data22<-dplyr::group_by(data21,bjo_annee,bjo_labelquantite)
 			data23<-dplyr::summarize(data22,total=sum(bjo_valeur))
-			data24<-dplyr::filter(ungroup(data23),bjo_labelquantite=="Effectif_total")
+			data24<-dplyr::filter(dplyr::ungroup(data23),bjo_labelquantite=="Effectif_total")
 			data24<-dplyr::select(data24,bjo_annee,total)
 			data24<-dplyr::rename(data24,annee=bjo_annee,effectif_bjo=total)
 			data124<-merge(data1,data24,all.x=TRUE,all.y=TRUE,by="annee")
@@ -407,7 +407,8 @@ setMethod("choice_c",signature=signature("report_mig_interannual"),definition=fu
 #' @author Marion Legrand
 #' @export
 setMethod("calcule",signature=signature("report_mig_interannual"),definition=function(object,silent=FALSE,timesplit="mois"){ 
-	  report_mig_interannual<-object	
+	  report_mig_interannual<-object
+	  #report_mig_interannual<-r_mig_interannual    
 	  #report_mig_interannual<-r_mig_interannual_vichy;silent=FALSE;timesplit="mois"
 	  #require(dplyr)
 	  if (!timesplit%in%c("jour","day","month","mois","week","semaine","quinzaine","2 weeks")) stop (
@@ -419,7 +420,7 @@ setMethod("calcule",signature=signature("report_mig_interannual"),definition=fun
 	  taxa<-report_mig_interannual@taxa@data$tax_code
 	  stage<-report_mig_interannual@stage@data$std_code
 	  if(length(unique(report_mig_interannual@dc@station))!=1) stop("You have more than one station in the report, the dc from the report should belong to the same station")
-	  if(nrow(report_mig_interannual@data)==0) stop("No rows in report_mig_interannual@data, nothing to run calculations on")
+	  if(nrow(report_mig_interannual@data)==0) stop("No rows in report_mig_interannual@data, nothing to run calculations on, you should run a report_mig_mult on this dc first")
 	  
 	  datadic<-report_mig_interannual@data[
 		  report_mig_interannual@data$bjo_labelquantite=="Effectif_total",]

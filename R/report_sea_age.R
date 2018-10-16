@@ -365,10 +365,10 @@ setMethod("summary",signature=signature(object="report_sea_age"),definition=func
 setMethod("write_database",signature=signature("report_sea_age"),definition=function(object,silent=TRUE){
 	  # dbname="bd_contmig_nat"
 	  r_seaa<-object
-	  host=get("sqldf.options",envir=envir_stacomi)["sqldf.host"]
-	  port=get("sqldf.options",envir=envir_stacomi)["sqldf.port"]		
+	  host=get("sqldf.options",envir=envir_stacomi)["sqldf.RPostgreSQL.host"]
+	  port=get("sqldf.options",envir=envir_stacomi)["sqldf.RPostgreSQL.port"]		
 	  # getting the database name
-	  dbname<-getdbname()		
+      dbname=get("sqldf.options",envir=envir_stacomi)["sqldf.dbname"]	
 	  calcdata<-r_seaa@calcdata[["data"]]	
 	  data_in_base<-r_seaa@data
 	  if (nrow(calcdata)==0) {   

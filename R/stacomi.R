@@ -370,20 +370,24 @@ stacomi=function(gr_interface=TRUE,login_window=TRUE,database_expected=TRUE){
   sqldf.options=mylinks[["sqldf.options"]]	
   # values assigned in the envir_stacomi
   assign("datawd",datawd,envir=envir_stacomi)
-  assign("sqldf.options",sqldf.options,envir=envir_stacomi)
+  
   # default the usrname and usrpwd come from baseODBC
   
   
   # the following values may be overridden later in load_stacomi()
   assign("baseODBC",baseODBC,envir=envir_stacomi)
   assign("sch",paste(baseODBC[2],".",sep=""),envir=envir_stacomi)
-  
+  if (database_expected) dbname<-getdbname()	
   #libraries()
-  options(sqldf.RPostgreSQL.user = sqldf.options["sqldf.uid"], 
-	  sqldf.RPostgreSQL.password =sqldf.options["sqldf.pwd"],
-	  sqldf.RPostgreSQL.dbname = sqldf.options["sqldf.dbname"],
-	  sqldf.RPostgreSQL.host = sqldf.options["sqldf.host"],#  1.100.1.6
-	  sqldf.RPostgreSQL.port = sqldf.options["sqldf.port"])
+  # change 2018 the test database is no longer used, we use usernames and
+  # password from the local baseODBC string
+  options(sqldf.RPostgreSQL.user = unname(sqldf.options["sqldf.RPostgreSQL.user"]), 
+	  sqldf.RPostgreSQL.password = unname(sqldf.options["sqldf.RPostgreSQL.password"]), 
+	  sqldf.RPostgreSQL.dbname = unname(sqldf.options["sqldf.RPostgreSQL.dbname"]),
+	  sqldf.RPostgreSQL.host = unname(sqldf.options["sqldf.RPostgreSQL.host"]),#  1.100.1.6
+	  sqldf.RPostgreSQL.port = unname(sqldf.options["sqldf.RPostgreSQL.port"]))
+  
+  assign("sqldf.options",sqldf.options,envir=envir_stacomi)
   # loginWindow, will call the load_stacomi handler
   # user login
   if (gr_interface&login_window&database_expected){
@@ -526,7 +530,8 @@ utils::globalVariables(c("quinzaine", "mois","val_quant","time.sequence","Effect
 		"env_valeur_quantitatif","env_val_identifiant","DC","color"))
 
 # variable used by dplyr
-utils::globalVariables(c("n0","newid","xmin","xmax"))
+utils::globalVariables(c("n0","newid","xmin","xmax","fin_pas","value","type_de_quantite","lot_tax_code","lot_std_code",
+						"lot_methode_obtention","no.pas"))
 
 # dataset used in the package
 utils::globalVariables(c("coef_durif"))
@@ -547,18 +552,14 @@ utils::globalVariables(c("coef_durif"))
 
 ## THESE LINES MUST BE UNCOMMENTED IN ORDER TO MAKE THE DOCUMENT METHOD FROM DEVTOOL WORK
 #calcmig<-
-#		structure(list(lienODBC = structure(1L, .Label = "bd_contmig_nat", class = "factor"), 
-#						uid = structure(1L, .Label = "iav", class = "factor"), pwd = structure(1L, .Label = "iav", class = "factor"), 
-#						sqldf.uid = structure(1L, .Label = "test", class = "factor"), 
-#						sqldf.pwd = structure(1L, .Label = "test", class = "factor"), 
-#						sqldf.dbname = structure(1L, .Label = "test", class = "factor"), 
-#						sqldf.host = structure(1L, .Label = "localhost", class = "factor"), 
-#						sqldf.port = 5432L, pgwd = structure(1L, .Label = "F:/workspace/stacomir/pkg/stacomir/R/", class = "factor"), 
-#						datawd = structure(1L, .Label = "~/CalcmigData", class = "factor"), 
-#						lang = structure(1L, .Label = "French", class = "factor")), .Names = c("lienODBC", 
-#						"uid", "pwd", "sqldf.uid", "sqldf.pwd", "sqldf.dbname", "sqldf.host", 
-#						"sqldf.port", "pgwd", "datawd", "lang"), class = "data.frame", row.names = c(NA, 
-#						-1L))
+#	structure(list(lienODBC = structure(1L, .Label = "bd_contmig_nat", class = "factor"), 
+#                uid = structure(1L, .Label = "iav", class = "factor"), pwd = structure(1L, .Label = "iav", class = "factor"), 
+#                dbname = structure(1L, .Label = "bd_contmig_nat", class = "factor"), 
+#                host = structure(1L, .Label = "localhost", class = "factor"), 
+#                port = 5432L, pgwd = structure(1L, .Label = "C:/workspace/stacomir/pkg/stacomir/R/", class = "factor"), 
+#                datawd = structure(1L, .Label = "C:/Users/cedric.briand/Documents/CalcmigData", class = "factor"), 
+#                lang = structure(1L, .Label = "French", class = "factor")), class = "data.frame", row.names = c(NA, 
+#            -1L))
 #' Working environment for stacomiR created when launching stacomi()
 #' 
 #' This is where the graphical interface stores its objects
