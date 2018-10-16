@@ -88,4 +88,11 @@ In a R console write :
 - ```install.packages("stacomiR")``` for the version of the package on CRAN
 - ```install.packages("stacomiR", repos="https://R-forge.R-project.org")``` for the development version (on rforge)
 
+## to get some help on how to use the package
+Once everything is installed and if you need some help on how to use our package, please have a look at our vignette.
+```
+library(stacomiR)
+vignette("stacomir")
+```
+
 **If you need some help, don't hesitate to contact us !**
