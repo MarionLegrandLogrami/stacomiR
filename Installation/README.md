@@ -63,7 +63,7 @@ In pgAdmin, you need to create a connexion role with the same name as your schem
 You need to [download and put the **stacomi folder**](https://github.com/MarionLegrandLogrami/stacomiR/tree/master/Installation) at the root of your **c:\Program Files** repository.
 You will find 6 files inside the stacomi folder:
 - base_local.xml: Informations of connection for the java program (to be able to add new data or update your database with graphical interface)
-- calcmig.csv: informations of connection for the R package stacomiR (allow the package to connect to your database). By default calcmig.csv is **configured to log on the iav schema** to allow new user to look at the functionnalities of the package. One stacomi folder installed on your computer you can change the configuration of calcmig.csv to log on your schema (just replace iav/iav by your schema's name and passeword).
+- calcmig.csv: informations of connection for the R package stacomiR (allow the package to connect to your database). By default calcmig.csv is **configured to log on the iav schema** to allow new user to look at the functionnalities of the package. Once the stacomi folder has been installed on your computer you can change the configuration of calcmig.csv to log on your schema (just replace iav/iav by your schema's name and passeword).
 - logo_stacomi.jpeg: Logo for the java program
 - stacomi.bat: launch the java program to access to the graphical interface (to update or insert new data in your fish migratory database)
 - stacomi.ico: icon for the java program
