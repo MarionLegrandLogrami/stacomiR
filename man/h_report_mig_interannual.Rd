@@ -15,4 +15,3 @@ h_report_mig_interannual(h, ...)
 handler function used by the main interface
 }
 \keyword{internal}
-

@@ -15,4 +15,3 @@ hbmCcalc(h, ...)
 internal use
 }
 \keyword{internal}
-

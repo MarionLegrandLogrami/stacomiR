@@ -15,4 +15,3 @@ hbmCplotquan(h, ...)
 handler for plot
 }
 \keyword{internal}
-

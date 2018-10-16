@@ -24,4 +24,3 @@ then no entry will be written to the database
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

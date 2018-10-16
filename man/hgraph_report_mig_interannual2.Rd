@@ -15,4 +15,3 @@ hgraph_report_mig_interannual2(h, ...)
 Plot of daily migrations
 }
 \keyword{internal}
-

@@ -17,4 +17,3 @@ This function creates a cumulated area plot to highlight seasonal trends in migr
 2 weeks period then centered and reduced
 }
 \keyword{internal}
-

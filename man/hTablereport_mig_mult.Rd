@@ -15,4 +15,3 @@ hTablereport_mig_mult(h = null, ...)
 internal use
 }
 \keyword{internal}
-

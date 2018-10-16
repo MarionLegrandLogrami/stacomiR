@@ -18,4 +18,3 @@ internal use for graphical interface
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

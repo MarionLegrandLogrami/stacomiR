@@ -17,4 +17,3 @@ Since we are using sqldf to connect to the base, we need to know the database na
 it is stored in the ODBC connection string. This method gets this name, from
 a "trial" connection to one of the table of the database.
 }
-

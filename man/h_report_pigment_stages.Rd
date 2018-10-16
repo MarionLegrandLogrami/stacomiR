@@ -15,4 +15,3 @@ h_report_pigment_stages(h, ...)
 handler function used by the main interface
 }
 \keyword{internal}
-

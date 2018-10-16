@@ -18,4 +18,3 @@ handler to print the command line
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

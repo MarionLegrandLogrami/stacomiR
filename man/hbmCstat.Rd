@@ -15,4 +15,3 @@ hbmCstat(h)
 This handler calls the generic method stat
 }
 \keyword{internal}
-

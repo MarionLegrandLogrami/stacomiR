@@ -14,4 +14,3 @@
 Gets the year or a vector of years corresponding to the timestep ("ref_timestep") object
 }
 \keyword{internal}
-

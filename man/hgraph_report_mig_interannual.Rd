@@ -15,4 +15,3 @@ hgraph_report_mig_interannual(h, ...)
 Plot of all interannual from top to bottom
 }
 \keyword{internal}
-

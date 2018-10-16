@@ -15,4 +15,3 @@ hplot(h, ...)
 Internal handler for reg, class \code{\link{report_ge_weight-class}}.
 }
 \keyword{internal}
-

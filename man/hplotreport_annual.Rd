@@ -15,4 +15,3 @@ hplotreport_annual(h, ...)
 plot handler
 }
 \keyword{internal}
-

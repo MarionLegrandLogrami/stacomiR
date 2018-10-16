@@ -17,4 +17,3 @@ Function displaying comparison similar to \link{hgraph_report_mig_interannual4} 
 This function plots comparisons for periods of 1 week, 2 weeks, month
 }
 \keyword{internal}
-

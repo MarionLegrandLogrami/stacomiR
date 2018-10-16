@@ -15,4 +15,3 @@ hbmCplotqual(h, ...)
 handler for plot
 }
 \keyword{internal}
-

@@ -18,4 +18,3 @@ h_report_envgraph Internal method
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

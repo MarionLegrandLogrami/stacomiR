@@ -19,4 +19,3 @@ computed for all years available in the daily migration table.
 This function plots comparisons for periods of 1 week, 2 weeks, month
 }
 \keyword{internal}
-

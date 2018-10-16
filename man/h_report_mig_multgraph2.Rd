@@ -15,4 +15,3 @@ h_report_mig_multgraph2(h = null, ...)
 Cumulated migration over time
 }
 \keyword{internal}
-

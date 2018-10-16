@@ -16,4 +16,3 @@ handler for plot internal use
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

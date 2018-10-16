@@ -14,4 +14,3 @@ getnocurrent_step(object, ...)
 \description{
 Generic method to get current time step
 }
-

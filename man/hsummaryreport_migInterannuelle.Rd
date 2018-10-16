@@ -15,4 +15,3 @@ hsummaryreport_migInterannuelle(h, ...)
 Summary handler internal method
 }
 \keyword{internal}
-

@@ -15,4 +15,3 @@ hxtablereport_annual(h, ...)
 xtable handler
 }
 \keyword{internal}
-

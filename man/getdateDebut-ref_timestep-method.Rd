@@ -16,4 +16,3 @@
 Returns the starting date as character
 }
 \keyword{internal}
-

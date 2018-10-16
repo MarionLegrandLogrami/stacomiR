@@ -17,4 +17,3 @@ A string corresponding to the value of current time step
 Gets the string value of time step
 }
 \keyword{internal}
-

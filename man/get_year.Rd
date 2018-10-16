@@ -15,4 +15,3 @@ get_year(object, ...)
 Generic method to get the years
 }
 \keyword{internal}
-

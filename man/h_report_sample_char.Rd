@@ -15,4 +15,3 @@ h_report_sample_char(h, ...)
 handler function used by the main interface
 }
 \keyword{internal}
-

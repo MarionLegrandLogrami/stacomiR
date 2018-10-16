@@ -15,4 +15,3 @@ h_report_mig_multgraph3(h = null, ...)
 internal use
 }
 \keyword{internal}
-

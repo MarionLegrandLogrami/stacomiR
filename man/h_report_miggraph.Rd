@@ -18,4 +18,3 @@ Standard report_mig graph over time
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

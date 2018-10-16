@@ -15,4 +15,3 @@ hbarplotreport_annual(h, ...)
 Barplot handler
 }
 \keyword{internal}
-

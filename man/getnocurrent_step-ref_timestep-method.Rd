@@ -17,4 +17,3 @@ the current time step of the object
 Gets the current time step of an object of class \link{ref_timestep-class}
 }
 \keyword{internal}
-

@@ -15,4 +15,3 @@ get_step_label(object, ...)
 Generic method to get the string value of time step
 }
 \keyword{internal}
-

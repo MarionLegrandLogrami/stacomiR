@@ -16,4 +16,3 @@ handler for summary report_species, internal use
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-
