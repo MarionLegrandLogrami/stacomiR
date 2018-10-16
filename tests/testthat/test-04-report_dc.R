@@ -1,15 +1,14 @@
 context("report_dc")
 
 test_that("Test an instance of report_dc",{
-	  require(stacomiR)
-	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=FALSE)
+      skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
+	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=TRUE)
 	  # overriding user schema to point to iav
 	  baseODBC<-get("baseODBC",envir=envir_stacomi)
 	  baseODBC[c(2,3)]<-rep("iav",2)
 	  assign("baseODBC",baseODBC,envir_stacomi)
 	  sch<-get("sch",envir=envir_stacomi) # "iav."
-	  assign("sch","iav.",envir_stacomi)
-	  
+	  assign("sch","iav.",envir_stacomi)	  
 	  r_dc<-new("report_dc")
 	  r_dc<-choice_c(r_dc,
 		  5,
@@ -31,7 +30,7 @@ test_that("Test an instance of report_dc",{
 	})
 
 test_that("report_dc charge method works",{
-	  require(stacomiR)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=FALSE)
 	  # overriding user schema to point to iav
 	  baseODBC<-get("baseODBC",envir=envir_stacomi)
@@ -54,7 +53,6 @@ test_that("report_dc charge method works",{
 
 
 test_that("report_dc plot method works",{
-	  require(stacomiR)
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=FALSE)
 	  data(r_dc)
 	  r_dc<-r_dc
@@ -67,7 +65,7 @@ test_that("report_dc plot method works",{
 
 
 test_that("report_dc summary method works",{
-	  require(stacomiR)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=FALSE)
 	  data(r_dc)
 	  r_dc<-r_dc
@@ -77,7 +75,7 @@ test_that("report_dc summary method works",{
 
 
 test_that("report_dc print method works",{
-	  require(stacomiR)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=FALSE)
 	  data(r_dc)
 	  r_dc<-r_dc

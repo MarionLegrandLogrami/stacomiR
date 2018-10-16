@@ -1,7 +1,6 @@
 context("ref_horodate")
 test_that("Test that the parsing of many kind of dates works",
 	{
-	  require(stacomiR)
 	  ref_horodate<-new("ref_horodate")
 	  # regular expression to test string "1] nous avons le choix dans la date\n"
 	  # default string returned by the method
@@ -23,7 +22,6 @@ test_that("Test that the parsing of many kind of dates works",
 
 test_that("Test that the parsing of wrong character formats gets an error",
 	{
-	  require(stacomiR)
 	  ref_horodate<-new("ref_horodate")
 	  options(warn = -1)
 	  expect_error(ref_horodate<-choice_c(ref_horodate,	
@@ -36,7 +34,7 @@ context("ref_df")
 
 test_that("Test that ref_df choice_c method loads character, numeric, but not rubbish",
 	{
-	  require(stacomiR)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=FALSE)
 	  ref_df<-new("ref_df")
 	  ref_df<-charge(ref_df)

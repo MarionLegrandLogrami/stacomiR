@@ -2,7 +2,7 @@ context("report_annual")
 
 
 test_that("Test an instance of report_annual loaded with choice_c",{
-	  require(stacomiR)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=TRUE)
 	  # overriding user schema to point to iav
 	  baseODBC<-get("baseODBC",envir=envir_stacomi)
@@ -25,7 +25,7 @@ test_that("Test an instance of report_annual loaded with choice_c",{
 
 
 test_that("Test methods in report_annual",{
-	  require(stacomiR)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=TRUE)
 	  # overriding user schema to point to iav
 	  baseODBC<-get("baseODBC",envir=envir_stacomi)
@@ -64,7 +64,7 @@ test_that("Test example report_mig_annual-example",
 
 test_that("Complement to example",
     {
-      require(stacomiR)
+      skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=TRUE)
 	  data(r_ann)
       xtr_ann<-stacomiR::xtable(r_ann,
@@ -115,11 +115,11 @@ test_that("Complement to example",
     })
 
 test_that("test xtable method for report_annual",{
-	  require(stacomiR)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 # launching stacomi without selecting the scheme or interface
 	  stacomi(gr_interface=FALSE,
 		  login_window=FALSE,
-		  database_expected=FALSE)
+		  database_expected=TRUE)
 	  baseODBC<-get("baseODBC",envir=envir_stacomi)
 	  baseODBC[c(2,3)]<-rep("iav",2)
 	  assign("baseODBC",baseODBC,envir_stacomi)

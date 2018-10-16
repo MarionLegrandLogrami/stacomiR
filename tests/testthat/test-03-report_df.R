@@ -1,7 +1,7 @@
 context("report_df")
 
 test_that("Test an instance of report_df",{
-	  require(stacomiR)
+      skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=FALSE)
 	  # overriding user schema to point to iav
 	  baseODBC<-get("baseODBC",envir=envir_stacomi)
@@ -30,7 +30,7 @@ test_that("Test an instance of report_df",{
 	})
 
 test_that("report_df charge method works",{
-	  require(stacomiR)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=FALSE)
 	  # overriding user schema to point to iav
 	  baseODBC<-get("baseODBC",envir=envir_stacomi)
@@ -53,7 +53,6 @@ test_that("report_df charge method works",{
 
 
 test_that("report_df plot method works",{
-	  require(stacomiR)
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=FALSE)
 	  data(r_df)
 	  r_df<-r_df
@@ -66,17 +65,17 @@ test_that("report_df plot method works",{
 
 
 test_that("report_df summary method works",{
-	  require(stacomiR)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=FALSE)
 	  data(r_df)
 	  r_df<-r_df
-	  expect_output(summary(r_df,silent=FALSE),"summary")
+	  expect_output(summary(r_df,silent=TRUE),"summary")
       rm(list=ls(envir=envir_stacomi),envir=envir_stacomi)
 	})
 
 
 test_that("report_df print method works",{
-	  require(stacomiR)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=FALSE)
 	  data(r_df)
 	  r_df<-r_df

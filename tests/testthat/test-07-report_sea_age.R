@@ -2,7 +2,7 @@ context("report_sea_age")
 
 
 test_that("test creating an instance of report_sea_age with data loaded (logrami required)",{
-	  require(stacomiR)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=TRUE)
 	  # overriding user schema to point to iav
 	  r_seaa<-new("report_sea_age")
@@ -25,7 +25,7 @@ test_that("test creating an instance of report_sea_age with data loaded (logrami
 	})
 
 test_that("test that loading bad limits fails",{
-	  require(stacomiR)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=FALSE)
 	  # overriding user schema to point to iav
 	  r_seaa<-new("report_sea_age")

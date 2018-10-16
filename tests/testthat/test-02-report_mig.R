@@ -1,7 +1,7 @@
 context("report_mig")
 test_that("Test an instance of report_mig",{
-	  require(stacomiR)
-	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=FALSE)
+      skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
+	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=TRUE)
 	  # overriding user schema to point to iav
 	  baseODBC<-get("baseODBC",envir=envir_stacomi)
 	  baseODBC[c(2,3)]<-rep("iav",2)
@@ -24,8 +24,8 @@ test_that("Test an instance of report_mig",{
 
 
 test_that("Test an instance of report_mig, check that operations accross two years are split correcly",{
-	  require(stacomiR)
-	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=FALSE)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
+	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=TRUE)
 	  # overriding user schema to point to iav
 	  baseODBC<-get("baseODBC",envir=envir_stacomi)
 	  baseODBC[c(2,3)]<-rep("iav",2)
@@ -54,8 +54,8 @@ test_that("Test an instance of report_mig, check that operations accross two yea
 	})
 
 test_that("Test another instance of report_mig, check that operations accross two years are split correcly",{
-	  require(stacomiR)
-	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=FALSE)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
+	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=TRUE)
 	  # overriding user schema to point to iav
 	  baseODBC<-get("baseODBC",envir=envir_stacomi)
 	  baseODBC[c(2,3)]<-rep("iav",2)
@@ -84,9 +84,10 @@ test_that("Test another instance of report_mig, check that operations accross tw
 	})
 
 test_that("Test connect method",{
+      skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,
 		  login_window=FALSE,
-		  database_expected=FALSE)	
+		  database_expected=TRUE)	
 	  # overriding user schema
 	  baseODBC<-get("baseODBC",envir=envir_stacomi)
 	  baseODBC[c(2,3)]<-rep("iav",2)
@@ -122,6 +123,7 @@ test_that("Test example 02_report_mig",
 
 test_that("Summary method works",
 	{
+      skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,
 		  login_window=FALSE,
 		  database_expected=TRUE)	
@@ -140,6 +142,7 @@ test_that("Summary method works",
 
 test_that("Test writing an example to the database",
 	{
+      skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,
 		  login_window=FALSE,
 		  database_expected=TRUE)	
@@ -158,6 +161,7 @@ test_that("Test writing an example to the database",
 
 test_that("Test that different sums are the same, for report_mig, report_mig_interannual, report_annual",
 	{
+      skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,
 		  login_window=FALSE,
 		  database_expected=TRUE)	
@@ -201,14 +205,8 @@ test_that("print method works",
 	{
 	  stacomi(gr_interface=FALSE,
 		  login_window=FALSE,
-		  database_expected=TRUE)	
+		  database_expected=FALSE)	
 	  # overriding user schema
-	  baseODBC<-get("baseODBC",envir=envir_stacomi)
-	  baseODBC[c(2,3)]<-rep("iav",2)
-	  assign("baseODBC",baseODBC,envir_stacomi)
-	  sch<-get("sch",envir=envir_stacomi) # "iav."
-	  assign("sch","iav.",envir_stacomi)
-	  # this chunk is not launched from examples but loads the r_mig dataset if connection works	
 	  data("r_mig")
 	  expect_output(print(r_mig), "report_mig=choice_c",info = NULL)
 	  rm(list=ls(envir=envir_stacomi),envir=envir_stacomi)
@@ -218,6 +216,7 @@ test_that("print method works",
 
 test_that("test example for fd80",
 	{
+      skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,
 		  login_window=FALSE,
 		  database_expected=TRUE)	
@@ -246,6 +245,7 @@ test_that("test example for fd80",
 
 test_that("test example with glass eel",
 	{
+      skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,
 		  login_window=FALSE,
 		  database_expected=TRUE)	
@@ -300,8 +300,8 @@ test_that("test example with glass eel",
 #				password<-tclvalue(passVar);  
 #				return(password);  
 #			}  
-#			sqldf.options["sqldf.host"]<-getpassword()
-#			sqldf.options["sqldf.port"]<-5432
+#			sqldf.options["sqldf.RPostgreSQL.host"]<-getpassword()
+#			sqldf.options["sqldf.RPostgreSQL.port"]<-5432
 #			assign("sqldf.options",sqldf.options,envir_stacomi)
 #			report_mig=new('report_mig')
 #			report_mig=choice_c(report_mig,

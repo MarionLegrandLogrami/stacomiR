@@ -2,7 +2,7 @@ context("report_mig_char")
 
 
 test_that("test creating an instance of report_mig_char and connect method (logrami required)",{
-	  require(stacomiR)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=TRUE)
 	  # overriding user schema to point to logrami
 	  assign("sch","logrami.",envir_stacomi)
@@ -31,7 +31,7 @@ test_that("test creating an instance of report_mig_char and connect method (logr
 	})
 
 test_that("test setasqualitative method",{
-	  require(stacomiR)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=TRUE)
 	  # overriding user schema to point to iav
 	  assign("sch","logrami.",envir_stacomi)
@@ -69,7 +69,7 @@ test_that("test setasqualitative method",{
 
 
 test_that("test calcule method",{
-	  require(stacomiR)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=TRUE)
 	  # overriding user schema to point to iav
 	  assign("sch","logrami.",envir_stacomi)

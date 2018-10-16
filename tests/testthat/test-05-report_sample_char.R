@@ -1,7 +1,7 @@
 context("report_sample_char")
 
 test_that("Test that view lot_ope_car exists",{
-	  require(stacomiR)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=TRUE)
 	  req<-new("RequeteODBC")
 	  req@baseODBC<-get("baseODBC", envir=envir_stacomi)		
@@ -14,7 +14,7 @@ test_that("Test that view lot_ope_car exists",{
 	})
 
 test_that("Test an instance of report_sample_char loaded with choice_c",{
-	  require(stacomiR)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=TRUE)
 	  # overriding user schema to point to iav
 	  baseODBC<-get("baseODBC",envir=envir_stacomi)
@@ -42,7 +42,7 @@ test_that("Test an instance of report_sample_char loaded with choice_c",{
 
 
 test_that("Test methods in report_sample_char",{
-	  require(stacomiR)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=TRUE)
 	  # overriding user schema to point to iav
 	  baseODBC<-get("baseODBC",envir=envir_stacomi)
@@ -71,7 +71,7 @@ test_that("Test methods in report_sample_char",{
 	})
 
 test_that("Test charge method for report_sample_char",{
-	  require(stacomiR)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=TRUE)
 	  # overriding user schema to point to iav
 	  baseODBC<-get("baseODBC",envir=envir_stacomi)

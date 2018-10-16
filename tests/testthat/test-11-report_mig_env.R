@@ -2,8 +2,14 @@ context("report_mig_env")
 
 
 test_that("test creating an instance of report_mig_env",{
-	  require(stacomiR)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=TRUE)
+	  # overriding user schema
+	  baseODBC<-get("baseODBC",envir=envir_stacomi)
+	  baseODBC[c(2,3)]<-rep("iav",2)
+	  assign("baseODBC",baseODBC,envir_stacomi)
+	  sch<-get("sch",envir=envir_stacomi) # "iav."
+	  assign("sch","iav.",envir_stacomi)
 	  r_mig_env<-new("report_mig_env")
 	  r_mig_env<-choice_c(r_mig_env,
 		  dc=c(5,6,12),
@@ -21,8 +27,14 @@ test_that("test creating an instance of report_mig_env",{
 	})
 
 test_that("test plot method",{
-	  require(stacomiR)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=TRUE)
+	  # overriding user schema
+	  baseODBC<-get("baseODBC",envir=envir_stacomi)
+	  baseODBC[c(2,3)]<-rep("iav",2)
+	  assign("baseODBC",baseODBC,envir_stacomi)
+	  sch<-get("sch",envir=envir_stacomi) # "iav."
+	  assign("sch","iav.",envir_stacomi)
 	  r_mig_env<-new("report_mig_env")
 	  r_mig_env<-choice_c(r_mig_env,
 		  dc=c(5,6,12),

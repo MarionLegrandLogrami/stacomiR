@@ -2,7 +2,7 @@ context("report_silver_eel")
 
 
 test_that("test creating an instance of report_silver_eel with data loaded (fd80 schema required)",{
-	  require(stacomiR)
+	  skip_if_not(stacomi_installed(),"skipping as the program is not installed on this computer")
 	  stacomi(gr_interface=FALSE,login_window=FALSE,database_expected=TRUE)
 	  # overriding user schema to point to iav
         r_silver<-new("report_silver_eel")
