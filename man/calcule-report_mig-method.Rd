@@ -7,7 +7,8 @@
 \title{Transforms migration per period to daily migrations, and performs the conversion from weights to number is data
 are stored as weights (glass eel).}
 \usage{
-\S4method{calcule}{report_mig}(object, negative = FALSE, silent = FALSE)
+\S4method{calcule}{report_mig}(object, negative = FALSE,
+  silent = FALSE)
 }
 \arguments{
 \item{object}{An object of class \code{\link{report_mig-class}}}
@@ -37,4 +38,3 @@ has no effect.
 The class report_mig does not handle escapement rates nor 
 'devenir' i.e. the destination of the fishes.
 }
-

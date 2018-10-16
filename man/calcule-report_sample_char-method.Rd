@@ -19,4 +19,3 @@ In that class, most treatments are done in the query, this method checks that da
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

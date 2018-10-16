@@ -21,4 +21,3 @@ with calcdata slot filled.
 per year or month or week. Data from different DC will be grouped. Counts are given per taxa,
 unless there are several stages, in which case the counts correspond to taxa + stage.
 }
-

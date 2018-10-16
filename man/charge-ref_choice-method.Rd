@@ -28,11 +28,8 @@ object=new("ref_choice")
 charge(object,vecteur=c("oui","non"),label="essai",selected=as.integer(1))
 }
 }
-\author{
-Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
-}
 \seealso{
-Other referential.objects: \code{\link{ref_checkbox-class}},
+Other referential objects: \code{\link{ref_checkbox-class}},
   \code{\link{ref_choice-class}},
   \code{\link{ref_coe-class}}, \code{\link{ref_dc-class}},
   \code{\link{ref_df-class}},
@@ -46,4 +43,7 @@ Other referential.objects: \code{\link{ref_checkbox-class}},
   \code{\link{ref_taxa-class}},
   \code{\link{ref_year-class}}
 }
-
+\author{
+Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
+}
+\concept{referential objects}

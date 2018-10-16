@@ -6,7 +6,7 @@
 \title{A data frame containing the default connection arguments.
 The program will use a file installed in c:/program files/stacomi but
 if not found will switch to this default value}
-\format{An object of class \code{data.frame} with 1 rows and 11 columns.}
+\format{An object of class \code{data.frame} with 1 rows and 9 columns.}
 \usage{
 calcmig
 }
@@ -16,4 +16,3 @@ The program will use a file installed in c:/program files/stacomi but
 if not found will switch to this default value
 }
 \keyword{datasets}
-

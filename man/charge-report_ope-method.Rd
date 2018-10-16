@@ -24,4 +24,3 @@ assigned to envir_stacomi
 cedric.briand
 }
 \keyword{internal}
-

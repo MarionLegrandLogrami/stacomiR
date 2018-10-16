@@ -19,4 +19,3 @@ Calcule method for report_ge_weight
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

@@ -25,4 +25,3 @@ line per silver eel). It will also calculate Durif silvering index and Pankhurst
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

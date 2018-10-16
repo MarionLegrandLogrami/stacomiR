@@ -27,4 +27,3 @@ choice_c method
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

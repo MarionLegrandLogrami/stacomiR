@@ -18,4 +18,3 @@ Method used by the graphical interface to load data and check that all choices h
 been made by the user
 }
 \keyword{internal}
-

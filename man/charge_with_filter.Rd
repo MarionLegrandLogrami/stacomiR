@@ -18,4 +18,3 @@ Generic method to load referentials, with filters from the parent object in the 
 cedric.briand
 }
 \keyword{internal}
-

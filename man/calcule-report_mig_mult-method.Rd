@@ -41,8 +41,4 @@ has no effect.
 \note{
 The class does not handle escapement rates, though structurally those are present in the database. If you 
 want to use those you will have to do the calculation manually from the data in \code{report_mig_mult@data}.
-Note also that running the calcule method requires to have a database called test in postgres, and empty
-database in which all sqldf group by queries are run. The user and password for the test database are taken 
-from the calcmig.csv configuration file.
 }
-

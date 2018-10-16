@@ -27,4 +27,3 @@ Loading method for ref_taxa referential objects searching only taxa existing for
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

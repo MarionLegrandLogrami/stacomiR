@@ -5,8 +5,8 @@
 \alias{charge_with_filter,ref_par-method}
 \title{Loading method for Repar referential objects searching only those parameters existing for a DC, a Taxa, and a stage}
 \usage{
-\S4method{charge_with_filter}{ref_par}(object, dc_selectionne, taxa_selectionne,
-  stage_selectionne)
+\S4method{charge_with_filter}{ref_par}(object, dc_selectionne,
+  taxa_selectionne, stage_selectionne)
 }
 \arguments{
 \item{object}{An object of class \link{ref_par-class}}
@@ -32,4 +32,3 @@ charge_with_filter(object,dc_selectionne=6,taxa_selectionne=2038,stage_selection
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

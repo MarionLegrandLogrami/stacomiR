@@ -24,4 +24,3 @@ Loading method for ref_taxa referential objects
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

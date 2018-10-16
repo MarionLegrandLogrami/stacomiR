@@ -21,4 +21,3 @@ used by the graphical interface to retrieve the objects of referential classes
 assigned to envir_stacomi
 }
 \keyword{internal}
-

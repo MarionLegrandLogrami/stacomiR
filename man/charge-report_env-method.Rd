@@ -20,4 +20,3 @@ charge method for report_env class
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

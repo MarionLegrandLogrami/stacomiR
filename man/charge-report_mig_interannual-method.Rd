@@ -23,4 +23,3 @@ loading method for report_mig_interannual class
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

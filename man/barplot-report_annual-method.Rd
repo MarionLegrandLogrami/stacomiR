@@ -18,10 +18,9 @@
 \description{
 barplot method for object \link{report_annual-class}
 }
-\author{
-Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
-}
 \seealso{
 \link{report_annual-class} for examples
 }
-
+\author{
+Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
+}

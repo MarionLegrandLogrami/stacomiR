@@ -19,4 +19,3 @@ Method to load the counting devices of the control station
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

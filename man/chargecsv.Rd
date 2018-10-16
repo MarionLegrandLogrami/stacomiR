@@ -33,4 +33,3 @@ A version of the calcmig.csv is packaged in the config directory of the stacomiR
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-

@@ -25,4 +25,3 @@ fishway operations, and counting devices operations as data from those are displ
 \author{
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
-

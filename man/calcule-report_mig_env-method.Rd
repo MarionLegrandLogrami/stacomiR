@@ -19,4 +19,3 @@
 \description{
 Runs the calcule method in \link{report_mig_mult-class}
 }
-

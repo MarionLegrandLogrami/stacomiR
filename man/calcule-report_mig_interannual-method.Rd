@@ -33,4 +33,3 @@ The class report_mig does not handle escapement rates nor
 \author{
 Marion Legrand
 }
-

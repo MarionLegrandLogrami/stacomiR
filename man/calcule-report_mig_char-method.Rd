@@ -18,4 +18,3 @@ Merges the content of the list elements "parqual" and "parquan" in the data slot
 a single dataframe with one line per qualitative and quantitative pair. This methods allow to 
 cross one quantity (e.g. length) with a qualitative parameter (e.g. sex).
 }
-

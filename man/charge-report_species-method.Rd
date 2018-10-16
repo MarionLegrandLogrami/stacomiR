@@ -24,4 +24,3 @@ to call the charge method if the choice_c method has been used
 Cedric Briand \email{cedric.briand"at"eptb-vilaine.fr}
 }
 \keyword{internal}
-
