@@ -29,11 +29,7 @@ CREATE ROLE invite LOGIN PASSWORD 'invite'
 CREATE ROLE user_1 LOGIN PASSWORD 'user_1'
   NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;
 ```
-- for user_2
-```
-CREATE ROLE user_2 LOGIN PASSWORD 'user_2'
-  NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;
-```
+
 You now need to restaure Install_bd_stacomi.sql. To do that open an MS DOS command and write (you first need to save the path to the Program\PostgreSQL\your_version\bin in Environment Variables):
 ```
 psql -U user <"path_to_the_Install_bd_stacomi.sql_file"
@@ -45,9 +41,9 @@ Now that your bd_contmig_nat database is restaured, you will find in your databa
 - ref : with all the reference tables to understand codification used (we used the french standard 'SANDRE' for all codifications)
 - nat : for french users, this schema allow a national compilation of all users's schema in France. Please don't write inside this schema
 - iav : an example of a real user schema. In this schema you will find all data of the Etablissement Public Territorial du Bassin de la Vilaine.
-- user_1 & user_2 : two examples of empty user's schemas. Each user write in his schema. It is possible to share information between user. To do this you need to dump your schema (using MS DOS commande pg_dump or graphical interface). For example inside pgAdmin you can do right click on your schema and click "Backup". Then send this backup file to the user with whom you want to share data. He can restore your schema using MS DOS command (psql) or graphical interface (inside pgAdmin right click and "Restore")
+- user_1 : an example of empty user's schema. Each user write in his schema. It is possible to share information between user. To do this you need to dump your schema (using MS DOS commande pg_dump or graphical interface). For example inside pgAdmin you can do right click on your schema and click "Backup". Then send this backup file to the user with whom you want to share data. He can restore your schema using MS DOS command (psql) or graphical interface (inside pgAdmin right click and "Restore")
 
-If you want to add data in one of this empty user schema you will probably want to change the name of one of the empty schema provided. To do so, you just need to choose a name for your schema (short name of your organization for example) and execute these lines :
+If you want to add data in the empty user schema you will probably want to change the name of the schema provided. To do so, you just need to choose a name for your schema (short name of your organization for example) and execute these lines :
 
 ```
 INSERT INTO ref.ts_organisme_org VALUES
@@ -72,14 +68,14 @@ You will find 6 files inside the stacomi folder:
 Using pad in administrator mode you need to customize your connection settings in these different files:
 - base_local.xml: 
 ```
-<bdd bdurl="jdbc:postgresql://localhost:5432/bd_contmig_nat" user="user_1" password="user_1" />
+<bdd bdurl="jdbc:postgresql://localhost:5432/bd_contmig_nat" user="iav" password="iav" />
 ```
 with: 
 `localhost` if you have local database (if the database is on a server put the server adress); 
 `5432` is the port of connexion (by default 5432, if on a server you will need to change the port to the one of your server); 
 `bd_contmig_nat` name of the fish migratory database; 
-`user="user_1"` replace "user_1" by the name of your database schema; 
-`password="user_1"` replace with the password you choose for the connexion role of your schema (see the **Create database** part of this file).
+`user="iav"` replace "iav" by the name of your database schema; 
+`password="iav"` replace with the password you choose for the connexion role of your schema (see the **Create database** part of this file).
 - calcmig.csv: replace the `lienODBC` name by the name of the ODBC source you created, replace `uid` and `pwd` by the name of your schema and password of your connexion role, verify `host` and `port`, add the link to the CalcmigData folder you created (`datawd` column of the calcmig.csv file)
 - stacomi.bat: update if necessary the name of the .jar program (if you change the version of the .jar file for example). The name of the .jar file must be exactly the same as the name of the .jar file in your stacomi folder.
 
