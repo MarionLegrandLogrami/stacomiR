@@ -8,7 +8,7 @@ For complete installation please be sure to have these softwares installed :
 - R >= 3.5.0
 
 You need also to:
-- create ODBC link for your fish migratory database (add a source of type "PostgreSQL unicode")
+- create ODBC link for your fish migratory database (add a source of type "PostgreSQL unicode" - if you don't have a PostgreSQL ODBC driver please use stack builder to install the driver first)
 - add a **CalcmigData** folder on your computer (for example c:\users\my_session\Documents\CalcmigData)
 
 ## Create a database
@@ -53,7 +53,7 @@ ALTER SCHEMA user_1 RENAME TO name_of_your_schema;
 ```
 You also need to add new connection role:
 In pgAdmin, you need to create a connexion role with the same name as your schema (for example if I write inside schema called 'toto' I need to create a connexion role with name 'toto' and password 'toto' (or wathever password you choose)).
-
+Finally, you need to update GRANT in the different table of your database to allow java or r programm to connect to your data. to do so, download the Updating_grant file (in the installation folder), unzipp the file and open the sql script in your pgAdmin. Using search/replace update all the user_1 in the script by the name you choose for your schema. When you have made all the modification select all the script and execute (Ctrl+e).
 
 ## Add stacomi folder
 You need to [download the stacomi.zip file, unzip the file and put the **stacomi folder**](https://github.com/MarionLegrandLogrami/stacomiR/tree/master/Installation) at the root of your **c:\Program Files** repository.
