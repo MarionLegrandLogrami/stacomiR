@@ -7,4 +7,4 @@ The program is intended to be used by a "non experienced" R user, but all the R 
 The package is available from CRAN and a development version is available
 from R-Forge. You can currently use this git as an open system to [submit recommendations / report bugs](https://github.com/MarionLegrandLogrami/stacomiR/issues).
 
-You can find all the [instructions needed pour a full installation here](https://github.com/MarionLegrandLogrami/stacomiR/tree/master/Installation).
+You can find all the [instructions needed for a full installation here](https://github.com/MarionLegrandLogrami/stacomiR/tree/master/Installation).
