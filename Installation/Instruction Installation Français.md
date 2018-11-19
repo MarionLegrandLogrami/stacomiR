@@ -47,10 +47,10 @@ Votre base de données bd_contmig_nat est maintenant restaurée, vous trouverez 
 - nat : pour les utilisateurs français, ce schéma permet une compilation de l'ensemble des schémas des utilisateurs en France. Merci de ne pas modifer ce schéma.
 - iav : un exemple d'un schéma utilisateur. Dans ce schéma vous trouverez toutes les données de l'Etablissement Public Territorial du Bassin de la Vilaine.
 - user_1 : un exemple de schéma utilisateur vide. Chaque utilisateur peut écrire dans ce schéma. Il est possible de partager les informations entre utilisateurs. Pour cela vous devez sauvegarder votre schéma (en utilisant une commande MS DOS ou l'interface graphique). Par exemple dans pgAdmin, vous pouvez faire un clic droit sur votre schéma et cliquer sur "Sauvegarder". Ensuite vous pouvez envoyer cette sauvegarde à l'utilisateur auquel vous souhaitez partager vos données. Il peut restaurer votre schéma en utilisant une commande MS DOS (psql) ou l'interface graphique (clic droit dans pgAdmin et "Restaurer")
+
 Si vous souhaitez bancariser des données dans le schéma vide, vous voudrez sûrement modifier le nom du schéma fourni. Pour cela, vous devez choisir un nom à votre schéma (acronyme de votre organisation par exemple) et exécuter les lignes suivantes dans pgAdmin :
 INSERT INTO ref.ts_organisme_org VALUES ('nom_de_votre_schéma', 'description_de_votre_organisme')
 ALTER SCHEMA user_1 RENAME TO nom_de_votre_schema;
-
 Vous devez également ajouter un nouveau rôle de connexion : dans pgAdmin, vous devez créer un rôle de connexion avec le nom de votre schéma (par exemple si vous voulez écrire dans le schéma appelé "toto" vous devez créer un rôle de connexion avec le nom "toto" et le mot de passe "toto" (où le mot de passe que vous avez choisi)). Finalement, vous devez mettre à jour les GRANT dans les tables de votre base de données pour permettre à java ou au logiciel R de se connecter à vos données. Pour cela, téléchargez le fichier Updating_grant (dans le dossier d'installation), dézipper le fichier et ouvrez une commande sql dans pgAdmin. Utilisez chercher/remplacer pour remplacer tous les user_1 dans le script par le nom que vous avez choisi pour votre schéma. Quand vous avez fait ces modifications, sélectionnez l'ensemble du script (Ctrl+a) et exécutez (Ctrl+e).
 
 ## Ajouter le dossier stacomi
