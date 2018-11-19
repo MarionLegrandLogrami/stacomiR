@@ -39,7 +39,8 @@ Vous pouvez maintenant restaurer le fichier Install_bd_stacomi.sql. Pour cela, o
 ```
 psql -U user  bd_contmig_nat<"path_to_the_Install_bd_stacomi.sql_file"
 ```
-* Avec user par le nom que vous utilisez pour vous connecter dans pgAdmin.*
+*Avec user par le nom que vous utilisez pour vous connecter dans pgAdmin.*
+
 Cette commande fonctionne uniquement si votre base de données est installée sur votre serveur local avec le port par défaut (5432). Si votre base de données est installée sur un serveur distant, vous devez spécifier le nom du serveur et le port en ajoutant le paramètre -h *nom du serveur ou l'adresse* et -p *le port*.
 Votre base de données bd_contmig_nat est maintenant restaurée, vous trouverez dans celle-ci différents schémas (pour regarder votre base de données, ouvrez pgAdmin et cherchez la base de données appelée bd_contmig_nat):
 - ref : contient toutes les tables de référence pour comprendre la codification utilisée (nous avons utilisé le standard "SANDRE" pour l'ensemble des codifications)
