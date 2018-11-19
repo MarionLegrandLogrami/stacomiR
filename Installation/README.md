@@ -7,13 +7,17 @@ For complete installation please be sure to have these softwares installed :
 - PostgreSQL (with pgAdmin - Open Source administration and development platform for PostgreSQL)
 - R >= 3.5.0
 
-You need also to:
+You will need also to:
 - create ODBC link for your fish migratory database (add a source of type "PostgreSQL unicode" - if you don't have a PostgreSQL ODBC driver please use stack builder to install the driver first)
 - add a **CalcmigData** folder on your computer (for example c:\users\my_session\Documents\CalcmigData)
 
 ## Create a database
-Install_bd_stacomi.sql (available in the [Installation folder](https://github.com/MarionLegrandLogrami/stacomiR/tree/master/Installation)) allows you to create an empty database. **You first need to decompress the file Install_bd_stacomi.zip**.
-Before restauring this file you will need to add different connections roles inside pgAdmin:
+Open pgAdmin and in a SQL script console type:
+```
+CREATE DATABASE bd_contmig_nat WITH ENCODING = 'UTF8';
+```
+
+You then need to add different connections roles inside pgAdmin:
 - for iav
 ```
 CREATE ROLE iav LOGIN PASSWORD 'iav'
@@ -30,9 +34,10 @@ CREATE ROLE user_1 LOGIN PASSWORD 'user_1'
   NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;
 ```
 
+Download Install_bd_stacomi.zip (available in the [Installation folder](https://github.com/MarionLegrandLogrami/stacomiR/tree/master/Installation)) and **decompress the file**.
 You now need to restaure Install_bd_stacomi.sql. To do that open an MS DOS command and write (you first need to save the path to the Program\PostgreSQL\your_version\bin in Environment Variables):
 ```
-psql -U user <"path_to_the_Install_bd_stacomi.sql_file"
+psql -U user bd_contmig_nat<"path_to_the_Install_bd_stacomi.sql_file"
 ```
 *with user the name you use to log in pgAdmin*
 This command line works only if your database is installed on your localhost server with the default port (5432). If your database is installed on a distant server you need to specify the server name and the port adding the parameter -h *server name or adress* and -p *port*
@@ -53,7 +58,7 @@ ALTER SCHEMA user_1 RENAME TO name_of_your_schema;
 ```
 You also need to add new connection role:
 In pgAdmin, you need to create a connexion role with the same name as your schema (for example if I write inside schema called 'toto' I need to create a connexion role with name 'toto' and password 'toto' (or wathever password you choose)).
-Finally, you need to update GRANT in the different table of your database to allow java or r programm to connect to your data. to do so, download the Updating_grant file (in the installation folder), unzipp the file and open the sql script in your pgAdmin. Using search/replace update all the user_1 in the script by the name you choose for your schema. When you have made all the modification select all the script and execute (Ctrl+e).
+Finally, you need to update GRANT in the different table of your database to allow java or r programm to connect to your data. to do so, download the Updating_grant file (in the installation folder), unzipp the file and open the sql script in your pgAdmin. Using search/replace update all the user_1 in the script by the name you choose for your schema. When you have made all the modifications select all the script and execute (Ctrl+e).
 
 ## Add stacomi folder
 You need to [download the stacomi.zip file, unzip the file and put the **stacomi folder**](https://github.com/MarionLegrandLogrami/stacomiR/tree/master/Installation) at the root of your **c:\Program Files** repository.
