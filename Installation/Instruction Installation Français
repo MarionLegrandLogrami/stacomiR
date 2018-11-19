@@ -1,13 +1,18 @@
 Le package stacomiR vous permet d'avoir accès à votre base de données sur les poissons migrateurs et de réaliser différents figures pré-programmées. Avec ce package, nous avons développé une interface java pour permettre aux personnes qui ne connaissent pas le langage sql de mettre à jour et d'ajouter des nouvelles données dans leur base de données poissons migrateurs postgreSQL.
-Procédure d'installation
+
+# Procédure d'installation
+
 Pour réaliser l'installation assurez vous d'avoir les logiciels suivants installés :
-java 8
-PostgreSQL (avec pgAdmin - interface Open source d'administration et de développement pour PostgreSQL)
-R (version 3.5.0 ou plus récente)
+- java 8
+- PostgreSQL (avec pgAdmin - interface Open source d'administration et de développement pour PostgreSQL)
+- R (version 3.5.0 ou plus récente)
+
 Vous devrez aussi :
-Créer un lien ODBC pour votre base de données poissons migrateurs (ajouter une source de type "PostgreSQL unicode" - si vous n'avez pas le driver PostgreSQL, utilisez stack builder pour installer le driver)
-Ajouter un dossier CalcmigData sur votre ordinateur (par exemple c:\users\my_session\Documents\CalcmigData)
-Créer une base de données
+- Créer un lien ODBC pour votre base de données poissons migrateurs (ajouter une source de type "PostgreSQL unicode" - si vous n'avez pas le driver PostgreSQL, utilisez stack builder pour installer le driver)
+- Ajouter un dossier CalcmigData sur votre ordinateur (par exemple c:\users\my_session\Documents\CalcmigData)
+
+# Créer une base de données
+
 Avant tout chose, créez la base de données dans pgAdmin via une console SQL en exécutant le code suivant :
 CREATE DATABASE bd_contmig_nat WITH ENCODING = 'UTF8';
 Puis, ajoutez les différents rôles de connexion dans pgAdmin : 
