@@ -4,12 +4,12 @@ The stacomiR package allows you to have access to your fish migratory database a
 
 For complete installation please be sure to have these softwares installed :
 - java 8
-- PostgreSQL (with pgAdmin - Open Source administration and development platform for PostgreSQL)
+- PostgreSQL >=9.5 (with pgAdmin - Open Source administration and development platform for PostgreSQL)
 - R >= 3.5.0
 
 You will need also to:
 - create ODBC link for your fish migratory database (add a source of type "PostgreSQL unicode" - if you don't have a PostgreSQL ODBC driver please use stack builder to install the driver first or download the driver on the [postgresql website](https://www.postgresql.org/ftp/odbc/versions/))
-- add a **CalcmigData** folder on your computer (for example c:\users\my_session\Documents\CalcmigData)
+- (optional - only if you want to use the stacomiR package / not necessary if you just want to test the package) add a **CalcmigData** folder on your computer (for example c:\users\my_session\Documents\CalcmigData)
 
 ## Create a database
 Open pgAdmin and in a SQL script console type:
@@ -63,6 +63,9 @@ In pgAdmin, you need to create a connexion role with the same name as your schem
 Finally, you need to update GRANT in the different table of your database to allow java or r programm to connect to your data. to do so, download the Updating_grant file (in the installation folder), unzipp the file and open the sql script in your pgAdmin. Using search/replace update all the user_1 in the script by the name you choose for your schema. When you have made all the modifications select all the script and execute (Ctrl+e).
 
 ## Add stacomi folder
+
+!! If you **just want to try the stacomiR package you don't need to do that**, as inside the stacomiR package you will have everything you need. You just have to do this step if you want to use the stacomiR package on your data (with a specific postgresql schema) !!
+
 You need to [download the stacomi.zip file, unzip the file and put the **stacomi folder**](https://github.com/MarionLegrandLogrami/stacomiR/tree/master/Installation) at the root of your **c:\Program Files** repository.
 You will find 6 files inside the stacomi folder:
 - base_local.xml: Informations of connection for the java program (to be able to add new data or update your database with graphical interface)
