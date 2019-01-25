@@ -48,6 +48,8 @@ Now that your bd_contmig_nat database is restaured, you will find in your databa
 - iav : an example of a real user schema. In this schema you will find all data of the Etablissement Public Territorial du Bassin de la Vilaine.
 - user_1 : an example of empty user's schema. Each user write in his schema. It is possible to share information between user. To do this you need to dump your schema (using MS DOS commande pg_dump or graphical interface). For example inside pgAdmin you can do right click on your schema and click "Backup". Then send this backup file to the user with whom you want to share data. He can restore your schema using MS DOS command (psql) or graphical interface (inside pgAdmin right click and "Restore")
 
+### Want to use the user schema (change name, etc.)
+
 If you want to add data in the empty user schema you will probably want to change the name of the schema provided. To do so, you just need to choose a name for your schema (short name of your organization for example) and execute these lines :
 
 ```
@@ -84,12 +86,12 @@ with:
 - calcmig.csv: replace the `lienODBC` name by the name of the ODBC source you created, replace `uid` and `pwd` by the name of your schema and password of your connexion role, verify `host` and `port`, add the link to the CalcmigData folder you created (`datawd` column of the calcmig.csv file)
 - stacomi.bat: update if necessary the name of the .jar program (if you change the version of the .jar file for example). The name of the .jar file must be exactly the same as the name of the .jar file in your stacomi folder.
 
-## install StacomiR package
+## Install StacomiR package
 In a R console write :
 - ```install.packages("stacomiR")``` for the version of the package on CRAN
 - ```install.packages("stacomiR", repos="https://R-forge.R-project.org")``` for the development version (on rforge)
 
-## to get some help on how to use the package
+## To get some help on how to use the package
 Once everything is installed and if you need some help on how to use our package, please have a look at our vignette.
 ```
 library(stacomiR)
