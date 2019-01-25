@@ -9,7 +9,7 @@ For complete installation please be sure to have these softwares installed :
 
 You will need also to:
 - create ODBC link for your fish migratory database (add a source of type "PostgreSQL unicode" - if you don't have a PostgreSQL ODBC driver please use stack builder to install the driver first or download the driver on the [postgresql website](https://www.postgresql.org/ftp/odbc/versions/))
-- (optional - only if you want to use the stacomiR package / not necessary if you just want to test the package) add a **CalcmigData** folder on your computer (for example c:\users\my_session\Documents\CalcmigData)
+- (optional - if you want to choose where the folder must be created) add a **CalcmigData** folder on your computer (for example c:\users\my_session\Documents\CalcmigData)
 
 ## Create a database
 Open pgAdmin and in a SQL script console type:
