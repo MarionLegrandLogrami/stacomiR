@@ -8,7 +8,7 @@ For complete installation please be sure to have these softwares installed :
 - R >= 3.5.0
 
 You will need also to:
-- create ODBC link for your fish migratory database (add a source of type "PostgreSQL unicode" - if you don't have a PostgreSQL ODBC driver please use stack builder to install the driver first)
+- create ODBC link for your fish migratory database (add a source of type "PostgreSQL unicode" - if you don't have a PostgreSQL ODBC driver please use stack builder to install the driver first or download the driver on the [postgresql website](https://www.postgresql.org/ftp/odbc/versions/))
 - add a **CalcmigData** folder on your computer (for example c:\users\my_session\Documents\CalcmigData)
 
 ## Create a database
