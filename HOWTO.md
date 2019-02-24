@@ -39,7 +39,7 @@ Finally, you need to update access rights (GRANT) in the different tables of you
 
 ## Add stacomi folder
 
-You need to [download the stacomi.zip file, unzip the file and put the **stacomi folder**](https://github.com/MarionLegrandLogrami/stacomiR/tree/master/Installation) at the root of your **c:\Program Files** repository.
+You need to [download the stacomi.zip file, unzip the file and put the **stacomi folder**](https://github.com/MarionLegrandLogrami/stacomiR/tree/master/Installation/data/stacomi.zip) at the root of your **c:\Program Files** repository.
 You will find 6 files inside the stacomi folder:
 - `base_local.xml`: connection information for the Java program (a graphical interface to add / update data)
 - `calcmig.csv`: connection information for the R package stacomiR (allow the package to connect to your database). By default calcmig.csv is **configured to log on the iav schema** to allow new user to look at the functionalities of the package. Once the stacomi folder is installed on your computer, you can change the configuration of calcmig.csv to log on your schema (just replace `iav/iav` by your schema's name and password).
