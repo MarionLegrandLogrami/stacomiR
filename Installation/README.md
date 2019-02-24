@@ -3,13 +3,21 @@ The stacomiR package allows you to have access to your fish migratory database a
 
 # Table of contents
 1. [Requirement ](#dependencies)
+
 2. [Database automated installation](#auto-install)
+
 2.1. [On Linux](#linux-install)
+
 2.2. [On Windows](#win-install)
+
 3. [Manual installation](#manual-install)
+
 3.1. [Create a database](#manual-install-db)
+
 3.2. [Populating it](#manual-install-db-fill)
+
 3.3. [Create an ODBC connector](#manual-install-odbc)
+
 4. [Final words](#final)
 
 
@@ -40,7 +48,7 @@ We made some scripts to help you creating the database, filling it and init the 
 They have been tested on:
 - Microsoft Windows 10
 - Linux Debian 9 (should work with Ubuntu)
-- Linux CentOS 7 (should work with RedHat)
+- Linux CentOS 7 (should work with RedHat / Fedora)
 
 
 ## 2.1 On Linux host <a name="linux-install"></a>
@@ -130,8 +138,8 @@ CREATE ROLE user_1 LOGIN PASSWORD 'user_1'
   NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;
 ```
 ## 3.2 Populating it<a name="manual-install-db-fill"></a>
-Download `Install_bd_stacomi.zip` (available in the [Installation folder](https://github.com/MarionLegrandLogrami/stacomiR/tree/master/Installation) and **decompress the file**.
-You will have a `Install_bd_stacomi.sql` file, which contains all the data.
+Download `install_bd_contmig_nat.zip` (available in the [Installation folder](https://github.com/MarionLegrandLogrami/stacomiR/tree/master/Installation/data/install_bd_contmig_nat.zip) and **decompress the file**.
+You will have a `install_bd_contmig_nat.sql` file, which contains all the data.
 
 ### 3.2.1 On Windows host
 To import the data in your new database:
@@ -139,7 +147,7 @@ To import the data in your new database:
 - open a Windows command line (< Windows > key, `cmd` < Enter >),
 - execute the following command:
 ```console
-psql -U <user> bd_contmig_nat < "path_to_the_Install_bd_stacomi.sql_file"
+psql -U <user> bd_contmig_nat < "path_to_the_install_bd_contmig_nat.sql_file"
 ```
 *with `user` the name you used to log in pgAdmin*
 
@@ -156,7 +164,7 @@ This command will only work if your database is installed on your localhost serv
 	 ```
  - Import the data on your `bd_contmig_nat` database:
 	```console
-	 psql bd_contmig_nat < "path_to_the_Install_bd_stacomi.sql_file"
+	 psql bd_contmig_nat < "path_to_the_install_bd_contmig_nat.sql_file"
 	```
 
 
