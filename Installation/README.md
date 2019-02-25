@@ -36,13 +36,6 @@ This wiki will help you to prepare your environment, by:
 - populating it,
 - create an ODBC link to this database.
 
-############## Jérémie : à virer ? ################
-You will also need to:
-- create an ODBC link for your fish migratory database (add a source of type "PostgreSQL unicode". If you don't have a PostgreSQL ODBC driver please use stack builder to install it first, or download it from the [PostgreSQL website](https://www.postgresql.org/ftp/odbc/versions/))
-- [optional - if you want to choose where the folder must be created] add a **CalcmigData** folder on your computer (for example `c:\users\<my_session>\Documents\CalcmigData` on Windows, or `~/CalcmigData` on Linux)
-
-############## fin ################
-
 # 2 Database automated installation <a name="auto-install"></a>
 We made some scripts to help you creating the database, filling it and init the ODBC link.
 They have been tested on:
