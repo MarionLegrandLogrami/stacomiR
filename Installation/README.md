@@ -33,11 +33,11 @@ For complete installation, you  also need:
 
 This wiki will help you to prepare your environment, by:
 - creating the test database,
-- populating it,
+- populating it (with data provided by the établissement public territorial du bassin de la Vilaine),
 - create an ODBC link to this database.
 
 # 2 Database automated installation <a name="auto-install"></a>
-We made some scripts to help you creating the database, filling it and init the ODBC link.
+We made some scripts to help you creating the database, filling it (with the test dataset) and init the ODBC link.
 They have been tested on:
 - Microsoft Windows 10
 - Linux Debian 9 (should work with Ubuntu)
