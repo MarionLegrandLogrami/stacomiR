@@ -33,16 +33,16 @@ INSERT INTO ref.ts_organisme_org VALUES
 ALTER SCHEMA user_1 RENAME TO name_of_your_schema;
 ```
 You then need to add new connection role, to allow the R package to access your data.
-🡆 In pgAdmin, you need to create a connection role with the same name as your schema (If your schema is called `foo`, you will need a connection role also called `foo` -- but with the password of your choice -- ).
+In pgAdmin, you need to create a connection role with the same name as your schema (If your schema is called `foo`, you will need a connection role also called `foo` -- but with the password of your choice -- ).
 
-Finally, you need to update access rights (GRANT) in the different tables of your database to allow Java or R program to connect to your data. to do so, download the Updating_grant file (in the installation folder), unzip the file and open the sql script in your pgAdmin. Using search/replace update all the user_1 in the script by the name you choose for your schema. When you have made all the modifications select all the script and execute (Ctrl+e).
+Finally, you need to update access rights (GRANT) in the different tables of your database to allow Java or R program to connect to your data. To do so, download the Updating_grant file (in the installation folder/data), unzip the file and open the sql script in your pgAdmin. Using search/replace update all the user_1 in the script by the name you choose for your schema. When you have made all the modifications select all the script and execute (Ctrl+e).
 
 ## Add stacomi folder
 
 You need to [download the stacomi.zip file, unzip the file and put the **stacomi folder**](https://github.com/MarionLegrandLogrami/stacomiR/tree/master/Installation/data/stacomi.zip) at the root of your **c:\Program Files** repository.
 You will find 6 files inside the stacomi folder:
 - `base_local.xml`: connection information for the Java program (a graphical interface to add / update data)
-- `calcmig.csv`: connection information for the R package stacomiR (allow the package to connect to your database). By default calcmig.csv is **configured to log on the iav schema** to allow new user to look at the functionalities of the package. Once the stacomi folder is installed on your computer, you can change the configuration of calcmig.csv to log on your schema (just replace `iav/iav` by your schema's name and password).
+- `calcmig.csv`: connection information for the R package stacomiR (allow the package to connect to your database). By default calcmig.csv is **configured to log on the iav schema** to allow new user to look at the functionalities of the package. Once the stacomi folder is installed on your computer, you can change the configuration of calcmig.csv to log on your schema (just replace `iav/iav` by your schema's name and password). 
 - `logo_stacomi.jpeg`: Logo for the Java program
 - `stacomi.bat`: launcher of the Java program, a graphical interface to update or insert new data in your fish migratory database
 - `stacomi.ico`: icon for the Java program
@@ -64,29 +64,8 @@ notes:
 - `password="iav"` replace with the password you choose for the connection role of your schema (see the **Create database** part of this file).
 
 **`calcmig.csv`**
-Replace the `lienODBC` name by the name of the ODBC source you created, replace `uid` and `pwd` by the name of your schema and password of your connection role, verify `host` and `port`, add the link to the CalcmigData folder you created (`datawd` column of the calcmig.csv file)
+Replace the `lienODBC` name by the name of the ODBC source you created, replace `uid` and `pwd` by the name of your schema and password of your connection role, verify `host` and `port`. You can also configure where you want to store the outputs (statistics, summarized data, etc.). To do so, first create a **folder called CalcmigData** where you want to access outputs and then copy/paste this path into the calcmig.csv file in the **datawd section**.
 
 **`stacomi.bat`**
 Update if necessary the name of the .jar program (if you change the version of the .jar file for example). The name of the .jar file must be exactly the same as the name of the .jar file in your stacomi folder.
-
-## Install StacomiR package
-In a R console, execute the following command:
-
-For the "Production" version of the package on CRAN:
-```R
-install.packages("stacomiR")
-``` 
-For the "Development" version (on R-Forge):
-```R
-install.packages("stacomiR", repos="https://R-forge.R-project.org")
-``` 
-
-## To get some help on how to use the package
-Once everything is installed and if you need some help on how to use our package, please have a look at our vignette.
-```R
-library(stacomiR)
-vignette("stacomir")
-```
-
-**If you need some help, don't hesitate to contact us !** The stacomiR package allows you to have access to your fish migratory database and to plot different pre-programmed figures. With this package, we developed a Java program to allow non-sql speakers to update or insert new data inside their own postgreSQL fish migratory database.
 
