@@ -6,19 +6,21 @@ The stacomiR package allows you to have access to your fish migratory database a
 
 2. [Database automated installation](#auto-install)
 
-2.1. [On Linux](#linux-install)
+	2.1. [On Linux](#linux-install)
 
-2.2. [On Windows](#win-install)
+	2.2. [On Windows](#win-install)
 
 3. [Manual installation](#manual-install)
 
-3.1. [Create a database](#manual-install-db)
+	3.1. [Create a database](#manual-install-db)
 
-3.2. [Populating it](#manual-install-db-fill)
+	3.2. [Populating it](#manual-install-db-fill)
 
-3.3. [Create an ODBC connector](#manual-install-odbc)
+	3.3. [Create an ODBC connector](#manual-install-odbc)
 
-4. [Final words](#final)
+4. [Install StacomiR package](#install)
+
+5. [Final words](#final)
 
 
 # 1 Requirement <a name="dependencies"></a>
@@ -188,6 +190,25 @@ For example:
  - Debian like: `apt-get install odbc-postgresql`
  - RedHat like: `yum install postgresql-odbc`
 
+# 4. Install StacomiR package<a name="install"></a>
+In a R console, execute the following command:
 
-# 4. Final words<a name="final"></a>
+For the "Production" version of the package on CRAN:
+```R
+install.packages("stacomiR")
+``` 
+For the "Development" version (on R-Forge):
+```R
+install.packages("stacomiR", repos="https://R-forge.R-project.org")
+``` 
+
+**⚠ To get some help on how to use the package**: once everything is installed and if you need some help on how to use our package, please have a look at our vignette.
+```R
+library(stacomiR)
+vignette("stacomir")
+```
+
+# 5. Final words<a name="final"></a>
 You are now ready to use the R package. If you want to go further, and use it for your own structure, you will find some help on it's usage on the [How To page](https://github.com/MarionLegrandLogrami/stacomiR/tree/master/HOWTO.md).
+
+**If you need some help, don't hesitate to contact us !** 
