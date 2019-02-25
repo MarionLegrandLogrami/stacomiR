@@ -179,6 +179,8 @@ The R package needs an ODBC connection to the database. To add it:
 		 - Password: the SQL user password
 	 - `Test` your connection
 	 - When it is OK, `Save` it
+	 
+**⚠ If you don't have a PostgreSQL ODBC driver please use stack builder to install it first, or download it from the [PostgreSQL website](https://www.postgresql.org/ftp/odbc/versions/)** 
 
 ### 3.3.2 On Linux host
 There should be a PostgreSQL ODBC package in your favorite distribution. The only thing to do is to install it.
