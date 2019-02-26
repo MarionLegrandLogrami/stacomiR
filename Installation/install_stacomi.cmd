@@ -3,7 +3,7 @@ SETLOCAL EnableDelayedExpansion
 
 :: Install script for Stacomi database on Windows
 :: (c)2019 LOGRAMI      - Marion LEGRAND
-:: (c)2019 EPTB Vilaine - Cédric BRILLANT
+:: (c)2019 EPTB Vilaine - Cédric BRIAND
 :: 
 :: Return codes:
 ::	  0	  no error
