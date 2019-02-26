@@ -163,7 +163,7 @@ if exist "%ProgramFiles%\psqlODBC" (
 	echo         * Assuming we have a 32 bits driver
 	echo           ^(I did not find any "psqlODBC" folder in "%ProgramFiles%"^)
 )
-odbcconf /A {ConfigDSN "!odbc_driver!" "DSN=%db_name%|UID=%sql_user%|PWD=%sql_pass%|SERVER=%sql_host%|PORT=%sql_port%|DATABASE=%db_name%|DESCRIPTION=popi"}
+odbcconf /A {ConfigDSN "!odbc_driver!" "DSN=%db_name%|UID=%sql_user%|PWD=%sql_pass%|SERVER=%sql_host%|PORT=%sql_port%|DATABASE=%db_name%|DESCRIPTION=ODBC link created for stacomiR project"}
 
 
 :: Bye bye
