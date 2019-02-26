@@ -83,7 +83,7 @@ Usages:
 
 ```
 
-If you call this script with no arguments, it will assume your PostgreSQL server is on the same computer than you. If you have a **distant** PostgreSQL server, use the `-u` `-p` `-H` and `-P` arguments to specify the connection credentials.
+If you call this script with no arguments, it will assume your PostgreSQL server is on your computer. If you have a **distant** PostgreSQL server, use the `-u` `-p` `-H` and `-P` arguments to specify the connection credentials.
 
 You **MUST** launch this script as root (directly or by sudo), else it will fail.
 
