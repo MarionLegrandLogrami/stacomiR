@@ -18,7 +18,7 @@ The stacomiR package allows you to have access to your fish migratory database a
 
 	3.3. [Create an ODBC connector](#manual-install-odbc)
 
-4. [Install StacomiR package](#install)
+4. [Install and launch StacomiR package](#install)
 
 5. [Final words](#final)
 
@@ -190,8 +190,8 @@ For example:
  - Debian like: `apt-get install odbc-postgresql`
  - RedHat like: `yum install postgresql-odbc`
 
-# 4. Install StacomiR package<a name="install"></a>
-In a R console, execute the following command:
+# 4. Install and launch StacomiR package<a name="install"></a>
+In a R console, execute the following command to install the package:
 
 For the "Production" version of the package on CRAN:
 ```R
@@ -200,6 +200,11 @@ install.packages("stacomiR")
 For the "Development" version (on R-Forge):
 ```R
 install.packages("stacomiR", repos="https://R-forge.R-project.org")
+``` 
+To launch stacomiR just execute the following commands, then click on "login" (defaut value iav/iav):
+```R
+library(stacomiR)
+stacomi()
 ``` 
 
 **⚠ To get some help on how to use the package**: once everything is installed and if you need some help on how to use our package, please have a look at our vignette.
