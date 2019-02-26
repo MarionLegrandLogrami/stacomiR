@@ -2,7 +2,7 @@
 #
 # Install script for Stacomi database on Linux
 # (c)2019 LOGRAMI      - Marion LEGRAND
-# (c)2019 EPTB Vilaine - Cédric BRILLANT
+# (c)2019 EPTB Vilaine - Cédric BRIAND
 # 
 # Return codes:
 #	 0   no error
