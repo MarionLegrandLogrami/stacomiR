@@ -1,2 +1,0 @@
-lienODBC;uid;pwd;dbname;host;port;pgwd;datawd;lang
-bd_contmig_nat;iav;iav;bd_contmig_nat;localhost;5432;F:/workspace/stacomir/pkg/stacomir/R/;~/CalcmigData;French
