@@ -1,3 +1,4 @@
+
 The stacomiR package allows you to have access to your fish migratory database and to plot different pre-programmed figures. With this package, we developed a java program to allow non-sql speaker to update or insert new data inside their postgreSQL fish migratory database.
 
 
@@ -26,7 +27,7 @@ The stacomiR package allows you to have access to your fish migratory database a
 # 1 Requirement <a name="dependencies"></a>
 
 For minimal installation, the following softwares must already be installed on your computer:
-- PostgreSQL ≥ 9.5 (with pgAdmin - Open Source administration and development platform for PostgreSQL)
+- PostgreSQL ≥ 9.2 (with pgAdmin - Open Source administration and development platform for PostgreSQL)
 - PostgreSQL ODBC driver (Link: [PostgreSQL website](https://www.postgresql.org/ftp/odbc/versions/))
 - R ≥ 3.5.0
 
@@ -52,7 +53,7 @@ The script is:
 
 Calling it with `-h` will display the possible options:
 ```
-/bin/batch install_stacomi.sh -h
+/bin/bash install_stacomi.sh -h
 Install Stacomi database on Linux
 *** This script must be executed with administrative rights! ***
 
@@ -185,10 +186,68 @@ The R package needs an ODBC connection to the database. To add it:
 **⚠ If you don't have a PostgreSQL ODBC driver please use stack builder to install it first, or download it from the [PostgreSQL website](https://www.postgresql.org/ftp/odbc/versions/)** 
 
 ### 3.3.2 On Linux host
-There should be a PostgreSQL ODBC package in your favorite distribution. The only thing to do is to install it.
-For example:
- - Debian like: `apt-get install odbc-postgresql`
- - RedHat like: `yum install postgresql-odbc`
+You need UnixODBC + the PostgreSQL ODBC packages. For example:
+ - Debian like: `apt-get -y install unixodbc odbc-postgresql`
+ - RedHat like: `yum -y install unixODBC postgresql-odbc`
+
+PostgreSQL comes with 2 possible drivers: ANSI and Unicode. We use the Unicode one, called `psqlodbcw.so`.
+The default places are:
+ - Debian like: `/usr/lib/x86_64-linux-gnu/odbc/psqlodbcw.so`
+ - RedHat like: `/usr/lib64/psqlodbcw.so`
+To find it manually, try: `find / -iname psqlodbcw.so`
+
+To add the ODBC link, create or edit the `/etc/odbc.ini` file, and append the following code:
+```ini
+[bd_contmig_nat]
+Description         = PostgreSQL Unicode - StacomiR
+Driver              = /path/to/your/psqlodbcw.so   <-- put your real path here
+Trace               = No
+TraceFile           = /tmp/psqlodbcstacomi.log
+Database            = bd_contmig_nat
+Servername          = localhost
+UserName            = iav
+Password            = iav
+Port                =
+ReadOnly            = Yes
+RowVersioning       = No
+ShowSystemTables    = No
+ShowOidColumn       = No
+FakeOidIndex        = No
+ConnSettings        =
+```
+You must allow `iav` SQL user to locally connect on your server, on database `bd_contmig_nat`. This is done in the `pg_hba.conf` file of your server.
+
+To find it, either:
+ - use `find`, like this: `find / -name pg_hba.conf`
+ - ask you PG server, in SQL: `SHOW hba_file;`
+
+At the __beginning__ of the file, add:
+```R
+# Added for StacomiR ODBC connection
+host   bd_contmig_nat  iav      127.0.0.1/32    md5
+host   bd_contmig_nat  iav      ::1/128         md5
+```
+
+You're almost done. Reload your PostgreSQL server config, either:
+ - asking your server in SQL: `SELECT pg_reload_conf();`
+ - using Systemd: `service postgresql reload` (The service name can vary on your system...)
+
+Just test if everything is OK:
+```bash
+@centos7:~# isql bd_contmig_nat -v
++---------------------------------------+
+| Connected!                            |
+|                                       |
+| sql-statement                         |
+| help [tablename]                      |
+| quit                                  |
+|                                       |
++---------------------------------------+
+SQL> quit
+root@centos7:~#
+```
+Congratulation!
+
 
 # 4. Install and launch StacomiR package<a name="install"></a>
 In a R console, execute the following command to install the package:
