@@ -2,7 +2,7 @@
 #
 # Install script for Stacomi database on Linux
 # (c)2019 LOGRAMI      - Marion LEGRAND
-# (c)2019 EPTB Vilaine - Cédric BRIAND
+# (c)2019 EPTB Vilaine - Cédric BRILLANT
 # 
 # Return codes:
 #	 0   no error
@@ -17,12 +17,15 @@
 _ROOT=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 ZIP_ARCH_NAME=install_bd_contmig_nat
 ZIP_ARCH=data/${ZIP_ARCH_NAME}.zip
+ODBC_LINK=data/odbc.ini
 
 # Default variables
 DB_NAME=bd_contmig_nat
 SQL_SUDO=postgres
 SQL_USER=postgres
 SQL_PASS=postgres
+SQL_IAV_USER=iav
+SQL_IAV_PASS=iav
 SQL_HOST=localhost
 SQL_PORT=5432
 REMOTE=0
@@ -60,8 +63,8 @@ PACKAGE_MANAGER=
 # Test dependency
 #	$1	program to test (empty = search for installed package name)
 #	$1	Description
-#	$2	Debian package name
-#	$3	RedHat package name
+#	$2	Debian package name (regexp)
+#	$3	RedHat package name (regexp)
 #---------------------------------------------------------
 test_dependency() {
 	local prog=$1
@@ -81,9 +84,9 @@ test_dependency() {
 	# (/!\ It could have been compiled by hand, and so not being detected here...)
 	else
 		if [ "$OS" = "debian" ]; then
-			found=$(dpkg-query -W $package 2>/dev/null)
+			found=$(dpkg -l | grep -E "^ii\s+$package\s" 2>/dev/null | awk '{print $2}')
 		elif [ "$OS" = "redhat" ]; then
-			found=$(rpm -qa | grep "^${package}-" 2>/dev/null)
+			found=$(rpm -qa | grep -E "^${package}-[0-9]" 2>/dev/null)
 		fi
 	fi
 	# found?
@@ -109,6 +112,7 @@ test_dependency() {
 			exit $RET_MISS
 		fi
 		# Install automatically
+		package=$(echo "$package" | sed -r 's~\.\*~~')
 		if [ "$OS" = "debian" ]; then
 			# The 1st time, update packages list
 			if [ $OS_UPD -eq 0 ]; then
@@ -121,12 +125,12 @@ test_dependency() {
 			result=$?
 		elif [ "$OS" = "redhat" ]; then
 			# The 1st time, update packages list
-			if [ $OS_UPD -eq 0 ]; then
-				echo -e "              [${BLUE}*${WHITE}] Doing 'yum upgrade'"
-				yum upgrade 1>/dev/null
-				OS_UPD=1
-			fi
-			echo -e "              [${BLUE}*${WHITE}] Doing 'apt-get -y install $package'"
+			#if [ $OS_UPD -eq 0 ]; then
+			#	echo -e "              [${BLUE}*${WHITE}] Doing 'yum upgrade'"
+			#	yum upgrade 1>/dev/null
+			#	OS_UPD=1
+			#fi
+			echo -e "              [${BLUE}*${WHITE}] Doing 'yum -y install $package'"
 			yum -y install $package 1>/dev/null
 			result=$?
 		fi
@@ -202,7 +206,6 @@ fi
 [ -z "$(whoami | grep '^root$')" ] && usage "This script must be executed as root. Please try:\n${BOLD}       su - root $_ROOT/$0${WHITE}"
 
 
-
 # Check dependencies
 #-------------------
 echo -e "[${BLUE}*${WHITE}] Checking dependencies:"
@@ -217,9 +220,11 @@ else
 	echo
 fi
 # Testing needed packages / programs
-test_dependency ""		"PostgreSQL ODBC...        " "odbc-postgresql" "postgresql-odbc"
-test_dependency "psql"	"pSQL client...            " "postgresql-client" "postgresql"
-test_dependency "unzip"	"Unzip program...          " "unzip" "unzip"
+#				prod	descr						 debian-name			redhat-name
+test_dependency ""		"UnixODBC...               " 'unixodbc'				'unixODBC'
+test_dependency ""		"PostgreSQL ODBC...        " 'odbc-postgresql'		'postgresql.*-odbc'
+test_dependency "psql"	"pSQL client...            " 'postgresql-client' 	'postgresql'
+test_dependency "unzip"	"Unzip program...          " 'unzip'				'unzip'
 
 # Is there the SQL dump?
 echo -en "    [${BLUE}*${WHITE}] SQL dump...               "
@@ -232,6 +237,18 @@ else
 	echo "     Did you really get ALL the install files GitHub?"
 	exit $RET_MISS
 fi
+# Is there the ODBC link?
+echo -en "    [${BLUE}*${WHITE}] ODBC link...              "
+test -f $_ROOT/$ODBC_LINK
+if [ $? -eq 0 ]; then
+	echo -e "[${GREEN}found${WHITE}] ($ODBC_LINK)"
+else
+	echo -e "[${RED}not found${WHITE}]"
+	echo -e "\n--> I was looking for $ODBC_LINK"
+	echo "     Did you really get ALL the install files GitHub?"
+	exit $RET_MISS
+fi
+
 # pSQL command detection
 if [ $REMOTE -eq 0 ]; then
 	cd /tmp
@@ -248,6 +265,32 @@ if [ $? -eq 0 ]; then
 else
 	echo -e "[${RED}error${WHITE}]"
 	echo -e "\n--> Please check your credentials, and be sure the server is running"
+	exit $RET_MISS
+fi
+# Can we find pg_hba.conf?
+echo -en "    [${BLUE}*${WHITE}] Asking for pg_hba.conf... "
+PG_HBA=$($PSQL -Atc "SHOW hba_file;")
+if [ -z "$PG_HBA" ]; then
+	PG_HBA=$(find / -name pg_hba.conf 2>/dev/null | head -n1)
+fi
+if [ -n "$PG_HBA" ]; then
+	echo -e "[${GREEN}found${WHITE}] ($PG_HBA)"
+else
+	echo -e "[${RED}error${WHITE}]"
+	echo -e "\n--> Can't find pg_hba.conf file"
+	exit $RET_MISS
+fi
+# Can we find the Postgres Unicode ODBC driver? (psqlodbcw.so)
+# (we test on all the known .so places on the system)
+echo -en "    [${BLUE}*${WHITE}] Detecting psqlodbcw.so... "
+libs=$(cat /etc/ld.so.conf /etc/ld.so.conf.d/* | grep ^/ | tr "\n" " ")
+libs="$libs /usr/lib /usr/lib64"
+SO_FILE=$(find $libs -iname psqlodbcw.so 2> /dev/null | head -n 1)
+if [ -n "$SO_FILE" ]; then
+	echo -e "[${GREEN}found${WHITE}] ($SO_FILE)"
+else
+	echo -e "[${RED}error${WHITE}]"
+	echo -e "\n--> Can't find it (it is the Unicode ODBC driver for Postgres)"
 	exit $RET_MISS
 fi
 
@@ -291,7 +334,40 @@ else
 		if [ $? -ne 0 ]; then
 			RET=$RET_ERR
 			echo -e "        [${RED}*${WHITE}] Error while extracting. Operation aborted"
-		fi	
+		fi
+		
+		# Adding ODBC link, using iav user to connect
+		if [ -z "$(grep $DB_NAME /etc/odbc.ini 2>/dev/null)" ]; then
+			echo -e "    [${BLUE}*${WHITE}] Creating ODBC link in /etc/odbc.ini"
+			cat $_ROOT/$ODBC_LINK \
+				| sed -r 's~^(Driver\s*=\s*).+$~\1'$SO_FILE'~' \
+				>> /etc/odbc.ini
+		fi
+		# Add an entrey in pg_hba.conf for iav (only on local!)
+		if [ -z "$(grep $DB_NAME $PG_HBA)" ]; then
+			echo -e "    [${BLUE}*${WHITE}] Adding 'iav' connection role in $PG_HBA"
+			# Add to the beginning of the file (works because "()" are interpreted BEFORE we actually write in the same file we read ;)
+			echo -e "# Added for StacomiR ODBC connection\n" \
+					"host\t$DB_NAME\tiav\t\t127.0.0.1/32\t\tmd5\n" \
+					"host\t$DB_NAME\tiav\t\t::1/128\t\t\tmd5\n\n" \
+					"$(cat $PG_HBA)" \
+				> $PG_HBA
+			# Reload the config
+			echo -e "    [${BLUE}*${WHITE}] Reloading the config"
+			$PSQL -c "SELECT pg_reload_conf();" &>/dev/null
+		fi
+		# Test the ODBC connection
+		echo -e "    [${BLUE}*${WHITE}] Testing the ODBC link..."
+		echo "SELECT 1;" | isql $DB_NAME -b &>/dev/null
+		if [ $? -eq 0 ]; then
+			echo -e "        [${GREEN}*${WHITE}] Valid"
+		else
+			echo -e "        [${RED}*${WHITE}] Uh oh... can't login. Ident method failed."
+			echo -e "        [${RED}*${WHITE}] You will have to do it by yourself:"
+			echo -e "        [${RED}*${WHITE}]  - edit $PG_HBA"
+			echo -e "        [${RED}*${WHITE}]  - add an entrey for user 'iav' on database '$DB_NAME', method 'ident'"
+			RET=1
+		fi
 	fi
 fi
 
