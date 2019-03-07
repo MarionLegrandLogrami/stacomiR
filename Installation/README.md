@@ -42,7 +42,7 @@ This wiki will help you to prepare your environment, by:
 # 2 Database automated installation <a name="auto-install"></a>
 We made some scripts to help you creating the database, filling it (with the test dataset) and init the ODBC link.
 They have been tested on:
-- Microsoft Windows 10
+- Microsoft Windows 7 pro & Windows 10
 - Linux Debian 9 (should work with Ubuntu)
 - Linux CentOS 7 (should work with RedHat / Fedora)
 
