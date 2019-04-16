@@ -23,12 +23,14 @@ The stacomiR package allows you to have access to your fish migratory database a
 
 5. [Final words](#final)
 
+6. [More Help](#more-help)
+
 
 # 1 Requirement <a name="dependencies"></a>
 
 For minimal installation, the following softwares must already be installed on your computer:
 - PostgreSQL ≥ 9.2 (with pgAdmin - Open Source administration and development platform for PostgreSQL)
-- PostgreSQL ODBC driver (Link: [PostgreSQL website](https://www.postgresql.org/ftp/odbc/versions/))
+- PostgreSQL ODBC driver (Link: [PostgreSQL website](https://www.postgresql.org/ftp/odbc/versions/) - if you need more help on how to install PostgreSQL ODBC driver please visit the section [More help](#more-help))
 - R ≥ 3.5.0
 
 For complete installation, you  also need:
@@ -276,3 +278,10 @@ vignette("stacomir")
 You are now ready to use the R package. If you want to go further, and use it for your own structure, you will find some help on it's usage on the [How To page](https://github.com/MarionLegrandLogrami/stacomiR/tree/master/HOWTO.md).
 
 **If you need some help, don't hesitate to contact us !** 
+
+# 6. More help<a name="more-help"></a>
+## 6.1 Step-by-Step to install a PostgreSQL ODBC Driver
+1. Choose the good ODBC Driver version
+If you are a windows user you need to download one of the files of the [msi folder](https://www.postgresql.org/ftp/odbc/versions/msi/). Before downloading the file you need to choose the file corresponding to your version of PostgreSQL and to your windows system (32 or 64 bits). For example if you have a PostgreSQL 9.6 version with a windows 64 bits you need to download the "psqlodbc_09_06_0500-x64.zip" file.
+2. Install the ODBC Driver
+After having downloaded the good ODBC Driver version, you need to dezip the folder and launch the installer (dobble-click on the .msi file). Follow the installer's instructions
