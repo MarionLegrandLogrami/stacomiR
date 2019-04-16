@@ -37,7 +37,7 @@ For complete installation, you  also need:
 This wiki will help you to prepare your environment, by:
 - creating the database,
 - populating it (with data provided by the établissement public territorial du bassin de la Vilaine),
-- create an ODBC link to this database.
+- creating an ODBC link to this database.
 
 # 2 Database automated installation <a name="auto-install"></a>
 We made some scripts to help you creating the database, filling it (with the test dataset) and init the ODBC link.
