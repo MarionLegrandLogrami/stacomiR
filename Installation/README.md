@@ -35,7 +35,7 @@ For complete installation, you  also need:
 - java ≥ 8
 
 This wiki will help you to prepare your environment, by:
-- creating the test database,
+- creating the database,
 - populating it (with data provided by the établissement public territorial du bassin de la Vilaine),
 - create an ODBC link to this database.
 
