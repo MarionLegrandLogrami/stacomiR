@@ -81,7 +81,7 @@ Options:
 
 You *WILL* have to give a SQL user (-u) with admin rights (i.e. rights to create a database and to create a connection role). Else the install will fail.
 
-Everything is working ? go to the [next step](#install)) !
+Everything is working ? go to the [next step](#install) !
 
 ## 2.2 On Linux host <a name="linux-install"></a>
 The script is:
