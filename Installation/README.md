@@ -53,14 +53,14 @@ They have been tested on:
 Open the 'Installation' folder previously downloaded and dezipped and look for the file named:
 `install_stacomi.cmd`
 
-You have several way to launch this file:
-- double-click on `install_stacomi.cmd`: this will launch the program to create the database and to fill it. It will also create an ODBC link to this database. When double-clicking you use the default parameters that is localhost database on default port (5432) and user name=postgres and password=postgres.
-- if you want to execute the program inside R it is possible to do this calling the function shell from the 'base' package (it will use the default parameters): 
+You have several ways to launch this file:
+	- double-click on `install_stacomi.cmd`: this will launch the program to create the database and to fill it. It will also create an ODBC link to this database. When double-clicking you use the default settings that are: localhost database on default port (5432) and user name=postgres and password=postgres.
+- if you want to execute the program inside R it is possible to do this calling the function shell from the 'base' package (it will use the default settings): 
 ```R
 path<-"path_to_install_stacomi.cmd" (e.g. "C:/Users/Public/stacomir/Installation/install_stacomi.cmd")
 shell(path,"cmd")
 ```
-- if you want to change the default parameters you will have to execute the `install_stacomi.cmd` inside a console. To do this:
+- if you want to change the default settings you will have to execute the `install_stacomi.cmd` inside a console. To do this:
 	- open a cmd console (Select the Start button and type cmd+enter)
 	- type cd + the path to your 'Installation' folder (e.g. cd C:\Users\Public\stacomir\Installation)
 	- type install_stacomi.cmd -h to display the possible options
@@ -277,7 +277,7 @@ For the "Development" version (on R-Forge):
 ```R
 install.packages("stacomiR", repos="https://R-forge.R-project.org")
 ``` 
-To launch stacomiR just execute the following commands, then click on "login" (defaut value iav/iav). You can choose your langage using Sys.setenv() with LANG="en" for english and LANG="fr" for french
+To launch stacomiR just execute the following commands, then click on "login" (default value iav/iav). You can choose your langage using Sys.setenv() with LANG="en" for english and LANG="fr" for french
 ```R
 library(stacomiR)
 Sys.setenv(LANG = "en")
