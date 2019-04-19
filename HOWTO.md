@@ -1,6 +1,5 @@
 **⚠ If you just want to TRY the stacomiR package you don't need to follow all the steps above ⚠**, as inside the stacomiR package you will have everything you need. This wiki is dedicated to people wanting to use the stacomiR package on their own data (with a specific postgresql schema).
 
-
 # How to use it for your own structure
 We assume that you have a valid `bd_contmig_nat` database on your PostgreSQL server. If not, please read our [Installation](https://github.com/MarionLegrandLogrami/stacomiR/tree/master/Installation) section before!
 

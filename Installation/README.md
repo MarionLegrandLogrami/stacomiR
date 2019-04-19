@@ -7,9 +7,9 @@ The stacomiR package allows you to have access to your fish migratory database a
 
 2. [Database automated installation](#auto-install)
 
-	2.1. [On Linux](#linux-install)
-
-	2.2. [On Windows](#win-install)
+	2.1. [On Windows](#win-install)
+	
+	2.2. [On Linux](#linux-install)
 
 3. [Manual installation](#manual-install)
 
@@ -33,8 +33,8 @@ For minimal installation, the following softwares must already be installed on y
 - PostgreSQL ODBC driver (Link: [PostgreSQL website](https://www.postgresql.org/ftp/odbc/versions/) - if you need more help on how to install PostgreSQL ODBC driver please visit the section [More help](#more-help))
 - R ≥ 3.5.0
 
-For complete installation, you  also need:
-- java ≥ 8
+You also need to download the complete 'Installation' folder available on github. To do this you can go to [DownGit](https://minhaskamal.github.io/DownGit/#/home) and enter the url of the folder (https://github.com/MarionLegrandLogrami/stacomiR/tree/master/Installation), then click "download".
+When the folder is downloaded, you need to dezip the folder.
 
 This wiki will help you to prepare your environment, by:
 - creating the database,
@@ -49,7 +49,41 @@ They have been tested on:
 - Linux CentOS 7 (should work with RedHat / Fedora)
 
 
-## 2.1 On Linux host <a name="linux-install"></a>
+## 2.1 On Windows host <a name="win-install"></a>
+Open the 'Installation' folder previously downloaded and dezipped and look for the file named:
+`install_stacomi.cmd`
+
+You have several way to launch this file:
+- double-click on `install_stacomi.cmd`: this will launch the program to create the database and to fill it. It will also create an ODBC link to this database. When double-clicking you use the default parameters that is localhost database on default port (5432) and user name=postgres and password=postgres.
+- if you want to execute the program inside R it is possible to do this calling the function shell from the 'base' package (it will use the default parameters): 
+```R
+path<-"path_to_install_stacomi.cmd" (e.g. "C:/Users/Public/stacomir/Installation/install_stacomi.cmd")
+shell(path,"cmd")
+```
+- if you want to change the default parameters you will have to execute the `install_stacomi.cmd` inside a console. To do this:
+	- open a cmd console (Select the Start button and type cmd+enter)
+	- type cd + the path to your 'Installation' folder (e.g. cd C:\Users\Public\stacomir\Installation)
+	- type install_stacomi.cmd -h to display the possible options
+
+```
+install_stacomi.cmd -h
+Usage:
+    install_stacomi.cmd [-h] [-u sql_user] [-p sql_pass] [-P port] [-H host]
+
+Options:
+    -h     Print this help
+    -u     Define the Postgres user to use     (default = postgres)
+    -p     Define the Postgres user's password (default = postgres)
+    -P     Define the Postgres server port     (default = 5432)
+    -H     Define the Postgres server host     (default = localhost)
+```
+	- change the options you need
+
+You *WILL* have to give a SQL user (-u) with admin rights (i.e. rights to create a database and to create a connection role). Else the install will fail.
+
+Everything is working ? go to the [next step](#install)) !
+
+## 2.2 On Linux host <a name="linux-install"></a>
 The script is:
 `install_stacomi.sh`
 
@@ -90,26 +124,7 @@ If you call this script with no arguments, it will assume your PostgreSQL server
 
 You **MUST** launch this script as root (directly or by sudo), else it will fail.
 
-
-## 2.2 On Windows host <a name="win-install"></a>
-The script is:
-`install_stacomi.cmd`
-
-Calling it with `-h` will display the possible options:
-```
-install_stacomi.cmd -h
-Usage:
-    install_stacomi.cmd [-h] [-u sql_user] [-p sql_pass] [-P port] [-H host]
-
-Options:
-    -h     Print this help
-    -u     Define the Postgres user to use     (default = postgres)
-    -p     Define the Postgres user's password (default = postgres)
-    -P     Define the Postgres server port     (default = 5432)
-    -H     Define the Postgres server host     (default = localhost)
-```
-
-You *WILL* have to give a SQL user with admin rights (create a database, create a connection role). Else the install will fail.
+Everything is working ? go to the [next step](#install)) !
 
 # 3 Manual installation<a name="manual-install"></a>
 
@@ -262,9 +277,10 @@ For the "Development" version (on R-Forge):
 ```R
 install.packages("stacomiR", repos="https://R-forge.R-project.org")
 ``` 
-To launch stacomiR just execute the following commands, then click on "login" (defaut value iav/iav):
+To launch stacomiR just execute the following commands, then click on "login" (defaut value iav/iav). You can choose your langage using Sys.setenv() with LANG="en" for english and LANG="fr" for french
 ```R
 library(stacomiR)
+Sys.setenv(LANG = "en")
 stacomi()
 ``` 
 

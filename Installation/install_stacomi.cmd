@@ -25,6 +25,7 @@ set prog_psql=psql
 set prog_unzip=%~dp0%bin\unzip.exe
 set sql_data_zip=%~dp0%data\install_bd_contmig_nat.zip
 set sql_data_unzip=%~dp0%data\install_bd_contmig_nat.sql
+set sql_rep_unzip=%~dp0%data\
 set db_name=bd_contmig_nat
 set odbc_driver_name_64=PostgreSQL Unicode(x64)
 set odbc_driver_name_32=PostgreSQL Unicode
@@ -116,7 +117,8 @@ echo   * Database connection: OK
 :Process
 echo Processing
 echo     * Extracting database archive
-%prog_unzip% -o -q %sql_data_zip% -d %~dp0%data
+::%prog_unzip% -o -q %sql_data_zip% -d %~dp0%data
+%prog_unzip% -o -q %sql_data_zip% -d %sql_rep_unzip%
 if "%ERRORLEVEL%" neq "0" (
 	echo         * Error while extracting. Operation aborted
 	set ret=2 && goto End
@@ -142,7 +144,7 @@ echo     * Creating connection role 'user_1'
 set PGPASSWORD=%sql_pass%&& !prog_psql! -U %sql_user% -h %sql_host% -p %sql_port% -c "CREATE ROLE user_1 LOGIN PASSWORD 'user_1' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;" >nul
 
 echo     * Filling database '%db_name%' ^(please be patient, it will take a while^)
-set PGPASSWORD=%sql_pass%&& !prog_psql! -U %sql_user% -h %sql_host% -p %sql_port% -f %sql_data_unzip% %db_name% >nul
+set PGPASSWORD=%sql_pass%&& !prog_psql! -U %sql_user% -h %sql_host% -p %sql_port% -f %sql_data_unzip% %db_name%
 if "%ERRORLEVEL%" neq "0" (
 	echo         * Error while extracting. Operation aborted
 	set ret=2 && goto End
@@ -170,10 +172,10 @@ odbcconf /A {ConfigDSN "!odbc_driver!" "DSN=%db_name%|UID=%sql_user%|PWD=%sql_pa
 :: -------
 :End
 
-if exist %~dp0%data\install_bd_contmig_nat.sql (
-	echo     * Removing extracted archive
-	del %~dp0%data\install_bd_contmig_nat.sql
-)
+REM if exist %~dp0%data\install_bd_contmig_nat.sql (
+	REM echo     * Removing extracted archive
+	REM del %~dp0%data\install_bd_contmig_nat.sql
+REM )
 if "%ret%" equ "0" (
 	echo * Finished
 )
