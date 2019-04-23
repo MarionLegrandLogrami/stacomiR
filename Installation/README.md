@@ -54,16 +54,13 @@ Open the 'Installation' folder previously downloaded and dezipped and look for t
 `install_stacomi.cmd`
 
 You have several way to launch this file:
-- double-click on `install_stacomi.cmd`: this will launch the program to create the database and to fill it. It will also create an ODBC link to this database. When double-clicking you use the default parameters that is localhost database on default port (5432) and user name=postgres and password=postgres.
-- if you want to execute the program inside R it is possible to do this calling the function shell from the 'base' package (it will use the default parameters): 
-```R
-path<-"path_to_install_stacomi.cmd" (e.g. "C:/Users/Public/stacomir/Installation/install_stacomi.cmd")
-shell(path,"cmd")
-```
+
+- double-click on `install_stacomi.cmd`: this will launch the program to create the database and to fill it. It will also create an ODBC link to this database. When double-clicking you use the default parameters that are: localhost database on default port (5432) and user name=postgres and password=postgres.
+
 - if you want to change the default parameters you will have to execute the `install_stacomi.cmd` inside a console. To do this:
 	- open a cmd console (Select the Start button and type cmd+enter)
 	- type cd + the path to your 'Installation' folder (e.g. cd C:\Users\Public\stacomir\Installation)
-	- type install_stacomi.cmd -h to display the possible options
+	- type `install_stacomi.cmd -h` to display the possible options
 
 ```
 install_stacomi.cmd -h
@@ -79,7 +76,22 @@ Options:
 ```
 	- change the options you need
 
-You *WILL* have to give a SQL user (-u) with admin rights (i.e. rights to create a database and to create a connection role). Else the install will fail.
+	- if you want to execute the program inside R it is possible to do this calling the function shell from the 'base' package: 
+```R
+#If you want to launch the program with the default settings
+scriptAddr<-"path_to_install_stacomi.cmd" (e.g. "C:/Users/Public/stacomir/Installation/install_stacomi.cmd")
+shell(scriptAddr,"cmd")
+
+#If you need to change some settings
+scriptAddr<-"path_to_install_stacomi.cmd" (e.g. "C:/Users/Public/stacomir/Installation/install_stacomi.cmd")
+command<-paste(scriptAddr,"-H hostname -P port -u user -p password")
+#Example with hostname=localhost (=default settings), port=6543, user=foo, password=foofoo
+command_example<-paste(scriptAddr,"-P 6543 -u foo -p foofoo") #I don't need to add -H localhost as it is the default settings
+shell(command,"cmd")
+
+```
+
+The SQL user (-u) must have admin rights (i.e. rights to create a database and to create a connection role). If you installed postgreSQL yourself on your computer, this is the username/password you specified during the installation.
 
 Everything is working ? go to the [next step](#install)) !
 
@@ -277,7 +289,7 @@ For the "Development" version (on R-Forge):
 ```R
 install.packages("stacomiR", repos="https://R-forge.R-project.org")
 ``` 
-To launch stacomiR just execute the following commands, then click on "login" (defaut value iav/iav). You can choose your langage using Sys.setenv() with LANG="en" for english and LANG="fr" for french
+To launch stacomiR just execute the following commands, then click on "login" (default value iav/iav). You can choose your langage using Sys.setenv() with LANG="en" for english and LANG="fr" for french (default is french so if you need french you don't have to specified the Sys.setenv command line)
 ```R
 library(stacomiR)
 Sys.setenv(LANG = "en")

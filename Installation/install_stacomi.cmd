@@ -24,8 +24,9 @@ set prog_psql=psql
 :: ------------- Do not change anything above this line -------------
 set prog_unzip=%~dp0%bin\unzip.exe
 set sql_data_zip=%~dp0%data\install_bd_contmig_nat.zip
-set sql_data_unzip=%~dp0%data\install_bd_contmig_nat.sql
 set sql_rep_unzip=%~dp0%data\
+set sql_data_unzip=%sql_rep_unzip%install_bd_contmig_nat.sql
+
 set db_name=bd_contmig_nat
 set odbc_driver_name_64=PostgreSQL Unicode(x64)
 set odbc_driver_name_32=PostgreSQL Unicode
@@ -36,10 +37,10 @@ set ret=0
 :: -----------------
 :GetOpts
 if "%1" == "-h" goto Usage
-if "%1" == "-u" set sql_user=%2 & shift
-if "%1" == "-p" set sql_pass=%2 & shift
-if "%1" == "-P" set sql_port=%2 & shift
-if "%1" == "-H" set sql_host=%2 & shift
+if "%1" == "-u" set sql_user=%2& shift
+if "%1" == "-p" set sql_pass=%2& shift
+if "%1" == "-P" set sql_port=%2& shift
+if "%1" == "-H" set sql_host=%2& shift
 shift
 if not "%1" == "" goto GetOpts
 goto CheckDependencies
@@ -94,8 +95,9 @@ if not exist !sql_data_zip! (
 	set ret=1 && goto End
 )
 echo   * Database archive: OK
+
 :: Can we connect to PostgreSQL server?
-set PGPASSWORD=%sql_pass%&& !prog_psql! -U %sql_user% -h %sql_host% -p %sql_port% -c "SELECT 1" >nul
+set PGPASSWORD=%sql_pass%&& !prog_psql! -U "%sql_user%" -h %sql_host% -p %sql_port% -c "SELECT 1" postgres >nul
 if "%ERRORLEVEL%" neq "0" (
 	echo   * Oops: can't connect to PostgreSQL server. Please check your credentials,
 	echo        and be sure the server is running
@@ -117,14 +119,13 @@ echo   * Database connection: OK
 :Process
 echo Processing
 echo     * Extracting database archive
-::%prog_unzip% -o -q %sql_data_zip% -d %~dp0%data
 %prog_unzip% -o -q %sql_data_zip% -d %sql_rep_unzip%
 if "%ERRORLEVEL%" neq "0" (
 	echo         * Error while extracting. Operation aborted
 	set ret=2 && goto End
 )
 echo     * Creating database '%db_name%'
-set PGPASSWORD=%sql_pass%&& !prog_psql! -U %sql_user% -h %sql_host% -p %sql_port% -c "CREATE DATABASE %db_name% WITH ENCODING = 'UTF8';" >nul
+set PGPASSWORD=%sql_pass%&& !prog_psql! -U "%sql_user%" -h %sql_host% -p %sql_port% -c "CREATE DATABASE %db_name% WITH ENCODING = 'UTF8';" postgres >nul
 if "%ERRORLEVEL%" neq "0" (
 	echo         * Error while creating database.
 	echo           If it already exists, you will have to drop it manually, and launch this script again later.
@@ -132,19 +133,19 @@ if "%ERRORLEVEL%" neq "0" (
 	set ret=2 && goto End
 )
 echo     * Creating connection role 'nat'
-set PGPASSWORD=%sql_pass%&& !prog_psql! -U %sql_user% -h %sql_host% -p %sql_port% -c "CREATE ROLE nat LOGIN PASSWORD 'nat' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;" >nul
+set PGPASSWORD=%sql_pass%&& !prog_psql! -U "%sql_user%" -h %sql_host% -p %sql_port% -c "CREATE ROLE nat LOGIN PASSWORD 'nat' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;" %db_name% >nul
 
 echo     * Creating connection role 'iav'
-set PGPASSWORD=%sql_pass%&& !prog_psql! -U %sql_user% -h %sql_host% -p %sql_port% -c "CREATE ROLE iav LOGIN PASSWORD 'iav' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;" >nul
+set PGPASSWORD=%sql_pass%&& !prog_psql! -U "%sql_user%" -h %sql_host% -p %sql_port% -c "CREATE ROLE iav LOGIN PASSWORD 'iav' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;" %db_name% >nul
 
 echo     * Creating connection role 'invite'
-set PGPASSWORD=%sql_pass%&& !prog_psql! -U %sql_user% -h %sql_host% -p %sql_port% -c "CREATE ROLE invite LOGIN PASSWORD 'invite' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;" >nul
+set PGPASSWORD=%sql_pass%&& !prog_psql! -U "%sql_user%" -h %sql_host% -p %sql_port% -c "CREATE ROLE invite LOGIN PASSWORD 'invite' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;" %db_name% >nul
 
 echo     * Creating connection role 'user_1'
-set PGPASSWORD=%sql_pass%&& !prog_psql! -U %sql_user% -h %sql_host% -p %sql_port% -c "CREATE ROLE user_1 LOGIN PASSWORD 'user_1' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;" >nul
+set PGPASSWORD=%sql_pass%&& !prog_psql! -U "%sql_user%" -h %sql_host% -p %sql_port% -c "CREATE ROLE user_1 LOGIN PASSWORD 'user_1' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;" %db_name% >nul
 
 echo     * Filling database '%db_name%' ^(please be patient, it will take a while^)
-set PGPASSWORD=%sql_pass%&& !prog_psql! -U %sql_user% -h %sql_host% -p %sql_port% -f %sql_data_unzip% %db_name%
+set PGPASSWORD=%sql_pass%&& !prog_psql! -U "%sql_user%" -h %sql_host% -p %sql_port% -f %sql_data_unzip% %db_name%>nul
 if "%ERRORLEVEL%" neq "0" (
 	echo         * Error while extracting. Operation aborted
 	set ret=2 && goto End
@@ -172,10 +173,10 @@ odbcconf /A {ConfigDSN "!odbc_driver!" "DSN=%db_name%|UID=%sql_user%|PWD=%sql_pa
 :: -------
 :End
 
-REM if exist %~dp0%data\install_bd_contmig_nat.sql (
-	REM echo     * Removing extracted archive
-	REM del %~dp0%data\install_bd_contmig_nat.sql
-REM )
+if exist %~dp0%data\install_bd_contmig_nat.sql (
+	echo     * Removing extracted archive
+	del %~dp0%data\install_bd_contmig_nat.sql
+)
 if "%ret%" equ "0" (
 	echo * Finished
 )
