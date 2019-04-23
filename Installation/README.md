@@ -60,7 +60,7 @@ You have several ways to launch this file:
 - if you want to change the default settings you will have to execute the `install_stacomi.cmd` inside a console. To do this:
 	- open a cmd console (Select the Start button and type cmd+enter)
 	- type cd + the path to your 'Installation' folder (e.g. cd C:\Users\Public\stacomir\Installation)
-	- change the options you need
+	- change the options you need (to see options first start to type install_stacomi.cmd -h in your command prompt)
 
 ```
 install_stacomi.cmd -h
@@ -82,7 +82,12 @@ Options:
 scriptAddr<-"path_to_install_stacomi.cmd" (e.g. "C:/Users/Public/stacomir/Installation/install_stacomi.cmd")
 shell(scriptAddr,"cmd")
 
-#If you need to change some settings
+#If you need to change some settings, you first have to look at the options provided by the install_stacomi.cmd program. To do this type:
+scriptAddr<-"path_to_install_stacomi.cmd" (e.g. "C:/Users/Public/stacomir/Installation/install_stacomi.cmd")
+command<-paste(scriptAddr,"-h")
+shell(command,"cmd")
+
+#To change some options:
 scriptAddr<-"path_to_install_stacomi.cmd" (e.g. "C:/Users/Public/stacomir/Installation/install_stacomi.cmd")
 command<-paste(scriptAddr,"-H hostname -P port -u user -p password")
 #Example with hostname=localhost (=default settings), port=6543, user=foo, password=foofoo
