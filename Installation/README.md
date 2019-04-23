@@ -55,11 +55,12 @@ Open the 'Installation' folder previously downloaded and dezipped and look for t
 
 You have several ways to launch this file:
 
-- double-click on `install_stacomi.cmd`: this will launch the program to create the database and to fill it. It will also create an ODBC link to this database. When double-clicking you use the default parameters that are: localhost database on default port (5432) and user name=postgres and password=postgres.
+- double-click on `install_stacomi.cmd`: this will launch the program to create the database and to fill it. It will also create an ODBC link to this database. When double-clicking you use the default settings that are: localhost database on default port (5432) and user name=postgres and password=postgres.
 
 - if you want to change the default settings you will have to execute the `install_stacomi.cmd` inside a console. To do this:
 	- open a cmd console (Select the Start button and type cmd+enter)
 	- type cd + the path to your 'Installation' folder (e.g. cd C:\Users\Public\stacomir\Installation)
+	- change the options you need
 
 ```
 install_stacomi.cmd -h
@@ -73,9 +74,9 @@ Options:
     -P     Define the Postgres server port     (default = 5432)
     -H     Define the Postgres server host     (default = localhost)
 ```
-	- change the options you need
 
-	- if you want to execute the program inside R it is possible to do this calling the function shell from the 'base' package: 
+- if you want to execute the program inside R it is possible to do this calling the function shell from the 'base' package: 
+
 ```R
 #If you want to launch the program with the default settings
 scriptAddr<-"path_to_install_stacomi.cmd" (e.g. "C:/Users/Public/stacomir/Installation/install_stacomi.cmd")
@@ -87,7 +88,6 @@ command<-paste(scriptAddr,"-H hostname -P port -u user -p password")
 #Example with hostname=localhost (=default settings), port=6543, user=foo, password=foofoo
 command_example<-paste(scriptAddr,"-P 6543 -u foo -p foofoo") #I don't need to add -H localhost as it is the default settings
 shell(command,"cmd")
-
 ```
 
 The SQL user (-u) must have admin rights (i.e. rights to create a database and to create a connection role). If you installed postgreSQL yourself on your computer, this is the username/password you specified during the installation.
