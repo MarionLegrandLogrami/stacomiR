@@ -91,7 +91,7 @@ shell(command,"cmd")
 scriptAddr<-"path_to_install_stacomi.cmd" (e.g. "C:/Users/Public/stacomir/Installation/install_stacomi.cmd")
 command<-paste(scriptAddr,"-H hostname -P port -u user -p password")
 #Example with hostname=localhost (=default settings), port=6543, user=foo, password=foofoo
-command_example<-paste(scriptAddr,"-P 6543 -u foo -p foofoo") #I don't need to add -H localhost as it is the default settings
+command<-paste(scriptAddr,"-P 6543 -u foo -p foofoo") #I don't need to add -H localhost as it is the default settings
 shell(command,"cmd")
 ```
 
