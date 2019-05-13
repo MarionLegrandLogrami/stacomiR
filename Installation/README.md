@@ -315,7 +315,7 @@ You are now ready to use the R package. If you want to go further, and use it fo
 ## 6.1 Step-by-Step to install a PostgreSQL ODBC Driver
 1. Choose the good ODBC Driver version
 
-If you are a windows user you need to download one of the files of the [msi folder](https://www.postgresql.org/ftp/odbc/versions/msi/). Before downloading the file you need to choose the file corresponding to your version of PostgreSQL and to your windows system (32 or 64 bits). For example if you have a PostgreSQL 9.6 version with a windows 64 bits you need to download the "psqlodbc_09_06_0500-x64.zip" file.
+If you are a windows user you need to download one of the files of the [msi folder](https://www.postgresql.org/ftp/odbc/versions/msi/). Unless you have have a specific reason not to do so, you should always download the latest version. Before downloading the file you need to choose the file corresponding to your windows system (32 or 64 bits).
 
 2. Install the ODBC Driver
 
