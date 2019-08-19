@@ -1,0 +1,15 @@
+^README\.Rmd$
+^README-.*\.png$
+^README\.md$
+^README\.html$
+^README\.log$
+^logo\.png$
+^NEWS.md$
+^NEWS.md.html$
+^README.md.html$
+^.NEWS.md.html$
+^.README.md.html$
+^cran-comments.md$
+^cran-comments$
+^paper\.bib$
+^paper\.md$

@@ -1,0 +1,8 @@
+inst/config/generate_ROxygen2.R
+inst/config/libraries.R
+inst/config/poedit.R
+inst/config/stacomi_checks.R
+inst/stacomi_manual_launch.r
+inst/test_vignette.R
+inst/testthat.R
+inst/cran-comment
