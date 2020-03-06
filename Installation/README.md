@@ -312,8 +312,8 @@ You need to download stacomi.zip, unzip this file and add a stacomi folder in yo
 - calcmig.csv : Specific informations of control for the stacomiR program (this will help you to manage the connexion to your database). By default calcmig.csv is configured to provide an access to the iav folder to allow to a new user to test the package functionalities. Once the stacomi folder has been installed on your computer, you may want to change the calcmig.csv configuration to connect to you schema (repace iav/iav by your schema name and the associated password to the user with the same name as the schema). 
 The calcmig.csv is as following
 
-|           | lienODBC |	uid	| pwd | dbname | host | port | pgwd | datawd| lang|
-| --------- | ------- |	----  | --- | ---     | --- | ---- | ---- | ---- | --- |--- |
+|           | lienODBC | uid | pwd | dbname | host | port | pgwd | datawd| lang |
+| --------- | ------- |	---- | --- | ---  | ---    | ---- | ---- | ---- | --- | 
 | example | bd_contmig_nat | iav | iav | bd_contmig_nat | localhost | 5432 | C:/workspace/stacomir/pkg/stacomir/R/ | C:/path/to/the/folder/ | French | 
 | description | name of the ODBC link, should have been set by the installation program | name of the schema, must be similar to your user name | password name (associated with username) | name of the database | host name, there you can point to an external server | port name | path to the program folder (used for package developement)... you can leave empty | path to the folder where I want to store the results | Language French Spanish or English | 
 
