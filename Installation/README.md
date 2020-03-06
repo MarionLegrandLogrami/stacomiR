@@ -315,7 +315,7 @@ The calcmig.csv is as following
 |           | lienODBC |	uid	| pwd | dbname | host | port | pgwd | datawd| lang|
 | --------- | ------- |	----  | --- | ---     | --- | ---- | ---- | ---- | --- |--- |
 | example | bd_contmig_nat | iav | iav | bd_contmig_nat | localhost | 5432 | C:/workspace/stacomir/pkg/stacomir/R/ | C:/path/to/the/folder/ | French | 
-| description | name of the ODBC link, should have been set by the installation program | name of the schema, must be similar to your user name | password name (associated with username) | name of the database | host name, there you can point to an external server | port name | path to the program folder (used for package developement... you can leave emply | path to the folder where I want to store the results | Language French Spainish or English | 
+| description | name of the ODBC link, should have been set by the installation program | name of the schema, must be similar to your user name | password name (associated with username) | name of the database | host name, there you can point to an external server | port name | path to the program folder (used for package developement)... you can leave empty | path to the folder where I want to store the results | Language French Spanish or English | 
 
 - logo_stacomi.jpeg : logo
 - stacomi.bat : launches the java program to the graphical interface 
