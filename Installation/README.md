@@ -307,6 +307,9 @@ vignette("stacomir")
 ```
 
 # 5. Add a stacomi folder 
+
+**⚠ this steps will access to the java graphical interface and allow you to change settings for the database connexion for stacomiR and java**
+
 You need to download stacomi.zip, unzip this file and add a stacomi folder in your program folder c:\Program Files. The folder contains 6 files  : 
 - base_local.xml : Connexion informations for the java program (this will allow access to an interface allowing to load, correct, import files into the stacomi database)
 - calcmig.csv : Specific informations of control for the stacomiR program (this will help you to manage the connexion to your database). By default calcmig.csv is configured to provide an access to the iav folder to allow to a new user to test the package functionalities. Once the stacomi folder has been installed on your computer, you may want to change the calcmig.csv configuration to connect to you schema (repace iav/iav by your schema name and the associated password to the user with the same name as the schema). 
