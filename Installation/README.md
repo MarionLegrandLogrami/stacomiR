@@ -312,28 +312,22 @@ You need to download stacomi.zip, unzip this file and add a stacomi folder in yo
 - calcmig.csv : Specific informations of control for the stacomiR program (this will help you to manage the connexion to your database). By default calcmig.csv is configured to provide an access to the iav folder to allow to a new user to test the package functionalities. Once the stacomi folder has been installed on your computer, you may want to change the calcmig.csv configuration to connect to you schema (repace iav/iav by your schema name and the associated password to the user with the same name as the schema). 
 The calcmig.csv is as following
 
-| | lienODBC |	uid	| pwd | dbname | host | port | pgwd | datawd| lang|
-| --------- | ------- |	----	| --- | --- | --- | ---- | ---- | ---- | --- |
-| example | bd_contmig_nat | iav | iav | bd_contmig_nat | localhost | 5432 | C:/path/to/the/folder/ | French | 
-| description | name of the ODBC link, you need to configure it | name of the schema, must be similar to your user name | password name (associated with username) | name of the database | host name, there you can point to an external server | port name | path to the folder where I want to store the results | Language French Spainish or English | 
+|           | lienODBC |	uid	| pwd | dbname | host | port | pgwd | datawd| lang|
+| --------- | ------- |	----  | --- | ---     | --- | ---- | ---- | ---- | --- |--- |
+| example | bd_contmig_nat | iav | iav | bd_contmig_nat | localhost | 5432 | C:/workspace/stacomir/pkg/stacomir/R/ | C:/path/to/the/folder/ | French | 
+| description | name of the ODBC link, should have been set by the installation program | name of the schema, must be similar to your user name | password name (associated with username) | name of the database | host name, there you can point to an external server | port name | path to the program folder (used for package developement... you can leave emply | path to the folder where I want to store the results | Language French Spainish or English | 
 
-- logo_stacomi.jpeg : logo pour le programme java
-- stacomi.bat : lance le programme java pour accéder à l'interface graphique (pour ajouter ou mettre à jour des données dans votre base de données poissons migrateurs)
-- stacomi.ico : icône pour le programme java
-- stacomi[numéro de la version].jar : programme java
-Utilisez le bloc note en mode administrateur pour modifier les paramètres de connexion dans ces différents fichiers : 
-base_local.xml :
+- logo_stacomi.jpeg : logo
+- stacomi.bat : launches the java program to the graphical interface 
+- stacomi.ico : icon for the java program
+- stacomi[number version].jar : java program
+
+So you can also change the connexion to the database (database name, host, port, password, default schema using a text editing program (notebook) in admin mode to modify the connexion parameters in base_local.xml :
 ```
 <bdd bdurl="jdbc:postgresql://localhost:5432/bd_contmig_nat" user="iav" password="iav" />
 ```
-avec : 
-`localhost` si votre base de données est stockée en local (si la base de données est sur un serveur distant, ajoutez l'adresse du serveur); 
-`5432` est le port de connexion (par défaut 5432, si votre base de données est sur un serveur distant, changez le par celui de votre serveur); 
-`bd_contmig_nat` nom de la base de données des poissons migrateurs; 
-`user="iav"` remplacez iav par le nom de votre schéma; 
-`mot de passe="iav"` remplacez le par le mot de passe de connexion du rôle de votre schéma (regarder la partie Créer une base de données de ce fichier) 
-- calcmig.csv : remplacer le nom du lien ODBC par le nom de la source ODBC que vous avez créée, remplacez uid et pwd par le nom et le mot de passe de votre rôle de connexion, vérifiez l'hôte et le port, ajoutez le lien du répertoire CalcmigData que vous avez créé (colonne datawd du fichier calcmig.csv)
-- stacomi.bat : mettez à jour si nécessaire le nom du programme .jar (si vous changez la version du fichier .jar par exemple). Le nom du fichier .jar doit impérativement être identique au nom du fichier .jar de votre dossier stacomi.
+
+- stacomi.bat :if necessary update the name of the .jar (when version .jar has changed). The name of the .jar must be identical to the .jar dof the stacomi folder.
 
 
 # 6. Final words<a name="final"></a>
