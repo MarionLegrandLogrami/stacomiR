@@ -33,7 +33,7 @@ For minimal installation, the following softwares must already be installed on y
 - PostgreSQL ODBC driver (Link: [PostgreSQL website](https://www.postgresql.org/ftp/odbc/versions/) - if you need more help on how to install PostgreSQL ODBC driver please visit the section [More help](#more-help))
 - R ≥ 3.5.0
 
-You also need to download the complete 'Installation' folder available on github. To do this you can go to [DownGit](https://minhaskamal.github.io/DownGit/#/home) and enter the url of the folder (https://github.com/MarionLegrandLogrami/stacomiR/tree/master/Installation), then click "download".
+You also need to download the complete 'Installation' folder available on github. To do this you can go to [this site](https://drive.google.com/open?id=1VOk5bC4pHt69LHPIZws53SeFDvwFu5Nr) then click "download". Unzip the data, bin folder at the same location than `install_stacomi.sh` on linux or `install_stacomi.cmd` on windows.
 When the folder is downloaded, you need to dezip the folder.
 
 This wiki will help you to prepare your environment, by:
